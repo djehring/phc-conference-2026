@@ -106,7 +106,7 @@ export default function EarlyBirdCountdown({ endDate, label, highlight = false }
           transition={{ duration: 2, repeat: Infinity }}
         >
           <p className="text-sm font-semibold text-phc-dark text-center">
-            Save up to £60 on tickets!
+            Save up to £30 on tickets!
           </p>
         </motion.div>
       )}

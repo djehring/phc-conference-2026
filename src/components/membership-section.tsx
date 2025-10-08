@@ -36,7 +36,7 @@ const benefits = [
   {
     icon: Calendar,
     title: 'Event Privileges',
-    description: 'Save £60 on conference tickets! Enjoy early access, special member pricing, and exclusive networking opportunities at all PHC events.',
+    description: 'Save £30 on conference tickets! Enjoy early access, special member pricing, and exclusive networking opportunities at all PHC events.',
     highlight: true
   },
   {
@@ -64,7 +64,7 @@ export default function MembershipSection() {
           >
             <span className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark rounded-full text-sm font-bold">
               <Sparkles className="w-4 h-4 mr-2" />
-              SAVE £60 ON EARLY BIRD TICKETS WITH MEMBERSHIP
+              SAVE £30 ON EARLY BIRD TICKETS WITH MEMBERSHIP
             </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
@@ -133,12 +133,12 @@ export default function MembershipSection() {
             <div className="flex items-center justify-center gap-3 mb-3">
               <TrendingDown className="w-5 h-5 text-phc-dark" />
               <p className="text-lg font-bold text-phc-dark">
-                Early Bird Special: Join now and save £60 on conference tickets!
+                Early Bird Special: Join now and save £30 on conference tickets!
               </p>
               <TrendingDown className="w-5 h-5 text-phc-dark" />
             </div>
             <p className="text-sm text-gray-700">
-              Annual membership is just £75 - instantly save £60 on your conference ticket
+              Annual membership is just £75 - instantly save £30 on your conference ticket
             </p>
           </div>
           <p className="text-xl text-gray-700 mb-8">

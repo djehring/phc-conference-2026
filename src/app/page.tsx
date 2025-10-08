@@ -179,15 +179,15 @@ export default function Home() {
               >
                 <span className="flex items-center gap-1 sm:gap-2">
                   Get Early Bird Tickets
-                  <span className="text-xs">from £119</span>
+                  <span className="text-xs">from £129</span>
                 </span>
               </a>
-              <motion.span 
+              <motion.span
                 animate={{ rotate: [0, -5, 5, -5, 0] }}
                 transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
                 className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full"
               >
-                SAVE £60
+                SAVE £30
               </motion.span>
             </div>
             <button
@@ -276,7 +276,7 @@ export default function Home() {
               Early Bird Pricing
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Book now and save up to £60 on your conference tickets!
+              Book now and save up to £30 on your conference tickets!
             </p>
           </motion.div>
 
@@ -296,9 +296,9 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-4 mt-2">PHC Members</h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold">£119</div>
-                <div className="text-sm opacity-90 line-through">Regular: £179</div>
-                <div className="text-phc-yellow font-semibold mt-1">Save £60!</div>
+                <div className="text-4xl font-bold">£129</div>
+                <div className="text-sm opacity-90 line-through">Regular: £159</div>
+                <div className="text-phc-yellow font-semibold mt-1">Save £30!</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm">
                 <li>✓ 2-day conference access</li>
@@ -321,9 +321,9 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold mb-4 text-phc-dark">Non-Members</h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold text-phc-dark">£179</div>
-                <div className="text-sm text-gray-500 line-through">Regular: £239</div>
-                <div className="text-phc-light font-semibold mt-1">Save £60!</div>
+                <div className="text-4xl font-bold text-phc-dark">£189</div>
+                <div className="text-sm text-gray-500 line-through">Regular: £209</div>
+                <div className="text-phc-light font-semibold mt-1">Save £20!</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm text-gray-700">
                 <li>✓ 2-day conference access</li>
@@ -353,7 +353,7 @@ export default function Home() {
                 <div className="text-sm font-semibold mt-1">Annual Membership</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm">
-                <li>✓ Instant £60 ticket discount</li>
+                <li>✓ Instant £30 ticket discount</li>
                 <li>✓ Year-round benefits</li>
                 <li>✓ Exclusive events access</li>
                 <li>✓ Support PHC mission</li>
