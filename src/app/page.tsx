@@ -156,9 +156,9 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.85 }}
             className="max-w-sm sm:max-w-md mx-auto mb-4 sm:mb-5"
           >
-            <EarlyBirdCountdown 
-              endDate="2025-10-06T23:59:59"
-              label="Super Early Bird Ends"
+            <EarlyBirdCountdown
+              endDate="2026-02-02T23:59:59"
+              label="Early Bird Ends"
               highlight={true}
             />
           </motion.div>
@@ -179,7 +179,7 @@ export default function Home() {
               >
                 <span className="flex items-center gap-1 sm:gap-2">
                   Get Early Bird Tickets
-                  <span className="text-xs">from £114</span>
+                  <span className="text-xs">from £119</span>
                 </span>
               </a>
               <motion.span 
@@ -273,7 +273,7 @@ export default function Home() {
               </span>
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
-              Super Early Bird Pricing
+              Early Bird Pricing
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Book now and save up to £60 on your conference tickets!
@@ -296,8 +296,8 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-4 mt-2">PHC Members</h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold">£114</div>
-                <div className="text-sm opacity-90 line-through">Regular: £174</div>
+                <div className="text-4xl font-bold">£119</div>
+                <div className="text-sm opacity-90 line-through">Regular: £179</div>
                 <div className="text-phc-yellow font-semibold mt-1">Save £60!</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm">
@@ -307,7 +307,7 @@ export default function Home() {
                 <li>✓ Member exclusive discount</li>
               </ul>
               <div className="text-xs opacity-75">
-                Sale ends: 6th October 2025
+                Sale ends: 2nd February 2026
               </div>
             </motion.div>
 
@@ -321,8 +321,8 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold mb-4 text-phc-dark">Non-Members</h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold text-phc-dark">£174</div>
-                <div className="text-sm text-gray-500 line-through">Regular: £234</div>
+                <div className="text-4xl font-bold text-phc-dark">£179</div>
+                <div className="text-sm text-gray-500 line-through">Regular: £239</div>
                 <div className="text-phc-light font-semibold mt-1">Save £60!</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm text-gray-700">
@@ -332,7 +332,7 @@ export default function Home() {
                 <li>✓ Networking opportunities</li>
               </ul>
               <div className="text-xs text-gray-500">
-                Sale ends: 6th October 2025
+                Sale ends: 2nd February 2026
               </div>
             </motion.div>
 
@@ -366,8 +366,8 @@ export default function Home() {
 
           {/* Countdown Timer */}
           <div className="max-w-lg mx-auto mb-8">
-            <EarlyBirdCountdown 
-              endDate="2025-10-06T23:59:59"
+            <EarlyBirdCountdown
+              endDate="2026-02-02T23:59:59"
               label="Early Bird Offer Ends In"
               highlight={false}
             />
