@@ -106,6 +106,16 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 <li><Link href="https://phcuk.org/" target="_blank" className="hover:text-phc-light transition-colors">PHC Website</Link></li>
                 <li><Link href="https://phcuk.org/membership/" target="_blank" className="hover:text-phc-light transition-colors">Become a Member</Link></li>
+                <li>
+                  <a 
+                    href="https://forms.office.com/e/LTaJrbkxmG" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-phc-light transition-colors"
+                  >
+                    Request Exhibitor Brochure
+                  </a>
+                </li>
                 <li><Link href="/privacy-policy" className="hover:text-phc-light transition-colors">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-phc-light transition-colors">Terms & Conditions</Link></li>
                 <li>

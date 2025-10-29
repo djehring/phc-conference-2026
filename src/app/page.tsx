@@ -414,7 +414,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             {/* Fundraiser Dinner Card */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -492,6 +492,24 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+
+          {/* Exhibitor Brochure CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <a
+              href="https://forms.office.com/e/LTaJrbkxmG"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-phc-light to-phc-dark text-white font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 text-base sm:text-lg"
+            >
+              Request Exhibitor Brochure →
+            </a>
+          </motion.div>
         </div>
       </section>
 
