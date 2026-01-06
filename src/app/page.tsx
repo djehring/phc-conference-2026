@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Award, ChevronDown, CalendarPlus, Utensils, Clock, Info, Sparkles } from "lucide-react";
+import { Calendar, MapPin, Award, ChevronDown, CalendarPlus, Utensils, Clock, Info, Sparkles, Video } from "lucide-react";
 import { conferenceInfo, statistics } from "@/lib/data";
 import { generateICS } from "@/lib/generateICS";
 import Image from "next/image";
@@ -278,6 +278,66 @@ export default function Home() {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Book now and save up to £30 on your conference tickets!
             </p>
+          </motion.div>
+
+          {/* Livestream Ticket - NEW */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="relative mb-8"
+          >
+            <div className="relative bg-gradient-to-r from-phc-dark via-phc-light to-phc-dark text-white rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden">
+              {/* Animated background effect */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 left-0 w-40 h-40 bg-phc-yellow rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 right-0 w-60 h-60 bg-phc-light rounded-full blur-3xl"></div>
+              </div>
+              
+              <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-phc-yellow/20 rounded-xl">
+                    <Video className="w-8 h-8 text-phc-yellow" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <motion.span
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="px-3 py-0.5 bg-phc-yellow text-phc-dark text-xs font-bold rounded-full"
+                      >
+                        NEW
+                      </motion.span>
+                      <h3 className="text-xl sm:text-2xl font-bold">Livestream Tickets Now Available!</h3>
+                    </div>
+                    <p className="text-white/90 text-sm sm:text-base">
+                      Can't attend in person? Watch all sessions live from anywhere in the world.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                  <div className="flex gap-4 sm:gap-6">
+                    <div className="text-center">
+                      <div className="text-2xl sm:text-3xl font-bold">£59</div>
+                      <div className="text-xs text-phc-yellow">Members</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl sm:text-3xl font-bold">£79</div>
+                      <div className="text-xs text-white/80">Non-Members</div>
+                    </div>
+                  </div>
+                  <a
+                    href={conferenceInfo.ticketUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-phc-yellow text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 whitespace-nowrap"
+                  >
+                    Get Livestream Access →
+                  </a>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
