@@ -320,10 +320,12 @@ export default function Home() {
                   <div className="flex gap-4 sm:gap-6">
                     <div className="text-center">
                       <div className="text-2xl sm:text-3xl font-bold">£59</div>
-                      <div className="text-xs text-phc-yellow">Members</div>
+                      <div className="text-xs text-white/70 line-through">Regular: £69</div>
+                      <div className="text-xs text-phc-yellow font-semibold">Members</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl sm:text-3xl font-bold">£79</div>
+                      <div className="text-xs text-white/70 line-through">Regular: £89</div>
                       <div className="text-xs text-white/80">Non-Members</div>
                     </div>
                   </div>
@@ -335,6 +337,9 @@ export default function Home() {
                   >
                     Get Livestream Access →
                   </a>
+                  <div className="text-xs text-white/70 text-center sm:text-left">
+                    Sale ends: 2nd February 2026
+                  </div>
                 </div>
               </div>
             </div>
