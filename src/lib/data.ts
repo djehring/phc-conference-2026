@@ -26,19 +26,7 @@ export const speakers = [
   },
   {
     id: 3,
-    name: "Dr Tommy Wood",
-    title: "Associate Professor",
-    description: "Neuroscience researcher and performance consultant",
-    initials: "TW",
-    photo: "tommy-wood.jpg",
-    bio: "Associate Professor of Pediatrics and Neuroscience at University of Washington. Research focuses on brain health across the lifespan. Cambridge biochemistry graduate, Oxford medical degree, Oslo PhD. Performance consultant to Formula 1 drivers. Director of British Society of Lifestyle Medicine.",
-    links: {
-      website: "https://www.drtommywood.com/"
-    }
-  },
-  {
-    id: 4,
-    name: "Nina Teicholz",
+    name: "Dr Nina Teicholz",
     title: "Nutrition Science Journalist",
     description: "NYT bestselling author of The Big Fat Surprise, challenging conventional nutrition wisdom",
     initials: "NT",
@@ -49,7 +37,7 @@ export const speakers = [
     }
   },
   {
-    id: 5,
+    id: 4,
     name: "Dr David Unwin",
     title: "GP & Low Carb Pioneer",
     description: "Award-winning NHS GP revolutionizing Type 2 diabetes treatment through low-carb approaches",
@@ -58,7 +46,7 @@ export const speakers = [
     bio: "Celebrated NHS GP whose low-carb lifestyle approach has helped hundreds of patients put Type 2 diabetes into remission. Known for his practical implementation of dietary interventions in primary care."
   },
   {
-    id: 6,
+    id: 5,
     name: "Dr Isabella Cooper",
     title: "Functional Medicine Doctor",
     description: "University of Westminster researcher investigating ketosis and cellular health",
@@ -67,7 +55,7 @@ export const speakers = [
     bio: "Researcher at the University of Westminster investigating how metabolic states like ketosis affect cellular health and cancer outcomes. Specializes in Ketogenic Endocrine Metabolic Oncology (KEMO) therapy."
   },
   {
-    id: 7,
+    id: 6,
     name: "Davinia Taylor",
     title: "Wellness Entrepreneur",
     description: "Biohacking pioneer and founder of WillPowders",
@@ -79,7 +67,7 @@ export const speakers = [
     }
   },
   {
-    id: 8,
+    id: 7,
     name: "Thomas Hal Robson-Kanu",
     title: "Elite Athlete & Wellness Advocate",
     description: "Former Wales international footballer and founder of The Turmeric Co.",
@@ -92,7 +80,7 @@ export const speakers = [
     }
   },
   {
-    id: 9,
+    id: 8,
     name: "Dr Wafaa Abdel-Hadi",
     title: "Clinical Oncologist & Functional Medicine Expert",
     description: "First certified Functional Medicine Doctor in Egypt and the Middle East",
@@ -104,7 +92,7 @@ export const speakers = [
     }
   },
   {
-    id: 10,
+    id: 9,
     name: "Ruth Seymour",
     title: "Nutritional Therapist",
     description: "BANT Registered Nutritional Therapist and Nutritional Wellbeing Foundation Trustee",
@@ -117,7 +105,7 @@ export const speakers = [
     }
   },
   {
-    id: 11,
+    id: 10,
     name: "Chris Hill",
     title: "Real Food Rebellion Co-Leader",
     description: "Retired teacher and educational expert promoting ketogenic principles",
@@ -129,7 +117,7 @@ export const speakers = [
     }
   },
   {
-    id: 12,
+    id: 11,
     name: "David Sogan",
     title: "Real Food Rebellion Co-Leader",
     description: "TLC Health Coach and real food advocate",
@@ -138,19 +126,7 @@ export const speakers = [
     bio: "Co-Leader of the Real Food Rebellion and TLC Health Coach. Passionate advocate for real food and metabolic health, working to educate communities about whole foods and the dangers of ultra-processed foods."
   },
   {
-    id: 13,
-    name: "Sue Beckers",
-    title: "Nutrition Expert",
-    description: "GP with Master's in Nutritional Medicine",
-    initials: "SB",
-    photo: "sue-beckers.png",
-    bio: "Medical doctor (MB BS) with Master's in Nutritional Medicine from University of Surrey. Former GP partner (1998-2019). Founder member of Society of Metabolic Health Practitioners. Specializes in LCHF nutrition, allergy, and mind-body eating approaches.",
-    links: {
-      website: "https://goodmoodandfood.co.uk"
-    }
-  },
-  {
-    id: 14,
+    id: 12,
     name: "Steve Bennett",
     title: "Health Philathropist",
     description: "Entrepreneur researching obesity and food addiction",
@@ -159,7 +135,7 @@ export const speakers = [
     bio: "Entrepreneur and health advocate researching the connections between obesity, type 2 diabetes, and food addiction. Focuses on metabolic health interventions and lifestyle solutions."
   },
   {
-    id: 15,
+    id: 13,
     name: "Dr David Jehring",
     title: "PHC Chair of Trustees",
     description: "PHC Chair of Trustees and pioneering UK Health Informatician",
@@ -168,13 +144,25 @@ export const speakers = [
     bio: "Chair of Trustees of the Public Health Collaboration. GP and pioneering UK Health Informatician who designed the first Windows GP clinical systems, helped design the RCGP research database, and implemented the first UK national diabetic audit."
   },
   {
-    id: 16,
+    id: 14,
     name: "Sam Feltham",
     title: "PHC Director",
     description: "PHC Founder and conference organiser",
     initials: "SF",
     photo: "sam-feltham.png",
     bio: "Founder of the Public Health Collaboration and conference organiser. Passionate advocate for evidence-based nutrition and lifestyle medicine, dedicated to promoting low-carb nutrition education."
+  },
+  {
+    id: 15,
+    name: "Henry Wood",
+    title: "Food Educator",
+    description: "Passionate advocate for real food and sustainable eating",
+    initials: "HW",
+    photo: "henry-wood.jpg",
+    bio: "Food educator dedicated to teaching people about real food, sustainable eating, and the importance of understanding where our food comes from.",
+    links: {
+      instagram: "https://www.instagram.com/ramblinghenry/"
+    }
   }
 ];;;;
 
