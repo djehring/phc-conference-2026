@@ -1,18 +1,30 @@
 export const speakers = [
   {
     id: 1,
-    name: "Dr Ben Bikman",
-    title: "Metabolic Research Expert",
-    description: "Professor at BYU researching the molecular mechanisms behind obesity, type 2 diabetes, and metabolic disorders",
-    initials: "BB",
-    photo: "ben-bikman.jpg",
-    bio: "Dr. Benjamin Bikman is a Professor in Cell Biology and Physiology at Brigham Young University. His Laboratory of Obesity and Metabolism explores insulin's pathogenicity and its impact on metabolic health. With a PhD in Bioenergetics from East Carolina University, he serves on boards of the American Diabetes Society and American Physiological Society.",
+    name: "Prof Richard J Johnson",
+    title: "Emeritus Professor of Medicine",
+    description: "Physician and scientist focused on the role of sugar and uric acid in kidney disease, obesity and diabetes. Author of over 900 papers with more than 100,000 citations",
+    initials: "RJ",
+    photo: "richard-johnson.jpg",
+    bio: "Dr Richard J Johnson is an Emeritus Professor of Medicine at the University of Colorado. He is a physician and scientist, and his research has focused on the cause of kidney disease, obesity and diabetes. His primary focus has been on the role of sugar (especially the fructose component) and uric acid. He has published over 900 papers and is highly cited (>100,000 citations) and has lectured in approximately 50 countries. He is also a founding editor of a major textbook in nephrology, Comprehensive Clinical Nephrology, that is now in the 8th edition. In addition, he has written three books for the general readership, including the Sugar Fix, the Fat Switch, with the most recent book being Nature Wants Us to Be Fat.",
     links: {
-      university: "https://cell.byu.edu/directory/benjamin-bikman"
+      university: "https://som.cuanschutz.edu/Profiles/Faculty/Profile/9426"
     }
   },
   {
     id: 2,
+    name: "Dr Nina Teicholz",
+    title: "Nutrition Science Journalist",
+    description: "NYT bestselling author of The Big Fat Surprise. Founder of the Nutrition Coalition, instrumental in reforming the US Dietary Guidelines",
+    initials: "NT",
+    photo: "nina-teicholz.jpg",
+    bio: "Science journalist and author known for challenging dietary guidelines. Author of NYT bestseller 'The Big Fat Surprise' and founder of the Nutrition Coalition, which played a pivotal role in reforming the US Dietary Guidelines by advocating for rigorous, evidence-based science in federal nutrition policy. Holds degrees from Yale, Stanford, and Oxford, with a PhD in nutrition from University of Reading (2024). Published in Lancet, BMJ, and major media outlets.",
+    links: {
+      website: "https://ninateicholz.com"
+    }
+  },
+  {
+    id: 3,
     name: "Dr Paul Reynolds",
     title: "Research Specialist",
     description: "BYU Professor specializing in developmental biology and pulmonary medicine",
@@ -22,18 +34,6 @@ export const speakers = [
     links: {
       university: "https://cell.byu.edu/directory/paul-reynolds",
       lab: "https://reynoldslab.byu.edu"
-    }
-  },
-  {
-    id: 3,
-    name: "Dr Nina Teicholz",
-    title: "Nutrition Science Journalist",
-    description: "NYT bestselling author of The Big Fat Surprise, challenging conventional nutrition wisdom",
-    initials: "NT",
-    photo: "nina-teicholz.jpg",
-    bio: "Science journalist and author known for challenging dietary guidelines. Author of NYT bestseller 'The Big Fat Surprise' and founder of the Nutrition Coalition. Holds degrees from Yale, Stanford, and Oxford, with a PhD in nutrition from University of Reading (2024). Published in Lancet, BMJ, and major media outlets.",
-    links: {
-      website: "https://ninateicholz.com"
     }
   },
   {

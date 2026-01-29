@@ -60,7 +60,7 @@ export default function SpeakersSection() {
                   <p className="text-sm text-phc-light font-semibold mb-2">
                     {speaker.title}
                   </p>
-                  <p className="text-xs text-gray-700 line-clamp-3 flex-1">
+                  <p className="text-xs text-gray-700 flex-1">
                     {speaker.description}
                   </p>
                   <div className="mt-3 h-5">
