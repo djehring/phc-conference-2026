@@ -57,11 +57,11 @@ export const speakers = [
   {
     id: 6,
     name: "Davinia Taylor",
-    title: "Wellness Entrepreneur",
-    description: "Biohacking pioneer and founder of WillPowders",
+    title: "Actress, Author & Biohacker",
+    description: "Former Hollyoaks actress turned biohacking pioneer. Double Sunday Times No.1 bestselling author and founder of WillPowders, with over a million followers",
     initials: "DT",
     photo: "davinia-taylor.png",
-    bio: "Biohacking pioneer, double Sunday Times No. 1 best-selling author, and founder of WillPowders. With over a million Instagram followers, she helps people transform their health through cutting out inflammatory foods and adopting nutrient-dense eating strategies.",
+    bio: "Best known for playing Jude Cunningham in Hollyoaks and as part of the famous Primrose Hill set, Davinia Taylor reinvented herself as a biohacking pioneer and wellness entrepreneur. A double Sunday Times No. 1 bestselling author, she founded WillPowders to champion good fats and fight ultra-processed foods under her #ForFatsSake campaign. With over a million Instagram followers, she helps people tackle brain fog, hormone imbalances and bad eating habits through nutrient-dense, whole food strategies. Featured on This Morning, Sunday Times Style, The Independent and Glamour.",
     links: {
       website: "https://www.willpowders.com"
     }
@@ -81,6 +81,18 @@ export const speakers = [
   },
   {
     id: 8,
+    name: "Henry Wood",
+    title: "Real Food Campaigner",
+    description: "Known as 'Rambling Henry' with over 250K social media followers, fighting for real food in a fake food world. Founder of The Real Food Club",
+    initials: "HW",
+    photo: "henry-wood.jpg",
+    bio: "Known online as Rambling Henry, Henry Wood is a real food campaigner with over 250K followers across Instagram, Facebook and TikTok. After 8 years in London sales, he moved to Australia and worked on large-scale farms, where the disconnect between farming and food sparked a mission to champion whole foods and traditional cooking. His own health transformation — from 19 stone at age 19 to thriving on whole foods — drives his advocacy against ultra-processed foods. He founded The Real Food Club and has travelled to Blue Zones including Costa Rica to learn from indigenous communities. His rallying cry: fighting for real food in a fake food world.",
+    links: {
+      instagram: "https://www.instagram.com/ramblinghenry/"
+    }
+  },
+  {
+    id: 9,
     name: "Dr Wafaa Abdel-Hadi",
     title: "Clinical Oncologist & Functional Medicine Expert",
     description: "First certified Functional Medicine Doctor in Egypt and the Middle East",
@@ -92,7 +104,7 @@ export const speakers = [
     }
   },
   {
-    id: 9,
+    id: 10,
     name: "Ruth Seymour",
     title: "Nutritional Therapist",
     description: "BANT Registered Nutritional Therapist and Nutritional Wellbeing Foundation Trustee",
@@ -105,7 +117,7 @@ export const speakers = [
     }
   },
   {
-    id: 10,
+    id: 11,
     name: "Chris Hill",
     title: "Real Food Rebellion Co-Leader",
     description: "Retired teacher and educational expert promoting ketogenic principles",
@@ -117,7 +129,7 @@ export const speakers = [
     }
   },
   {
-    id: 11,
+    id: 12,
     name: "David Sogan",
     title: "Real Food Rebellion Co-Leader",
     description: "TLC Health Coach and real food advocate",
@@ -126,7 +138,7 @@ export const speakers = [
     bio: "Co-Leader of the Real Food Rebellion and TLC Health Coach. Passionate advocate for real food and metabolic health, working to educate communities about whole foods and the dangers of ultra-processed foods."
   },
   {
-    id: 12,
+    id: 13,
     name: "Steve Bennett",
     title: "Health Philathropist",
     description: "Entrepreneur researching obesity and food addiction",
@@ -135,7 +147,7 @@ export const speakers = [
     bio: "Entrepreneur and health advocate researching the connections between obesity, type 2 diabetes, and food addiction. Focuses on metabolic health interventions and lifestyle solutions."
   },
   {
-    id: 13,
+    id: 14,
     name: "Dr David Jehring",
     title: "PHC Chair of Trustees",
     description: "PHC Chair of Trustees and pioneering UK Health Informatician",
@@ -144,25 +156,13 @@ export const speakers = [
     bio: "Chair of Trustees of the Public Health Collaboration. GP and pioneering UK Health Informatician who designed the first Windows GP clinical systems, helped design the RCGP research database, and implemented the first UK national diabetic audit."
   },
   {
-    id: 14,
+    id: 15,
     name: "Sam Feltham",
     title: "PHC Director",
     description: "PHC Founder and conference organiser",
     initials: "SF",
     photo: "sam-feltham.png",
     bio: "Founder of the Public Health Collaboration and conference organiser. Passionate advocate for evidence-based nutrition and lifestyle medicine, dedicated to promoting low-carb nutrition education."
-  },
-  {
-    id: 15,
-    name: "Henry Wood",
-    title: "Food Educator",
-    description: "Passionate advocate for real food and sustainable eating",
-    initials: "HW",
-    photo: "henry-wood.jpg",
-    bio: "Food educator dedicated to teaching people about real food, sustainable eating, and the importance of understanding where our food comes from.",
-    links: {
-      instagram: "https://www.instagram.com/ramblinghenry/"
-    }
   }
 ];;;;
 

@@ -80,7 +80,7 @@ export default function Footer() {
                   alt="Public Health Collaboration" 
                   width={180} 
                   height={80}
-                  className="mb-4"
+                  className="mb-4 h-auto"
                 />
               </Link>
               <p className="text-sm text-gray-300">
