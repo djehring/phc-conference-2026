@@ -9,7 +9,7 @@ import SpeakersSection from "@/components/SpeakersSection";
 import ConferenceVideoSlider from "@/components/conference-video-slider";
 import MembershipSection from "@/components/membership-section";
 import MobileJumpNav from "@/components/MobileJumpNav";
-import EarlyBirdCountdown from "@/components/EarlyBirdCountdown";
+
 
 export default function Home() {
   return (
@@ -149,47 +149,24 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Early Bird Countdown */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.85 }}
-            className="max-w-sm sm:max-w-md mx-auto mb-4 sm:mb-5"
-          >
-            <EarlyBirdCountdown
-              endDate="2026-02-02T23:59:59"
-              label="Early Bird Ends"
-              highlight={true}
-            />
-          </motion.div>
-
-          {/* CTAs with Early Bird Badge */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
             className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center"
           >
-            <div className="relative">
-              <a
-                href={conferenceInfo.ticketUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 inline-block text-xs sm:text-sm"
-              >
-                <span className="flex items-center gap-1 sm:gap-2">
-                  Get Early Bird Tickets
-                  <span className="text-xs">from £129</span>
-                </span>
-              </a>
-              <motion.span
-                animate={{ rotate: [0, -5, 5, -5, 0] }}
-                transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
-                className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full"
-              >
-                SAVE £30
-              </motion.span>
-            </div>
+            <a
+              href={conferenceInfo.ticketUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 inline-block text-xs sm:text-sm"
+            >
+              <span className="flex items-center gap-1 sm:gap-2">
+                Get Tickets
+                <span className="text-xs">from £159</span>
+              </span>
+            </a>
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
               className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-colors text-xs sm:text-sm"
@@ -263,20 +240,11 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              className="inline-block mb-4"
-            >
-              <span className="px-6 py-2 bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold rounded-full text-sm">
-                🔥 EARLY BIRD SPECIAL - LIMITED TIME
-              </span>
-            </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
-              Early Bird Pricing
+              Ticket Pricing
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Book now and save up to £30 on your conference tickets!
+              Secure your spot at the premier metabolic health conference of 2026
             </p>
           </motion.div>
 
@@ -319,13 +287,11 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                   <div className="flex gap-4 sm:gap-6">
                     <div className="text-center">
-                      <div className="text-2xl sm:text-3xl font-bold">£59</div>
-                      <div className="text-xs text-white/70 line-through">Regular: £69</div>
+                      <div className="text-2xl sm:text-3xl font-bold">£69</div>
                       <div className="text-xs text-phc-yellow font-semibold">Members</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl sm:text-3xl font-bold">£79</div>
-                      <div className="text-xs text-white/70 line-through">Regular: £89</div>
+                      <div className="text-2xl sm:text-3xl font-bold">£89</div>
                       <div className="text-xs text-white/80">Non-Members</div>
                     </div>
                   </div>
@@ -337,9 +303,6 @@ export default function Home() {
                   >
                     Get Livestream Access →
                   </a>
-                  <div className="text-xs text-white/70 text-center sm:text-left">
-                    Sale ends: 2nd February 2026
-                  </div>
                 </div>
               </div>
             </div>
@@ -354,26 +317,17 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="relative bg-gradient-to-br from-phc-dark to-phc-light text-white rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all"
             >
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="px-4 py-1 bg-phc-yellow text-phc-dark font-bold rounded-full text-sm">
-                  BEST VALUE
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 mt-2">PHC Members</h3>
+              <h3 className="text-2xl font-bold mb-4">PHC Members</h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold">£129</div>
-                <div className="text-sm opacity-90 line-through">Regular: £159</div>
-                <div className="text-phc-yellow font-semibold mt-1">Save £30!</div>
+                <div className="text-4xl font-bold">£159</div>
+                <div className="text-sm opacity-90">2-day ticket</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm">
                 <li>✓ 2-day conference access</li>
                 <li>✓ 16 CPD points</li>
                 <li>✓ All sessions included</li>
-                <li>✓ Member exclusive discount</li>
+                <li>✓ Member exclusive pricing</li>
               </ul>
-              <div className="text-xs opacity-75">
-                Sale ends: 2nd February 2026
-              </div>
             </motion.div>
 
             {/* Non-Members Ticket */}
@@ -386,9 +340,8 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold mb-4 text-phc-dark">Non-Members</h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold text-phc-dark">£189</div>
-                <div className="text-sm text-gray-500 line-through">Regular: £209</div>
-                <div className="text-phc-light font-semibold mt-1">Save £20!</div>
+                <div className="text-4xl font-bold text-phc-dark">£209</div>
+                <div className="text-sm text-gray-500">2-day ticket</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm text-gray-700">
                 <li>✓ 2-day conference access</li>
@@ -396,9 +349,6 @@ export default function Home() {
                 <li>✓ All sessions included</li>
                 <li>✓ Networking opportunities</li>
               </ul>
-              <div className="text-xs text-gray-500">
-                Sale ends: 2nd February 2026
-              </div>
             </motion.div>
 
             {/* Membership Add-on */}
@@ -418,7 +368,7 @@ export default function Home() {
                 <div className="text-sm font-semibold mt-1">Annual Membership</div>
               </div>
               <ul className="space-y-2 mb-6 text-sm">
-                <li>✓ Instant £30 ticket discount</li>
+                <li>✓ Instant £50 ticket discount</li>
                 <li>✓ Year-round benefits</li>
                 <li>✓ Exclusive events access</li>
                 <li>✓ Support PHC mission</li>
@@ -427,15 +377,6 @@ export default function Home() {
                 Bundle & Save!
               </div>
             </motion.div>
-          </div>
-
-          {/* Countdown Timer */}
-          <div className="max-w-lg mx-auto mb-8">
-            <EarlyBirdCountdown
-              endDate="2026-02-02T23:59:59"
-              label="Early Bird Offer Ends In"
-              highlight={false}
-            />
           </div>
 
           {/* CTA */}
@@ -452,7 +393,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-block px-10 py-5 bg-gradient-to-r from-phc-dark to-phc-light text-white font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 text-lg"
             >
-              Secure Your Early Bird Tickets Now →
+              Get Your Tickets Now →
             </a>
             <p className="mt-4 text-sm text-gray-600">
               ⚠️ Lunch, teas and coffees not included - available for separate purchase
