@@ -452,7 +452,7 @@ export default function Home() {
                   </p>
                   <p className="mt-3 text-phc-yellow font-semibold flex items-center">
                     <Info className="w-4 h-4 mr-2" />
-                    Full details and tickets available January 2026
+                    Full details and tickets available February 2026
                   </p>
                 </div>
               </div>
@@ -472,7 +472,7 @@ export default function Home() {
               </div>
               <div className="space-y-3">
                 <p className="text-white/90">
-                  The detailed speaker schedule and session timings will be published in January 2026.
+                  The detailed speaker schedule and session timings will be published in March 2026.
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <h4 className="font-semibold mb-2">What to expect:</h4>
