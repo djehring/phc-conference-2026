@@ -431,7 +431,7 @@ export default function Home() {
             >
               <div className="flex items-center mb-4">
                 <Utensils className="w-8 h-8 text-phc-yellow mr-3" />
-                <h3 className="text-2xl font-bold">Fundraiser Dinner</h3>
+                <h3 className="text-2xl font-bold">Evening Fundraiser Dinner</h3>
               </div>
               <div className="space-y-3">
                 <p className="flex items-center">
@@ -440,20 +440,23 @@ export default function Home() {
                 </p>
                 <p className="flex items-center">
                   <Clock className="w-5 h-5 mr-2 text-phc-yellow" />
-                  From 7:00 PM
+                  7:00 PM to 10:00 PM
                 </p>
                 <p className="flex items-center">
                   <MapPin className="w-5 h-5 mr-2 text-phc-yellow" />
-                  Near the conference venue
+                  The Memoir Club, London
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm text-white/90">
-                    Join us for an evening of networking and fundraising to support the Public Health Collaboration's mission.
+                    Welcome drink, 3-course real food meal and half-bottle of wine per person. Only 100 public tickets available!
                   </p>
-                  <p className="mt-3 text-phc-yellow font-semibold flex items-center">
+                  <a
+                    href="/dinner"
+                    className="mt-3 inline-flex items-center text-phc-yellow font-semibold hover:underline"
+                  >
                     <Info className="w-4 h-4 mr-2" />
-                    Full details and tickets available February 2026
-                  </p>
+                    View full details &rarr;
+                  </a>
                 </div>
               </div>
             </motion.div>

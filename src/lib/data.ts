@@ -177,8 +177,14 @@ export const conferenceInfo = {
   ticketUrl: "https://phc26.eventify.io/t2/tickets",
   galaDinner: {
     date: "Saturday 16th May 2026",
-    time: "7pm",
-    details: "Full details coming January 2026"
+    time: "7pm to 10pm",
+    venue: "The Memoir Club",
+    address: "12 Upper Woburn Place, London, WC1H 0HX",
+    mapUrl: "https://maps.app.goo.gl/LhdqZGuFNoaM2d4v6",
+    website: "https://www.memoirclublondon.com/",
+    included: "Welcome drink, 3-course real food meal and half-bottle of wine per person",
+    capacity: 100,
+    details: "Only 100 public tickets available!"
   }
 };
 

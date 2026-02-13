@@ -96,6 +96,7 @@ export default function Footer() {
                 <li><Link href="/#speakers" className="hover:text-phc-light transition-colors">Speakers</Link></li>
                 <li><Link href="/#schedule" className="hover:text-phc-light transition-colors">Schedule</Link></li>
                 <li><Link href="/#venue" className="hover:text-phc-light transition-colors">Venue</Link></li>
+                <li><Link href="/dinner" className="hover:text-phc-light transition-colors">Dinner</Link></li>
                 <li><Link href="/#tickets" className="hover:text-phc-light transition-colors">Tickets</Link></li>
               </ul>
             </div>
