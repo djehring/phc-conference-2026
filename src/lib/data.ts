@@ -120,10 +120,10 @@ export const speakers = [
     id: 11,
     name: "Chris Hill",
     title: "Real Food Rebellion Co-Leader",
-    description: "Retired teacher and educational expert promoting ketogenic principles",
+    description: "Retired teacher and educational expert promoting real food principles",
     initials: "CH",
     photo: "chris-hill.png",
-    bio: "Retired school teacher with 35+ years experience, now volunteering at Real Food Rebellion. Mission is to teach children about real food and the dangers of Ultra-Processed Foods. Brings educational expertise to promoting ketogenic principles.",
+    bio: "Retired teacher and educational expert promoting real food principles",
     links: {
       podcast: "https://fabulouslyketo.com/podcast/207/"
     }
