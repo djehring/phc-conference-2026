@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1F2937;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-jakarta);
+
+  /* PHC Primary */
+  --color-phc-navy: #2D2E83;
+  --color-phc-cyan: #4ABFD8;
+
+  /* PHC Extended */
+  --color-phc-navy-light: #3A3B9A;
+  --color-phc-navy-dark: #1E1F5E;
+  --color-phc-cyan-light: #7DD4E6;
+  --color-phc-cyan-pale: #E8F7FB;
+  --color-off-white: #F8F9FC;
+  --color-warm-grey: #6B7280;
+  --color-dark-grey: #1F2937;
+  --color-success-green: #10B981;
+  --color-warm-amber: #F59E0B;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
