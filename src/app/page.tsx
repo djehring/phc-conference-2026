@@ -502,7 +502,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Exhibitor Brochure CTA */}
+          {/* Exhibitors CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -511,12 +511,10 @@ export default function Home() {
             className="text-center"
           >
             <a
-              href="https://forms.office.com/e/LTaJrbkxmG"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/exhibitors"
               className="inline-block px-8 py-4 bg-gradient-to-r from-phc-light to-phc-dark text-white font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 text-base sm:text-lg"
             >
-              Request Exhibitor Brochure →
+              View Our Exhibitors & Sponsors →
             </a>
           </motion.div>
         </div>

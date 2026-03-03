@@ -118,6 +118,18 @@ export const speakers = [
   },
   {
     id: 11,
+    name: "Richard Smith",
+    title: "Nutrition Expert & Founder of The Keto Pro",
+    description: "Certified nutrition expert with qualifications in molecular biochemistry, clinical blood analysis and epigenetics. Founder of The Keto Pro and leading advocate for real food nutrition",
+    initials: "RS2",
+    photo: "richard-smith.png",
+    bio: "Richard Smith is a certified nutrition expert, with qualifications in molecular biochemistry, clinical blood analysis and epigenetics, the founder of The Keto Pro and a leading advocate for real food nutrition and sustainable health. While widely known for his expertise in ketogenic principles, Richard's work extends far beyond any single dietary approach. His philosophy is rooted in teaching people how to nourish their bodies with real food, understand metabolic health, and build lifestyles that support long-term wellbeing. Richard's mission was shaped by years of observing the confusion caused by conflicting dietary advice and overly restrictive trends. Rather than promoting quick fixes, he focuses on education, clarity, and practical application. His approach emphasizes nutrient-dense foods, metabolic flexibility, and informed decision-making — empowering individuals to move away from processed diets and toward sustainable health practices that work in the real world. In addition to his education work, Richard is a highly sought-after speaker at prestigious events and conferences around the world. He regularly teaches medical professionals, health practitioners, and industry leaders about real nutrition, metabolic health, and wellbeing, bridging the gap between modern science and practical implementation. His ability to translate complex concepts into clear, actionable insights has made him a respected voice within the global health community. Through The Keto Pro, Richard continues to share evidence-informed guidance on nutrition, mindset, and lifestyle design. His work is centred on helping people improve energy, clarity, and overall health by understanding how the body truly functions — not through rigid rules, but through informed, sustainable choices built to last.",
+    links: {
+      website: "https://theketopro.com"
+    }
+  },
+  {
+    id: 12,
     name: "Chris Hill",
     title: "Real Food Rebellion Co-Leader",
     description: "Retired teacher and educational expert promoting real food principles",
@@ -129,7 +141,7 @@ export const speakers = [
     }
   },
   {
-    id: 12,
+    id: 13,
     name: "David Sogan",
     title: "Real Food Rebellion Co-Leader",
     description: "TLC Health Coach and real food advocate",
@@ -138,7 +150,7 @@ export const speakers = [
     bio: "Co-Leader of the Real Food Rebellion and TLC Health Coach. Passionate advocate for real food and metabolic health, working to educate communities about whole foods and the dangers of ultra-processed foods."
   },
   {
-    id: 13,
+    id: 14,
     name: "Steve Bennett",
     title: "Health Philathropist",
     description: "Entrepreneur researching obesity and food addiction",
@@ -147,7 +159,7 @@ export const speakers = [
     bio: "Entrepreneur and health advocate researching the connections between obesity, type 2 diabetes, and food addiction. Focuses on metabolic health interventions and lifestyle solutions."
   },
   {
-    id: 14,
+    id: 15,
     name: "Dr David Jehring",
     title: "PHC Chair of Trustees",
     description: "PHC Chair of Trustees and pioneering UK Health Informatician",
@@ -156,7 +168,7 @@ export const speakers = [
     bio: "Chair of Trustees of the Public Health Collaboration. GP and pioneering UK Health Informatician who designed the first Windows GP clinical systems, helped design the RCGP research database, and implemented the first UK national diabetic audit."
   },
   {
-    id: 15,
+    id: 16,
     name: "Sam Feltham",
     title: "PHC Director",
     description: "PHC Founder and conference organiser",
@@ -191,7 +203,7 @@ export const conferenceInfo = {
 export const statistics = [
   { number: "10", label: "Years of Excellence", icon: "Trophy" },
   { number: "16", label: "CPD Points Available", icon: "Award" },
-  { number: "14+", label: "World-Class Speakers", icon: "Users" },
+  { number: "15+", label: "World-Class Speakers", icon: "Users" },
   { number: "2", label: "Full Days of Learning", icon: "Calendar" }
 ];
 
