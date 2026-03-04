@@ -130,6 +130,18 @@ export const speakers = [
   },
   {
     id: 12,
+    name: "Dr Louise Newson",
+    title: "GP & Hormone Specialist",
+    description: "Founder of Newson Clinic (CQC rated Outstanding), the Balance app and Dr Louise Newson podcast. A leading voice in women's hormone health and menopause education",
+    initials: "LN",
+    photo: "louise-newson.jpg",
+    bio: "Dr Louise Newson is a GP, hormone specialist, Founder of Newson Clinic (CQC rated Outstanding), Dr Louise Newson podcast and the Balance app. A highly respected voice in women's health, with years of clinical experience specialising in women's hormones. Through her clinical and educational work, as well as her research contributing to numerous peer-reviewed publications, she has empowered a generation of women to have a greater understanding, choice and control over their hormone treatment, bodies and mind. A passionate advocate for education and better training for healthcare professionals, she has played a key role in changing international conversations around menopause and hormone treatments. Louise studied Medicine and Pathology at The University of Manchester and pursued a career in hospital medicine before moving to specialise in General Practice and medical writing. She is a member of the Royal College of Physicians, a Fellow of the Royal College of GPs, Visiting Fellow at Murray Edwards College, Cambridge University and has been awarded an Honorary Doctorate in Health from Bradford University.",
+    links: {
+      website: "https://www.drlouisenewson.co.uk"
+    }
+  },
+  {
+    id: 13,
     name: "Chris Hill",
     title: "Real Food Rebellion Co-Leader",
     description: "Retired teacher and educational expert promoting real food principles",
@@ -141,7 +153,7 @@ export const speakers = [
     }
   },
   {
-    id: 13,
+    id: 14,
     name: "David Sogan",
     title: "Real Food Rebellion Co-Leader",
     description: "TLC Health Coach and real food advocate",
@@ -150,7 +162,7 @@ export const speakers = [
     bio: "Co-Leader of the Real Food Rebellion and TLC Health Coach. Passionate advocate for real food and metabolic health, working to educate communities about whole foods and the dangers of ultra-processed foods."
   },
   {
-    id: 14,
+    id: 15,
     name: "Steve Bennett",
     title: "Health Philathropist",
     description: "Entrepreneur researching obesity and food addiction",
@@ -159,7 +171,7 @@ export const speakers = [
     bio: "Entrepreneur and health advocate researching the connections between obesity, type 2 diabetes, and food addiction. Focuses on metabolic health interventions and lifestyle solutions."
   },
   {
-    id: 15,
+    id: 16,
     name: "Dr David Jehring",
     title: "PHC Chair of Trustees",
     description: "PHC Chair of Trustees and pioneering UK Health Informatician",
@@ -168,7 +180,7 @@ export const speakers = [
     bio: "Chair of Trustees of the Public Health Collaboration. GP and pioneering UK Health Informatician who designed the first Windows GP clinical systems, helped design the RCGP research database, and implemented the first UK national diabetic audit."
   },
   {
-    id: 16,
+    id: 17,
     name: "Sam Feltham",
     title: "PHC Director",
     description: "PHC Founder and conference organiser",
