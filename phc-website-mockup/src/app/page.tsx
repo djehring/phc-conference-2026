@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Scale,
@@ -17,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import FadeInSection from "@/components/FadeInSection";
 import {
   impactStats,
   pillars,
@@ -30,31 +30,6 @@ const pillarIcons: Record<string, React.ReactNode> = {
   BookOpen: <BookOpen className="w-8 h-8" />,
   Users: <Users className="w-8 h-8" />,
 };
-
-function FadeInSection({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, delay, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const categoryColors: Record<string, string> = {
   Research: "bg-phc-cyan/10 text-phc-cyan",
@@ -261,7 +236,7 @@ export default function HomePage() {
                 </h2>
               </div>
               <Link
-                href="#"
+                href="/news"
                 className="hidden sm:inline-flex items-center gap-1 text-phc-navy font-semibold hover:gap-2 transition-all"
               >
                 View all
@@ -301,7 +276,7 @@ export default function HomePage() {
 
           <div className="sm:hidden mt-8 text-center">
             <Link
-              href="#"
+              href="/news"
               className="inline-flex items-center gap-1 text-phc-navy font-semibold"
             >
               View all news &amp; resources

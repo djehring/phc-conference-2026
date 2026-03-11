@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import {
   Target,
   Eye,
@@ -14,32 +13,8 @@ import {
   FileText,
 } from "lucide-react";
 import Link from "next/link";
+import FadeInSection from "@/components/FadeInSection";
 import { teamMembers, timeline } from "@/lib/data";
-
-function FadeInSection({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, delay, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const values = [
   {
@@ -371,14 +346,14 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="#"
+                href="/get-involved"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-phc-cyan hover:bg-phc-cyan-light text-phc-navy-dark font-bold rounded-full transition-all hover:scale-105"
               >
                 Become a member
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="#"
+                href="/get-involved"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 hover:border-white/40 text-white font-semibold rounded-full transition-all hover:bg-white/5"
               >
                 Volunteer with us

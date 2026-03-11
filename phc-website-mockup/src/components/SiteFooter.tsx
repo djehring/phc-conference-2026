@@ -1,33 +1,33 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const footerLinks = {
   "About PHC": [
     { label: "Our Mission", href: "/about" },
     { label: "Team & Trustees", href: "/about#team" },
-    { label: "Governance", href: "#" },
-    { label: "Annual Reports", href: "#" },
+    { label: "Governance", href: "/about" },
+    { label: "Annual Reports", href: "/about" },
   ],
   "Our Work": [
-    { label: "Advocacy & Policy", href: "#" },
-    { label: "Education", href: "#" },
-    { label: "Real Food Rebellion", href: "#" },
+    { label: "Advocacy & Policy", href: "/our-work" },
+    { label: "Education", href: "/our-work" },
+    { label: "Real Food Rebellion", href: "/our-work" },
     { label: "Elevate App", href: "https://elevate-me.life/" },
-    { label: "Annual Conference", href: "#" },
+    { label: "Annual Conference", href: "/our-work" },
   ],
   "Get Involved": [
-    { label: "Become a Member", href: "#" },
-    { label: "Volunteer", href: "#" },
-    { label: "Donate", href: "#" },
-    { label: "Events", href: "#" },
-    { label: "Partnerships", href: "#" },
+    { label: "Become a Member", href: "/get-involved" },
+    { label: "Volunteer", href: "/get-involved" },
+    { label: "Donate", href: "/get-involved" },
+    { label: "Events", href: "/get-involved" },
+    { label: "Partnerships", href: "/get-involved" },
   ],
   Resources: [
-    { label: "Evidence Library", href: "#" },
-    { label: "Real Food Booklets", href: "#" },
-    { label: "FAQs", href: "#" },
-    { label: "News & Blog", href: "#" },
-    { label: "Press Enquiries", href: "#" },
+    { label: "Evidence Library", href: "/evidence" },
+    { label: "Real Food Booklets", href: "/evidence" },
+    { label: "FAQs", href: "/evidence" },
+    { label: "News & Blog", href: "/news" },
+    { label: "Press Enquiries", href: "/news" },
   ],
 };
 
@@ -75,6 +75,9 @@ export default function SiteFooter() {
                     <Link
                       href={link.href}
                       className="text-white/50 hover:text-phc-cyan text-sm transition-colors"
+                      {...(link.href.startsWith("http")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                     >
                       {link.label}
                     </Link>
