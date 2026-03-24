@@ -74,7 +74,7 @@ const VideoCard = ({ video }: VideoCardProps) => {
             )}
             {/* Play button overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-phc-light to-phc-dark rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-200 shadow-2xl">
+              <div className="w-16 h-16 bg-phc-cyan rounded-full flex items-center justify-center transform hover:scale-110 hover:bg-phc-cyan-light transition-all duration-200 shadow-2xl">
                 <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
@@ -96,14 +96,14 @@ const VideoCard = ({ video }: VideoCardProps) => {
           style={{ WebkitBackfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
         >
           <div className="mb-1">
-            <span className="inline-block bg-phc-light text-white px-2 py-0.5 rounded-full text-xs sm:text-xs md:text-sm font-semibold">
+            <span className="inline-block bg-phc-cyan text-phc-navy-dark px-2 py-0.5 rounded-full text-xs sm:text-xs md:text-sm font-semibold">
               {video.year}
             </span>
           </div>
-          <h3 className="text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg mb-0.5 sm:mb-1 line-clamp-1">
+          <h3 className="font-heading text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg mb-0.5 sm:mb-1 line-clamp-1">
             {video.title}
           </h3>
-          <p className="text-gray-200 text-xs sm:text-xs md:text-sm line-clamp-3">
+          <p className="text-white/80 text-xs sm:text-xs md:text-sm line-clamp-3">
             {video.description}
           </p>
         </div>
@@ -209,10 +209,10 @@ const ConferenceVideoSlider = () => {
     <div className="w-full px-4 sm:px-6 lg:px-8 py-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 relative z-10">
-          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-phc-dark to-phc-light bg-clip-text text-transparent mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold bg-gradient-to-r from-phc-dark to-phc-cyan bg-clip-text text-transparent mb-4">
             Conference Highlights Through the Years
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          </h2>
+          <p className="text-lg sm:text-xl text-dark-grey max-w-3xl mx-auto px-4">
             Explore the most memorable moments from our annual conferences, featuring world-renowned speakers and groundbreaking presentations.
           </p>
         </div>
@@ -235,7 +235,7 @@ const ConferenceVideoSlider = () => {
           <div className="flex items-center gap-2 sm:gap-4">
             <button
               onClick={scrollLeft}
-              className="p-2 rounded-full bg-gradient-to-r from-phc-light to-phc-dark text-white hover:shadow-lg transition-all hover:scale-110"
+              className="p-2 rounded-full bg-phc-cyan text-phc-navy-dark hover:bg-phc-cyan-light hover:shadow-lg transition-all hover:scale-110"
               aria-label="Scroll left"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,13 +243,13 @@ const ConferenceVideoSlider = () => {
               </svg>
             </button>
             
-            <span className="text-transparent bg-gradient-to-r from-phc-dark to-phc-light bg-clip-text text-xs sm:text-sm font-semibold hidden sm:inline">
+            <span className="text-transparent bg-gradient-to-r from-phc-dark to-phc-cyan bg-clip-text text-xs sm:text-sm font-semibold hidden sm:inline">
               Scroll to see more videos
             </span>
             
             <button
               onClick={scrollRight}
-              className="p-2 rounded-full bg-gradient-to-r from-phc-dark to-phc-light text-white hover:shadow-lg transition-all hover:scale-110"
+              className="p-2 rounded-full bg-phc-cyan text-phc-navy-dark hover:bg-phc-cyan-light hover:shadow-lg transition-all hover:scale-110"
               aria-label="Scroll right"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

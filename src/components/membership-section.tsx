@@ -48,7 +48,7 @@ const benefits = [
 
 export default function MembershipSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-off-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,16 +62,16 @@ export default function MembershipSection() {
             transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
             className="inline-block mb-6"
           >
-            <span className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark rounded-full text-sm font-bold">
-              <Sparkles className="w-4 h-4 mr-2" />
+            <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold bg-gradient-to-r from-warm-amber/20 to-phc-cyan/15 text-phc-navy-dark border border-warm-amber/40">
+              <Sparkles className="w-4 h-4 mr-2 text-warm-amber" />
               SAVE £50 ON CONFERENCE TICKETS WITH MEMBERSHIP
             </span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
             Why Join the Public Health Collaboration?
           </h2>
-          <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-phc-cyan mx-auto mb-6 rounded-full" />
+          <p className="text-lg text-dark-grey max-w-3xl mx-auto">
             Become part of a growing community dedicated to transforming healthcare through 
             prevention-focused approaches.
           </p>
@@ -89,30 +89,33 @@ export default function MembershipSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`${
                   benefit.highlight 
-                    ? 'bg-gradient-to-br from-phc-yellow/10 to-white border-2 border-phc-yellow' 
+                    ? 'bg-gradient-to-br from-phc-cyan/10 to-white border-2 border-phc-cyan/50' 
                     : 'bg-white'
                 } rounded-lg p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105`}
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className={`w-12 h-12 ${
-                      benefit.highlight ? 'bg-phc-yellow' : 'bg-phc-dark'
+                      benefit.highlight ? 'bg-phc-cyan' : 'bg-phc-dark'
                     } rounded-full flex items-center justify-center`}>
                       <Icon className={`w-6 h-6 ${
-                        benefit.highlight ? 'text-phc-dark' : 'text-white'
+                        benefit.highlight ? 'text-phc-navy-dark' : 'text-white'
                       }`} />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-phc-dark mb-3">
+                    <h3 className="font-heading text-xl font-bold text-phc-dark mb-3">
                       {benefit.title}
                       {benefit.highlight && (
-                        <span className="ml-2 text-xs bg-red-500 text-white px-2 py-1 rounded-full">
-                          HOT
-                        </span>
+                        <>
+                          {" "}
+                          <span className="text-xs bg-success-green text-white px-2 py-1 rounded-full font-sans font-semibold whitespace-nowrap align-middle">
+                            Featured
+                          </span>
+                        </>
                       )}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-dark-grey leading-relaxed">
                       {benefit.description}
                     </p>
                   </div>
@@ -129,26 +132,26 @@ export default function MembershipSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="max-w-2xl mx-auto mb-8 p-6 bg-gradient-to-r from-phc-yellow/20 to-phc-light/20 rounded-xl border-2 border-phc-yellow">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <TrendingDown className="w-5 h-5 text-phc-dark" />
-              <p className="text-lg font-bold text-phc-dark">
+          <div className="max-w-2xl mx-auto mb-8 p-6 bg-gradient-to-r from-phc-cyan/15 to-warm-amber/10 rounded-xl border-2 border-phc-cyan/40">
+            <div className="flex items-center justify-center gap-3 mb-3 flex-wrap">
+              <TrendingDown className="w-5 h-5 text-phc-dark shrink-0" />
+              <p className="font-heading text-lg font-bold text-phc-dark">
                 Join now and save £50 on conference tickets!
               </p>
-              <TrendingDown className="w-5 h-5 text-phc-dark" />
+              <TrendingDown className="w-5 h-5 text-phc-dark shrink-0" />
             </div>
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-dark-grey">
               Annual membership is just £75 - instantly save £50 on your conference ticket
             </p>
           </div>
-          <p className="text-xl text-gray-700 mb-8">
+          <p className="text-xl text-dark-grey mb-8">
             Ready to be part of a healthcare revolution?
           </p>
           <a
             href="https://phcuk.org/membership"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-phc-dark to-phc-light text-white font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105"
+            className="inline-flex items-center px-8 py-4 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105"
           >
             Become a Member Today
             <svg 

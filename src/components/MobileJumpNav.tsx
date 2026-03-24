@@ -108,15 +108,15 @@ export default function MobileJumpNav() {
         {/* Dropdown Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg px-4 py-2.5 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow"
+          className="w-full bg-white/95 backdrop-blur-sm border border-warm-grey/25 rounded-lg px-4 py-2.5 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow"
           aria-label="Jump to section"
           aria-expanded={isOpen}
         >
-          <span className="text-sm font-medium text-gray-700">
+          <span className="text-sm font-medium text-dark-grey">
             Jump to: <span className="text-phc-dark">{currentSectionLabel}</span>
           </span>
           <ChevronDown 
-            className={`w-4 h-4 text-gray-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
+            className={`w-4 h-4 text-warm-grey transition-transform ${isOpen ? "rotate-180" : ""}`}
           />
         </button>
 
@@ -130,7 +130,7 @@ export default function MobileJumpNav() {
             />
             
             {/* Menu */}
-            <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50">
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg border border-warm-grey/25 overflow-hidden z-50">
               {sections.map((section) => {
                 // Use anchor tag for tickets, button for others
                 if (section.id === "tickets") {
@@ -144,12 +144,12 @@ export default function MobileJumpNav() {
                         // Use location.href for mobile compatibility
                         window.location.href = "https://phc26.eventify.io/t2/tickets";
                       }}
-                      className={`w-full px-4 py-3 text-left text-sm hover:bg-phc-light/10 transition-colors flex items-center justify-between block ${
-                        currentSection === section.id ? "bg-phc-light/5 text-phc-dark font-semibold" : "text-gray-700"
+                      className={`w-full px-4 py-3 text-left text-sm hover:bg-phc-cyan/10 transition-colors flex items-center justify-between block ${
+                        currentSection === section.id ? "bg-phc-cyan/5 text-phc-dark font-semibold" : "text-dark-grey"
                       }`}
                     >
                       {section.label}
-                      <span className="text-xs text-phc-light">External →</span>
+                      <span className="text-xs text-phc-cyan">External →</span>
                     </a>
                   );
                 }
@@ -158,8 +158,8 @@ export default function MobileJumpNav() {
                   <button
                     key={section.id}
                     onClick={(e) => jumpToSection(section.id, e)}
-                    className={`w-full px-4 py-3 text-left text-sm hover:bg-phc-light/10 transition-colors flex items-center justify-between ${
-                      currentSection === section.id ? "bg-phc-light/5 text-phc-dark font-semibold" : "text-gray-700"
+                    className={`w-full px-4 py-3 text-left text-sm hover:bg-phc-cyan/10 transition-colors flex items-center justify-between ${
+                      currentSection === section.id ? "bg-phc-cyan/5 text-phc-dark font-semibold" : "text-dark-grey"
                     }`}
                   >
                     {section.label}

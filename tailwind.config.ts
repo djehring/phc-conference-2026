@@ -9,9 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'phc-dark': '#1F2063',
-        'phc-light': '#3AA0B8', 
-        'phc-yellow': '#D4D400',
+        'phc-navy': '#2d2e83',
+        'phc-navy-dark': '#1f2063',
+        'phc-cyan': '#4abfd8',
+        'phc-cyan-light': '#6dcee3',
+        'phc-dark': '#2d2e83',
+        'phc-light': '#4abfd8',
+        'phc-yellow': '#e7e700',
+        'warm-amber': '#d97706',
+        'success-green': '#16a34a',
+        'off-white': '#f4f5f7',
+        'dark-grey': '#3d4454',
+        'warm-grey': '#6b7280',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

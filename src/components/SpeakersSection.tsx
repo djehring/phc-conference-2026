@@ -19,10 +19,10 @@ export default function SpeakersSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
             Our Speakers
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-dark-grey max-w-3xl mx-auto">
             Learn from world-renowned experts in metabolic health, nutrition science, and lifestyle medicine
           </p>
         </motion.div>
@@ -50,21 +50,21 @@ export default function SpeakersSection() {
                       priority={index < 8}
                     />
                   ) : (
-                    <div className="flex items-center justify-center h-full bg-gradient-to-br from-phc-light via-phc-dark to-phc-yellow/30">
-                      <span className="text-6xl font-bold text-white/90">
+                    <div className="flex items-center justify-center h-full bg-gradient-to-br from-phc-light via-phc-dark to-phc-navy-dark">
+                      <span className="font-heading text-6xl font-bold text-white/90">
                         {speaker.initials}
                       </span>
                     </div>
                   )}
                 </div>
                 <div className="p-4 bg-white flex-1 flex flex-col">
-                  <h3 className="font-bold text-lg text-phc-dark mb-1">
+                  <h3 className="font-heading font-bold text-lg text-phc-dark mb-1">
                     {speaker.name}
                   </h3>
-                  <p className="text-sm text-phc-light font-semibold mb-2">
+                  <p className="text-sm text-phc-cyan font-semibold mb-2">
                     {speaker.title}
                   </p>
-                  <p className="text-xs text-gray-700 flex-1">
+                  <p className="text-xs text-dark-grey flex-1">
                     {speaker.description}
                   </p>
                   <div className="mt-3 flex items-center justify-between">
@@ -75,7 +75,7 @@ export default function SpeakersSection() {
                           href={url as string}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-phc-light hover:text-phc-yellow transition-all hover:scale-110"
+                          className="text-phc-cyan hover:text-phc-cyan-light transition-all hover:scale-110"
                           title={`View ${key}`}
                           onClick={(e) => e.stopPropagation()}
                         >
@@ -83,7 +83,7 @@ export default function SpeakersSection() {
                         </a>
                       ))}
                     </div>
-                    <span className="text-xs text-phc-light font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-xs text-phc-cyan font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
                       View Profile <ChevronRight className="w-3 h-3 ml-0.5" />
                     </span>
                   </div>

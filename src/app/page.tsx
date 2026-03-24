@@ -86,7 +86,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-3"
+            className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-3"
           >
             Nourish to Flourish
           </motion.h1>
@@ -120,7 +120,7 @@ export default function Home() {
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4">
               <Calendar className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
-              <h3 className="font-semibold text-xs sm:text-sm">Date</h3>
+              <h3 className="font-heading font-semibold text-xs sm:text-sm">Date</h3>
               <p className="text-xs text-white/80">{conferenceInfo.dates}</p>
               <button
                 onClick={generateICS}
@@ -138,13 +138,13 @@ export default function Home() {
               className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 block hover:bg-white/20 transition-colors"
             >
               <MapPin className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
-              <h3 className="font-semibold text-xs sm:text-sm">Location</h3>
+              <h3 className="font-heading font-semibold text-xs sm:text-sm">Location</h3>
               <p className="text-xs text-white/80">{conferenceInfo.location}</p>
               <p className="text-xs text-white/90 mt-1">Click for directions →</p>
             </a>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4">
               <Award className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
-              <h3 className="font-semibold text-xs sm:text-sm">CPD Points</h3>
+              <h3 className="font-heading font-semibold text-xs sm:text-sm">CPD Points</h3>
               <p className="text-xs text-white/80">{conferenceInfo.cpdPoints} Points Available</p>
             </div>
           </motion.div>
@@ -160,7 +160,7 @@ export default function Home() {
               href={conferenceInfo.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 inline-block text-xs sm:text-sm"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 inline-block text-xs sm:text-sm"
             >
               <span className="flex items-center gap-1 sm:gap-2">
                 Get Tickets
@@ -188,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-20 px-4 bg-gradient-to-br from-gray-50 via-phc-light/5 to-phc-light/10 overflow-hidden">
+      <section id="about" className="relative py-20 px-4 bg-gradient-to-br from-off-white via-phc-light/5 to-phc-light/10 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 right-10 w-64 h-64 bg-phc-light/20 rounded-full blur-3xl"></div>
@@ -203,10 +203,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
               Celebrating 10 Years
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-dark-grey max-w-3xl mx-auto">
               Join us for the premier metabolic health conference, bringing together world-renowned experts, 
               healthcare professionals, and wellness advocates for two days of transformative learning.
             </p>
@@ -223,8 +223,10 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="bg-gradient-to-br from-white to-phc-light/5 rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all hover:scale-105 border border-phc-light/10"
               >
-                <div className="text-4xl font-bold text-phc-light mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="font-heading text-4xl font-bold text-warm-amber mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-dark-grey">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -241,10 +243,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
               Ticket Pricing
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-dark-grey max-w-3xl mx-auto">
               Secure your spot at the premier metabolic health conference of 2026
             </p>
           </motion.div>
@@ -278,7 +280,9 @@ export default function Home() {
                       >
                         NEW
                       </motion.span>
-                      <h3 className="text-xl sm:text-2xl font-bold">Livestream Tickets Now Available!</h3>
+                      <h3 className="font-heading text-xl sm:text-2xl font-bold">
+                        Livestream Tickets Now Available!
+                      </h3>
                     </div>
                     <p className="text-white/90 text-sm sm:text-base">
                       Can't attend in person? Watch all sessions live from anywhere in the world.
@@ -300,7 +304,7 @@ export default function Home() {
                     href={conferenceInfo.ticketUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 whitespace-nowrap"
+                    className="px-6 py-3 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 whitespace-nowrap"
                   >
                     Get Livestream Access →
                   </a>
@@ -318,7 +322,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="relative bg-gradient-to-br from-phc-dark to-phc-light text-white rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all"
             >
-              <h3 className="text-2xl font-bold mb-4">PHC Members</h3>
+              <h3 className="font-heading text-2xl font-bold mb-4">PHC Members</h3>
               <div className="mb-6">
                 <div className="text-4xl font-bold">£159</div>
                 <div className="text-sm opacity-90">2-day ticket</div>
@@ -339,12 +343,14 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-white rounded-2xl p-8 shadow-xl border-2 border-phc-light/30 transform hover:scale-105 transition-all"
             >
-              <h3 className="text-2xl font-bold mb-4 text-phc-dark">Non-Members</h3>
+              <h3 className="font-heading text-2xl font-bold mb-4 text-phc-dark">
+                Non-Members
+              </h3>
               <div className="mb-6">
                 <div className="text-4xl font-bold text-phc-dark">£209</div>
-                <div className="text-sm text-gray-500">2-day ticket</div>
+                <div className="text-sm text-warm-grey">2-day ticket</div>
               </div>
-              <ul className="space-y-2 mb-6 text-sm text-gray-700">
+              <ul className="space-y-2 mb-6 text-sm text-dark-grey">
                 <li>✓ 2-day conference access</li>
                 <li>✓ 16 CPD points</li>
                 <li>✓ All sessions included</li>
@@ -362,7 +368,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-6 h-6" />
-                <h3 className="text-2xl font-bold">Add Membership</h3>
+                <h3 className="font-heading text-2xl font-bold">Add Membership</h3>
               </div>
               <div className="mb-6">
                 <div className="text-4xl font-bold">£75</div>
@@ -392,12 +398,12 @@ export default function Home() {
               href={conferenceInfo.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-5 bg-gradient-to-r from-phc-dark to-phc-light text-white font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 text-lg"
+              className="inline-block px-10 py-5 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 text-lg"
             >
               Get Your Tickets Now →
             </a>
-            <p className="mt-4 text-sm text-gray-600">
-              ⚠️ Lunch, teas and coffees not included - available for separate purchase
+            <p className="mt-4 text-sm text-warm-amber font-medium">
+              Lunch, teas and coffees not included — available for separate purchase
             </p>
           </motion.div>
         </div>
@@ -415,7 +421,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
               Funded Tickets Available
             </h2>
             <p className="text-white/90 leading-relaxed mb-6">
@@ -449,10 +455,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-phc-dark mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
               Event Information
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-dark-grey max-w-3xl mx-auto">
               Important details about the conference schedule and special events
             </p>
           </motion.div>
@@ -468,7 +474,9 @@ export default function Home() {
             >
               <div className="flex items-center mb-4">
                 <Utensils className="w-8 h-8 text-white/90 mr-3" />
-                <h3 className="text-2xl font-bold">Evening Fundraiser Dinner</h3>
+                <h3 className="font-heading text-2xl font-bold">
+                  Evening Fundraiser Dinner
+                </h3>
               </div>
               <div className="space-y-3">
                 <p className="flex items-center">
@@ -508,14 +516,14 @@ export default function Home() {
             >
               <div className="flex items-center mb-4">
                 <Clock className="w-8 h-8 text-white/90 mr-3" />
-                <h3 className="text-2xl font-bold">Speaker Schedule</h3>
+                <h3 className="font-heading text-2xl font-bold">Speaker Schedule</h3>
               </div>
               <div className="space-y-3">
                 <p className="text-white/90">
                   Two packed days of keynote presentations, expert panels, and interactive sessions.
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/20">
-                  <h4 className="font-semibold mb-2">Highlights:</h4>
+                  <h4 className="font-heading font-semibold mb-2">Highlights:</h4>
                   <ul className="space-y-2 text-sm text-white/90">
                     <li className="flex items-start">
                       <span className="text-phc-light mr-2">•</span>
@@ -556,7 +564,7 @@ export default function Home() {
           >
             <a
               href="/exhibitors"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-phc-light to-phc-dark text-white font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 text-base sm:text-lg"
+              className="inline-block px-8 py-4 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 text-base sm:text-lg"
             >
               View Our Exhibitors & Sponsors →
             </a>
@@ -565,7 +573,7 @@ export default function Home() {
       </section>
 
       {/* Speakers Section with gradient transition */}
-      <div id="speakers" className="relative bg-gradient-to-b from-gray-50 via-white to-phc-light/5">
+      <div id="speakers" className="relative bg-gradient-to-b from-off-white via-white to-phc-light/5">
         <SpeakersSection />
       </div>
 
