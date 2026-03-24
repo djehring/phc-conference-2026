@@ -48,3 +48,4 @@ next-env.d.ts
 # IDE and editor files
 .vscode/
 .idea/
+.playwright-mcp/console-2026-03-24T16-49-37-181Z.log
