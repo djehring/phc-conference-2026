@@ -42,7 +42,7 @@ export default function Home() {
             />
           </motion.div>
           <motion.div
-            className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-16 h-16 sm:w-24 sm:h-24 bg-phc-yellow/10 rounded-lg"
+            className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-16 h-16 sm:w-24 sm:h-24 bg-phc-light/10 rounded-lg"
             animate={{
               y: [0, -15, 0],
               rotate: [0, -10, 0],
@@ -77,7 +77,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="mb-2 sm:mb-3"
           >
-            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-phc-yellow/20 backdrop-blur-sm rounded-full text-phc-yellow font-semibold text-xs sm:text-sm">
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-white/90 font-semibold text-xs sm:text-sm">
               10th Anniversary Conference
             </span>
           </motion.div>
@@ -119,12 +119,12 @@ export default function Home() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6"
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4">
-              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-phc-yellow" />
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
               <h3 className="font-semibold text-xs sm:text-sm">Date</h3>
               <p className="text-xs text-white/80">{conferenceInfo.dates}</p>
               <button
                 onClick={generateICS}
-                className="mt-2 inline-flex items-center gap-1 px-2 py-1 bg-phc-yellow/20 hover:bg-phc-yellow/30 text-phc-yellow rounded transition-colors text-xs font-medium"
+                className="mt-2 inline-flex items-center gap-1 px-2 py-1 bg-white/20 hover:bg-white/30 text-white/90 rounded transition-colors text-xs font-medium"
                 aria-label="Add conference to calendar"
               >
                 <CalendarPlus className="w-3 h-3" />
@@ -137,13 +137,13 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 block hover:bg-white/20 transition-colors"
             >
-              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-phc-yellow" />
+              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
               <h3 className="font-semibold text-xs sm:text-sm">Location</h3>
               <p className="text-xs text-white/80">{conferenceInfo.location}</p>
-              <p className="text-xs text-phc-yellow mt-1">Click for directions →</p>
+              <p className="text-xs text-white/90 mt-1">Click for directions →</p>
             </a>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4">
-              <Award className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-phc-yellow" />
+              <Award className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
               <h3 className="font-semibold text-xs sm:text-sm">CPD Points</h3>
               <p className="text-xs text-white/80">{conferenceInfo.cpdPoints} Points Available</p>
             </div>
@@ -160,19 +160,20 @@ export default function Home() {
               href={conferenceInfo.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 inline-block text-xs sm:text-sm"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 inline-block text-xs sm:text-sm"
             >
               <span className="flex items-center gap-1 sm:gap-2">
                 Get Tickets
                 <span className="text-xs">from £159</span>
               </span>
             </a>
-            <button
-              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-colors text-xs sm:text-sm"
+            <a
+              href="/schedule/"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-colors text-xs sm:text-sm inline-flex items-center gap-2"
             >
-              Learn More
-            </button>
+              <Calendar className="w-4 h-4" />
+              View Full Schedule
+            </a>
           </motion.div>
         </div>
 
@@ -187,11 +188,11 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative py-20 px-4 bg-gradient-to-br from-gray-50 via-phc-light/5 to-phc-yellow/10 overflow-hidden">
+      <section id="about" className="relative py-20 px-4 bg-gradient-to-br from-gray-50 via-phc-light/5 to-phc-light/10 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 right-10 w-64 h-64 bg-phc-light/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-phc-yellow/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative max-w-6xl mx-auto">
@@ -231,7 +232,7 @@ export default function Home() {
       </section>
 
       {/* Early Bird Pricing Section */}
-      <section id="pricing" className="relative py-20 px-4 bg-gradient-to-br from-phc-yellow/10 via-white to-phc-light/10 overflow-hidden">
+      <section id="pricing" className="relative py-20 px-4 bg-gradient-to-br from-phc-light/10 via-white to-phc-light/10 overflow-hidden">
         <div className="relative max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -259,21 +260,21 @@ export default function Home() {
             <div className="relative bg-gradient-to-r from-phc-dark via-phc-light to-phc-dark text-white rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden">
               {/* Animated background effect */}
               <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-0 w-40 h-40 bg-phc-yellow rounded-full blur-3xl"></div>
+                <div className="absolute top-0 left-0 w-40 h-40 bg-phc-light rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 right-0 w-60 h-60 bg-phc-light rounded-full blur-3xl"></div>
               </div>
               
               <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 bg-phc-yellow/20 rounded-xl">
-                    <Video className="w-8 h-8 text-phc-yellow" />
+                  <div className="p-3 bg-white/20 rounded-xl">
+                    <Video className="w-8 h-8 text-white/90" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <motion.span
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
-                        className="px-3 py-0.5 bg-phc-yellow text-phc-dark text-xs font-bold rounded-full"
+                        className="px-3 py-0.5 bg-white text-phc-dark text-xs font-bold rounded-full"
                       >
                         NEW
                       </motion.span>
@@ -288,7 +289,7 @@ export default function Home() {
                   <div className="flex gap-4 sm:gap-6">
                     <div className="text-center">
                       <div className="text-2xl sm:text-3xl font-bold">£69</div>
-                      <div className="text-xs text-phc-yellow font-semibold">Members</div>
+                      <div className="text-xs text-white/90 font-semibold">Members</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl sm:text-3xl font-bold">£89</div>
@@ -299,7 +300,7 @@ export default function Home() {
                     href={conferenceInfo.ticketUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 bg-phc-yellow text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 whitespace-nowrap"
+                    className="px-6 py-3 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 whitespace-nowrap"
                   >
                     Get Livestream Access →
                   </a>
@@ -357,7 +358,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-gradient-to-br from-phc-yellow to-yellow-400 text-phc-dark rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all"
+              className="bg-gradient-to-br from-phc-light to-phc-light/80 text-white rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all"
             >
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-6 h-6" />
@@ -402,8 +403,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Funded Tickets Section */}
+      <section className="relative py-16 px-4 bg-gradient-to-br from-phc-dark to-phc-light overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-3xl mx-auto text-center text-white">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Funded Tickets Available
+            </h2>
+            <p className="text-white/90 leading-relaxed mb-6">
+              With a big thank you to our exhibitors and sponsors, we&apos;ve been able to make 50 funded
+              in-person tickets available for our conference. If you&apos;re in a difficult financial position
+              or facing accessibility barriers then please apply for a funded ticket today.
+            </p>
+            <p className="text-white/70 text-sm mb-8">
+              The deadline for applications is Friday 17th April, and applicants will be notified of their
+              outcome by Thursday 30th April. All are welcome to apply and we hope to see you in May.
+            </p>
+            <a
+              href="https://forms.office.com/e/mdP62AmpPJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 text-base"
+            >
+              Apply for a Funded Ticket →
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Event Details Section */}
-      <section id="event-details" className="relative py-20 px-4 bg-gradient-to-br from-phc-dark/5 via-white to-phc-yellow/5 overflow-hidden">
+      <section id="schedule" className="relative py-20 px-4 bg-gradient-to-br from-phc-dark/5 via-white to-phc-light/5 overflow-hidden">
         <div className="relative max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -430,20 +467,20 @@ export default function Home() {
               className="bg-gradient-to-br from-phc-dark to-phc-light text-white rounded-2xl p-8 shadow-xl"
             >
               <div className="flex items-center mb-4">
-                <Utensils className="w-8 h-8 text-phc-yellow mr-3" />
+                <Utensils className="w-8 h-8 text-white/90 mr-3" />
                 <h3 className="text-2xl font-bold">Evening Fundraiser Dinner</h3>
               </div>
               <div className="space-y-3">
                 <p className="flex items-center">
-                  <Calendar className="w-5 h-5 mr-2 text-phc-yellow" />
+                  <Calendar className="w-5 h-5 mr-2 text-white/90" />
                   Saturday 16th May 2026
                 </p>
                 <p className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-phc-yellow" />
+                  <Clock className="w-5 h-5 mr-2 text-white/90" />
                   7:00 PM to 10:00 PM
                 </p>
                 <p className="flex items-center">
-                  <MapPin className="w-5 h-5 mr-2 text-phc-yellow" />
+                  <MapPin className="w-5 h-5 mr-2 text-white/90" />
                   The Memoir Club, London
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/20">
@@ -452,7 +489,7 @@ export default function Home() {
                   </p>
                   <a
                     href="/dinner"
-                    className="mt-3 inline-flex items-center text-phc-yellow font-semibold hover:underline"
+                    className="mt-3 inline-flex items-center text-white font-semibold hover:underline"
                   >
                     <Info className="w-4 h-4 mr-2" />
                     View full details &rarr;
@@ -470,33 +507,40 @@ export default function Home() {
               className="bg-gradient-to-br from-phc-light to-phc-dark text-white rounded-2xl p-8 shadow-xl"
             >
               <div className="flex items-center mb-4">
-                <Clock className="w-8 h-8 text-phc-yellow mr-3" />
+                <Clock className="w-8 h-8 text-white/90 mr-3" />
                 <h3 className="text-2xl font-bold">Speaker Schedule</h3>
               </div>
               <div className="space-y-3">
                 <p className="text-white/90">
-                  The detailed speaker schedule and session timings will be published in March 2026.
+                  Two packed days of keynote presentations, expert panels, and interactive sessions.
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/20">
-                  <h4 className="font-semibold mb-2">What to expect:</h4>
+                  <h4 className="font-semibold mb-2">Highlights:</h4>
                   <ul className="space-y-2 text-sm text-white/90">
                     <li className="flex items-start">
-                      <span className="text-phc-yellow mr-2">•</span>
-                      Keynote presentations from world-renowned experts
+                      <span className="text-phc-light mr-2">•</span>
+                      Day 1: Men&apos;s Health & Teenage Health
                     </li>
                     <li className="flex items-start">
-                      <span className="text-phc-yellow mr-2">•</span>
-                      Dedicated sessions on women's, men's, teenage, and children's health
+                      <span className="text-phc-light mr-2">•</span>
+                      Day 2: Women&apos;s Health & Dietary Guidelines
                     </li>
                     <li className="flex items-start">
-                      <span className="text-phc-yellow mr-2">•</span>
-                      Interactive Q&A sessions
+                      <span className="text-phc-light mr-2">•</span>
+                      Expert panels with Q&A
                     </li>
                     <li className="flex items-start">
-                      <span className="text-phc-yellow mr-2">•</span>
-                      Networking opportunities between sessions
+                      <span className="text-phc-light mr-2">•</span>
+                      Evening Fundraiser Dinner
                     </li>
                   </ul>
+                  <a
+                    href="/schedule/"
+                    className="mt-5 inline-flex items-center px-6 py-3 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105"
+                  >
+                    <Calendar className="w-5 h-5 mr-2" />
+                    View Full Schedule →
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -521,12 +565,12 @@ export default function Home() {
       </section>
 
       {/* Speakers Section with gradient transition */}
-      <div id="speakers" className="relative bg-gradient-to-b from-phc-yellow/10 via-white to-phc-light/5">
+      <div id="speakers" className="relative bg-gradient-to-b from-gray-50 via-white to-phc-light/5">
         <SpeakersSection />
       </div>
 
       {/* Conference Videos Section */}
-      <section id="videos" className="relative py-20 px-4 bg-gradient-to-br from-phc-light/5 via-white to-phc-dark/5 overflow-hidden">
+      <section id="videos" className="relative pt-8 pb-20 px-4 bg-gradient-to-br from-phc-light/5 via-white to-phc-dark/5 overflow-hidden">
         {/* Animated gradient orbs */}
         <div className="absolute inset-0 opacity-20">
           <motion.div
@@ -542,7 +586,7 @@ export default function Home() {
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-phc-yellow rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-phc-light rounded-full blur-3xl"
             animate={{
               x: [0, -50, 0],
               y: [0, 30, 0],

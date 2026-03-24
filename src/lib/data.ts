@@ -2,6 +2,7 @@ export const speakers = [
   {
     id: 1,
     name: "Prof Richard J Johnson",
+    slug: "richard-j-johnson",
     title: "Emeritus Professor of Medicine",
     description: "Physician and scientist focused on the role of sugar and uric acid in kidney disease, obesity and diabetes. Author of over 900 papers with more than 100,000 citations",
     initials: "RJ",
@@ -14,6 +15,7 @@ export const speakers = [
   {
     id: 2,
     name: "Dr Nina Teicholz",
+    slug: "nina-teicholz",
     title: "Nutrition Science Journalist",
     description: "NYT bestselling author of The Big Fat Surprise. Founder of the Nutrition Coalition, instrumental in reforming the US Dietary Guidelines",
     initials: "NT",
@@ -26,6 +28,7 @@ export const speakers = [
   {
     id: 3,
     name: "Dr Paul Reynolds",
+    slug: "paul-reynolds",
     title: "Research Specialist",
     description: "BYU Professor specializing in developmental biology and pulmonary medicine",
     initials: "PR",
@@ -39,6 +42,7 @@ export const speakers = [
   {
     id: 4,
     name: "Dr David Unwin",
+    slug: "david-unwin",
     title: "GP & Low Carb Pioneer",
     description: "Award-winning NHS GP revolutionizing Type 2 diabetes treatment through low-carb approaches",
     initials: "DU",
@@ -48,6 +52,7 @@ export const speakers = [
   {
     id: 5,
     name: "Dr Isabella Cooper",
+    slug: "isabella-cooper",
     title: "Functional Medicine Doctor",
     description: "University of Westminster researcher investigating ketosis and cellular health",
     initials: "IC",
@@ -57,6 +62,7 @@ export const speakers = [
   {
     id: 6,
     name: "Davinia Taylor",
+    slug: "davinia-taylor",
     title: "Actress, Author & Biohacker",
     description: "Former Hollyoaks actress turned biohacking pioneer. Double Sunday Times No.1 bestselling author and founder of WillPowders, with over a million followers",
     initials: "DT",
@@ -69,6 +75,7 @@ export const speakers = [
   {
     id: 7,
     name: "Thomas Hal Robson-Kanu",
+    slug: "thomas-hal-robson-kanu",
     title: "Elite Athlete & Wellness Advocate",
     description: "Former Wales international footballer and founder of The Turmeric Co.",
     initials: "TRK",
@@ -82,6 +89,7 @@ export const speakers = [
   {
     id: 8,
     name: "Henry Wood",
+    slug: "henry-wood",
     title: "Real Food Campaigner",
     description: "Known as 'Rambling Henry' with over 250K social media followers, fighting for real food in a fake food world. Founder of The Real Food Club",
     initials: "HW",
@@ -94,6 +102,7 @@ export const speakers = [
   {
     id: 9,
     name: "Dr Wafaa Abdel-Hadi",
+    slug: "wafaa-abdel-hadi",
     title: "Clinical Oncologist & Functional Medicine Expert",
     description: "First certified Functional Medicine Doctor in Egypt and the Middle East",
     initials: "WAH",
@@ -106,6 +115,7 @@ export const speakers = [
   {
     id: 10,
     name: "Ruth Seymour",
+    slug: "ruth-seymour",
     title: "Nutritional Therapist",
     description: "BANT Registered Nutritional Therapist and Nutritional Wellbeing Foundation Trustee",
     initials: "RS",
@@ -119,6 +129,7 @@ export const speakers = [
   {
     id: 11,
     name: "Richard Smith",
+    slug: "richard-smith",
     title: "Nutrition Expert & Founder of The Keto Pro",
     description: "Certified nutrition expert with qualifications in molecular biochemistry, clinical blood analysis and epigenetics. Founder of The Keto Pro and leading advocate for real food nutrition",
     initials: "RS2",
@@ -131,6 +142,7 @@ export const speakers = [
   {
     id: 12,
     name: "Dr Louise Newson",
+    slug: "louise-newson",
     title: "GP & Hormone Specialist",
     description: "Founder of Newson Clinic (CQC rated Outstanding), the Balance app and Dr Louise Newson podcast. A leading voice in women's hormone health and menopause education",
     initials: "LN",
@@ -143,6 +155,7 @@ export const speakers = [
   {
     id: 13,
     name: "Chris Hill",
+    slug: "chris-hill",
     title: "Real Food Rebellion Co-Leader",
     description: "Retired teacher and educational expert promoting real food principles",
     initials: "CH",
@@ -155,6 +168,7 @@ export const speakers = [
   {
     id: 14,
     name: "David Sogan",
+    slug: "david-sogan",
     title: "Real Food Rebellion Co-Leader",
     description: "TLC Health Coach and real food advocate",
     initials: "DS",
@@ -164,6 +178,7 @@ export const speakers = [
   {
     id: 15,
     name: "Steve Bennett",
+    slug: "steve-bennett",
     title: "Health Philathropist",
     description: "Entrepreneur researching obesity and food addiction",
     initials: "SBN",
@@ -173,6 +188,7 @@ export const speakers = [
   {
     id: 16,
     name: "Dr David Jehring",
+    slug: "david-jehring",
     title: "PHC Chair of Trustees",
     description: "PHC Chair of Trustees and pioneering UK Health Informatician",
     initials: "DJ",
@@ -182,6 +198,7 @@ export const speakers = [
   {
     id: 17,
     name: "Sam Feltham",
+    slug: "sam-feltham",
     title: "PHC Director",
     description: "PHC Founder and conference organiser",
     initials: "SF",

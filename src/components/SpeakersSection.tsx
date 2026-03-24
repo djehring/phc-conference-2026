@@ -2,12 +2,15 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { speakers } from "@/lib/data";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronRight } from "lucide-react";
 
 export default function SpeakersSection() {
+  const router = useRouter();
+
   return (
-    <section className="relative py-20 px-4">
+    <section className="relative pt-20 pb-8 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,7 +35,8 @@ export default function SpeakersSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group"
+              className="group cursor-pointer"
+              onClick={() => router.push(`/speakers/${speaker.slug}/`)}
             >
               <div className="bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-phc-light/20 hover:border-phc-light/40 hover:-translate-y-1 h-full flex flex-col">
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-white">
@@ -63,23 +67,25 @@ export default function SpeakersSection() {
                   <p className="text-xs text-gray-700 flex-1">
                     {speaker.description}
                   </p>
-                  <div className="mt-3 h-5">
-                    {speaker.links && (
-                      <div className="flex gap-2">
-                        {Object.entries(speaker.links).map(([key, url]) => (
-                          <a
-                            key={key}
-                            href={url as string}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-phc-light hover:text-phc-yellow transition-all hover:scale-110"
-                            title={`View ${key}`}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        ))}
-                      </div>
-                    )}
+                  <div className="mt-3 flex items-center justify-between">
+                    <div className="flex gap-2">
+                      {speaker.links && Object.entries(speaker.links).map(([key, url]) => (
+                        <a
+                          key={key}
+                          href={url as string}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-phc-light hover:text-phc-yellow transition-all hover:scale-110"
+                          title={`View ${key}`}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      ))}
+                    </div>
+                    <span className="text-xs text-phc-light font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      View Profile <ChevronRight className="w-3 h-3 ml-0.5" />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -87,26 +93,6 @@ export default function SpeakersSection() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mt-12 relative"
-        >
-          <p className="text-gray-700 mb-6">
-            More speakers to be announced soon!
-          </p>
-          <a
-            href="https://phc26.eventify.io/t2/tickets"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-phc-yellow to-phc-light text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 relative overflow-hidden group"
-          >
-            <span className="relative z-10">Get Your Tickets Now</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-phc-light to-phc-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

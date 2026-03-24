@@ -38,10 +38,22 @@ The project is deployed on Netlify with:
 - **Preview Deploys**: Enabled for pull requests
 
 ### Design System
-Custom Tailwind colors defined:
-- `phc-dark`: #2D2E83
-- `phc-light`: #4ABFD8
-- `phc-yellow`: #E7E700
+| Token | Hex / Description | Usage |
+|-------|-------------------|-------|
+| `phc-navy` / `phc-navy-dark` | Deep navy blue | Backgrounds, text, primary buttons |
+| `phc-cyan` / `phc-cyan-light` | Teal/cyan accent | CTAs, highlights, active states, icons |
+| `warm-amber` | Amber | Crisis/stat emphasis (homepage crisis section) |
+| `success-green` | Green | Resource category pills |
+| `off-white` | Light grey | Alternating section backgrounds |
+| `dark-grey` | Dark grey | Body text |
+| `warm-grey` | Medium grey | Secondary text |
+
+### Typography
+
+| Role | Font | Tailwind Class |
+|------|------|----------------|
+| Headings | Plus Jakarta Sans | `font-heading` |
+| Body | Inter | `font-sans` |
 
 ### Data Management
 Conference data is centralized in `src/lib/data.ts` containing:

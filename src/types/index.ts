@@ -1,10 +1,32 @@
 export interface Speaker {
   id: number;
   name: string;
+  slug: string;
   title: string;
   description: string;
   initials: string;
-  image?: string;
+  photo?: string;
+  bio?: string;
+  links?: Record<string, string>;
+}
+
+export type SessionType = 'talk' | 'panel' | 'break' | 'registration' | 'lunch' | 'opening' | 'closing' | 'dinner';
+
+export interface ScheduleSession {
+  id: string;
+  time: string;
+  title: string;
+  type: SessionType;
+  speakerSlugs?: string[];
+  chairSlug?: string;
+  panelistSlugs?: string[];
+  description?: string;
+}
+
+export interface ScheduleDay {
+  date: string;
+  theme: string;
+  sessions: ScheduleSession[];
 }
 
 export interface ConferenceInfo {

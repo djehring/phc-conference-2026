@@ -96,7 +96,7 @@ const VideoCard = ({ video }: VideoCardProps) => {
           style={{ WebkitBackfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
         >
           <div className="mb-1">
-            <span className="inline-block bg-gradient-to-r from-phc-yellow to-phc-light text-phc-dark px-2 py-0.5 rounded-full text-xs sm:text-xs md:text-sm font-semibold">
+            <span className="inline-block bg-phc-light text-white px-2 py-0.5 rounded-full text-xs sm:text-xs md:text-sm font-semibold">
               {video.year}
             </span>
           </div>
@@ -209,7 +209,7 @@ const ConferenceVideoSlider = () => {
     <div className="w-full px-4 sm:px-6 lg:px-8 py-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 relative z-10">
-          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-phc-dark via-phc-light to-phc-yellow bg-clip-text text-transparent mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-phc-dark to-phc-light bg-clip-text text-transparent mb-4">
             Conference Highlights Through the Years
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -243,7 +243,7 @@ const ConferenceVideoSlider = () => {
               </svg>
             </button>
             
-            <span className="text-transparent bg-gradient-to-r from-phc-dark via-phc-light to-phc-yellow bg-clip-text text-xs sm:text-sm font-semibold hidden sm:inline">
+            <span className="text-transparent bg-gradient-to-r from-phc-dark to-phc-light bg-clip-text text-xs sm:text-sm font-semibold hidden sm:inline">
               Scroll to see more videos
             </span>
             

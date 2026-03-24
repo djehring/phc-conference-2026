@@ -16,6 +16,7 @@ export default function MobileJumpNav() {
   const sections: Section[] = [
     { id: "top", label: "Top" },
     { id: "about", label: "About" },
+    { id: "schedule", label: "Schedule" },
     { id: "speakers", label: "Speakers" },
     { id: "videos", label: "Videos" },
     { id: "membership", label: "Membership" },
@@ -75,6 +76,8 @@ export default function MobileJumpNav() {
     
     if (sectionId === "top") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (sectionId === "schedule") {
+      window.location.href = "/schedule/";
     } else if (sectionId === "tickets") {
       // Special handling for tickets - open in new tab
       const ticketUrl = "https://phc26.eventify.io/t2/tickets";
