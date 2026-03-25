@@ -75,7 +75,8 @@ export const scheduleData: ScheduleDay[] = [
       {
         id: "day1-henry-wood",
         time: "2:15pm",
-        title: "My Story from Obese Teenager to Healthy Adult",
+        title:
+          "Real Food, Real Control: What We Eat Shapes How We Think, Feel and Perform",
         type: "talk",
         speakerSlugs: ["henry-wood"],
       },
@@ -154,7 +155,8 @@ export const scheduleData: ScheduleDay[] = [
       {
         id: "day2-wafaa",
         time: "10:30am",
-        title: "The Imbalance of Female Hormones",
+        title:
+          "Rethinking Physiology: The Dynamic Interplay between Hormones, Immunity & Metabolism",
         type: "talk",
         speakerSlugs: ["wafaa-abdel-hadi"],
       },
