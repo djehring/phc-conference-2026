@@ -88,14 +88,14 @@ export const scheduleData: ScheduleDay[] = [
       },
       {
         id: "day1-paul-reynolds",
-        time: "3:15pm",
+        time: "3:00pm",
         title: "Glycaemic Load and Inflammation Affects Mental Health in Teens",
         type: "talk",
         speakerSlugs: ["paul-reynolds"],
       },
       {
         id: "day1-teen-panel",
-        time: "4:00pm",
+        time: "3:45pm",
         title: "Teenage Health Panel",
         type: "panel",
         chairSlug: "ruth-seymour",
