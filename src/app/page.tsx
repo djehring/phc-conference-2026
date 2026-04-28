@@ -409,42 +409,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Funded Tickets Section */}
-      <section className="relative py-16 px-4 bg-gradient-to-br from-phc-dark to-phc-light overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-3xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
-              Funded Tickets Available
-            </h2>
-            <p className="text-white/90 leading-relaxed mb-6">
-              With a big thank you to our exhibitors and sponsors, we&apos;ve been able to make 50 funded
-              in-person tickets available for our conference. If you&apos;re in a difficult financial position
-              or facing accessibility barriers then please apply for a funded ticket today.
-            </p>
-            <p className="text-white/70 text-sm mb-8">
-              The deadline for applications is Friday 17th April, and applicants will be notified of their
-              outcome by Thursday 30th April. All are welcome to apply and we hope to see you in May.
-            </p>
-            <a
-              href="https://forms.office.com/e/mdP62AmpPJ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105 text-base"
-            >
-              Apply for a Funded Ticket →
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Event Details Section */}
       <section id="schedule" className="relative py-20 px-4 bg-gradient-to-br from-phc-dark/5 via-white to-phc-light/5 overflow-hidden">
         <div className="relative max-w-6xl mx-auto">
