@@ -192,14 +192,16 @@ export const scheduleData: ScheduleDay[] = [
         title: "The New USDA Dietary Guidelines",
         type: "talk",
         speakerSlugs: ["nina-teicholz"],
+        isRemote: true,
       },
       {
         id: "day2-guidelines-panel",
         time: "3:30pm",
         title: "Dietary Guidelines Panel",
         type: "panel",
-        description: "Chair to be confirmed",
+        description: "Chair to be confirmed. Nina Teicholz joining remotely.",
         panelistSlugs: ["nina-teicholz", "richard-j-johnson", "david-unwin"],
+        isRemote: true,
       },
       {
         id: "day2-end",

@@ -21,6 +21,7 @@ export interface ScheduleSession {
   chairSlug?: string;
   panelistSlugs?: string[];
   description?: string;
+  isRemote?: boolean;
 }
 
 export interface ScheduleDay {

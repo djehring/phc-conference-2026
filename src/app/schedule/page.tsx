@@ -160,6 +160,11 @@ function SessionCard({ session, index }: { session: ScheduleSession; index: numb
                 {badge.label}
               </span>
             )}
+            {session.isRemote && (
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warm-amber/15 text-warm-amber">
+                Remote
+              </span>
+            )}
           </div>
 
           <h3 className={`font-bold ${isNonSpeaker ? "text-gray-500" : "text-phc-dark"}`}>
