@@ -20,7 +20,7 @@ export const speakers = [
     description: "NYT bestselling author of The Big Fat Surprise. Founder of the Nutrition Coalition, instrumental in reforming the US Dietary Guidelines",
     initials: "NT",
     photo: "nina-teicholz.jpg",
-    bio: "Science journalist and author known for challenging dietary guidelines. Author of NYT bestseller 'The Big Fat Surprise' and founder of the Nutrition Coalition, which played a pivotal role in reforming the US Dietary Guidelines by advocating for rigorous, evidence-based science in federal nutrition policy. Holds degrees from Yale, Stanford, and Oxford, with a PhD in nutrition from University of Reading (2024). Published in Lancet, BMJ, and major media outlets.",
+    bio: "Science journalist and author known for challenging dietary guidelines. Author of NYT bestseller 'The Big Fat Surprise' and founder of the Nutrition Coalition, which played a pivotal role in reforming the US Dietary Guidelines by advocating for rigorous, evidence-based science in federal nutrition policy. Holds degrees from Yale, Stanford, and Oxford, with a PhD in nutrition from University of Reading (2024). Published in Lancet, BMJ, and major media outlets. Nina is joining PHC 2026 remotely from the United States.",
     links: {
       website: "https://ninateicholz.com"
     }

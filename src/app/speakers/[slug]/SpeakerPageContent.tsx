@@ -195,10 +195,16 @@ export default function SpeakerPageContent({ slug }: { slug: string }) {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              See {speaker.name.replace(/^(Dr|Prof|Mr|Mrs|Ms)\s+/i, "").split(" ")[0]} Live at PHC 2026
+              {slug === "nina-teicholz"
+                ? "Watch Nina Teicholz Remotely at PHC 2026"
+                : `See ${speaker.name.replace(/^(Dr|Prof|Mr|Mrs|Ms)\s+/i, "").split(" ")[0]} Live at PHC 2026`
+              }
             </h2>
             <p className="text-white/90 max-w-xl mx-auto mb-8">
-              Join us at The Light, Euston, London for two days of transformative learning.
+              {slug === "nina-teicholz"
+                ? "Nina is joining remotely from the United States. Register to access her sessions virtually."
+                : "Join us at The Light, Euston, London for two days of transformative learning."
+              }
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
