@@ -36,6 +36,16 @@ export const speakers = [
     bio: "A leader in therapeutic carbohydrate restriction at Duke University, Dr Westman's clinical research has changed the conversation around Type 2 diabetes. An internationally recognised physician and researcher, he has spent decades demonstrating how low-carbohydrate nutrition can be used as a powerful clinical tool to reverse obesity, metabolic syndrome and Type 2 diabetes."
   },
   {
+    id: 19,
+    name: "Ellen Bennett RD",
+    slug: "ellen-bennett",
+    title: "Registered Dietitian & Liberate Operations Manager",
+    description: "Registered Dietitian pioneering online education and peer support programs for ultra-processed food addiction",
+    initials: "EB",
+    photo: "ellen-bennett.jpg",
+    bio: "Registered Dietitian and Operations Manager at Liberate, pioneering online education programs for addressing ultra-processed food addiction through evidence-based interventions and peer support."
+  },
+  {
     id: 3,
     name: "Dr Paul Reynolds",
     slug: "paul-reynolds",

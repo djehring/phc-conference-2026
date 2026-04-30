@@ -200,7 +200,7 @@ export const scheduleData: ScheduleDay[] = [
         type: "panel",
         description: "Nina Teicholz joining remotely.",
         chairSlug: "eric-westman",
-        panelistSlugs: ["nina-teicholz", "richard-j-johnson", "david-unwin"],
+        panelistSlugs: ["nina-teicholz", "richard-j-johnson", "david-unwin", "ellen-bennett"],
       },
       {
         id: "day2-end",
