@@ -198,7 +198,8 @@ export const scheduleData: ScheduleDay[] = [
         time: "3:30pm",
         title: "Dietary Guidelines Panel",
         type: "panel",
-        description: "Chair to be confirmed. Nina Teicholz joining remotely.",
+        description: "Nina Teicholz joining remotely.",
+        chairSlug: "eric-westman",
         panelistSlugs: ["nina-teicholz", "richard-j-johnson", "david-unwin"],
       },
       {

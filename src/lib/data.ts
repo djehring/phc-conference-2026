@@ -26,6 +26,16 @@ export const speakers = [
     }
   },
   {
+    id: 18,
+    name: "Dr Eric Westman",
+    slug: "eric-westman",
+    title: "Duke University Physician & Low Carb Pioneer",
+    description: "A leader in therapeutic carbohydrate restriction at Duke University, whose clinical research has changed the conversation around Type 2 diabetes",
+    initials: "EW",
+    photo: "eric-westman.png",
+    bio: "A leader in therapeutic carbohydrate restriction at Duke University, Dr Westman's clinical research has changed the conversation around Type 2 diabetes. An internationally recognised physician and researcher, he has spent decades demonstrating how low-carbohydrate nutrition can be used as a powerful clinical tool to reverse obesity, metabolic syndrome and Type 2 diabetes."
+  },
+  {
     id: 3,
     name: "Dr Paul Reynolds",
     slug: "paul-reynolds",
