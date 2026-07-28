@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
@@ -96,6 +97,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}
       >
+        <AnnouncementBanner />
         {children}
         <Footer />
       </body>
