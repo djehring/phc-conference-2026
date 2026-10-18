@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ExternalLink, Award, Star, Medal, Trophy } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { conferenceInfo } from "@/lib/data";
 
 interface Exhibitor {
   name: string;
@@ -108,10 +107,10 @@ export default function ExhibitorsPage() {
               to evidence-based nutrition and metabolic health.
             </p>
             <Link
-              href="/"
+              href="/2026/"
               className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/30 transition-colors"
             >
-              Back to Conference
+              Back to PHC Conference 2026
             </Link>
           </motion.div>
         </div>
@@ -184,41 +183,29 @@ export default function ExhibitorsPage() {
         </section>
       ))}
 
-      {/* Become a Sponsor CTA */}
+      {/* Exhibit in 2027 CTA */}
       <section className="py-20 bg-gradient-to-br from-phc-dark to-phc-light">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Interested in Exhibiting?
-            </h2>
-            <p className="text-white/90 text-lg max-w-xl mx-auto mb-8">
-              Showcase your brand at the premier metabolic health conference.
-              Request our exhibitor brochure for sponsorship packages and pricing.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="https://forms.office.com/e/LTaJrbkxmG"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark font-bold rounded-full hover:scale-105 transition-transform shadow-lg text-lg"
-              >
-                Request Exhibitor Brochure
-              </a>
-              <a
-                href={conferenceInfo.ticketUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-10 py-4 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-colors text-lg"
-              >
-                Get Conference Tickets
-              </a>
-            </div>
-          </motion.div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+            Interested in exhibiting in 2027?
+          </h2>
+          <p className="text-white/90 text-lg max-w-xl mx-auto mb-8">
+            PHC Conference 2027 is at Warwick Hall, Warwick, on 10 and 11 April 2027.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://phcuk.org/contact/"
+              className="inline-flex items-center px-10 py-4 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light transition-colors shadow-lg text-lg"
+            >
+              Enquire about exhibiting
+            </a>
+            <Link
+              href="/"
+              className="inline-flex items-center px-10 py-4 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-colors text-lg"
+            >
+              See the 2027 conference
+            </Link>
+          </div>
         </div>
       </section>
     </div>

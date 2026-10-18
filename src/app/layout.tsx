@@ -3,6 +3,8 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Footer from "@/components/Footer";
+import SiteHeader from "@/components/SiteHeader";
+import TicketBanner from "@/components/TicketBanner";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,46 +17,54 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 });
 
+const SITE_TITLE = "PHC Conference 2027: Prevent the preventable";
+const SITE_DESCRIPTION =
+  "The Preventive Health Collaboration conference on preventing the diseases of modern life. Warwick Hall, Warwick, Saturday 10 and Sunday 11 April 2027. Tickets on sale 11 November 2026.";
+const OG_IMAGE = {
+  url: "/images/og-conference-2027.png",
+  width: 1200,
+  height: 630,
+  alt: "PHC Conference 2027: Prevent the preventable. Warwick Hall, Warwick, 10 and 11 April 2027. Preventive Health Collaboration.",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://phcukconference.org'),
-  title: "PHC Conference 2026 - Nourish to Flourish",
-  description: "Celebrating 10 years of helping people nourish to flourish. Join us for the premier metabolic health conference on May 16-17, 2026 in London.",
-  keywords: "PHC, metabolic health, nutrition, conference, London, 2026, health conference",
-  alternates: {
-    canonical: 'https://phcukconference.org',
+  metadataBase: new URL("https://phcukconference.org"),
+  title: {
+    default: SITE_TITLE,
+    template: "%s | Preventive Health Collaboration",
   },
+  description: SITE_DESCRIPTION,
+  keywords:
+    "PHC, Preventive Health Collaboration, prevention, conference, Warwick, 2027, metabolic health, heart and stroke, brain health, cancer",
+  applicationName: "PHC Conference",
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
+  icons: {
+    apple: "/icons/apple-touch-icon.png",
+  },
   openGraph: {
-    title: "PHC Conference 2026 - Nourish to Flourish",
-    description: "Join us for 2 days of world-class speakers and 16 CPD points at The Light, Euston, London on May 16-17, 2026",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     type: "website",
     url: "https://phcukconference.org",
-    images: [
-      {
-        url: "/images/PHC26-Save-The-Date-v2.png",
-        width: 1200,
-        height: 630,
-        alt: "PHC Conference 2026 - Nourish to Flourish - 10 Year Anniversary Conference",
-      }
-    ],
-    siteName: "PHC Conference 2026",
+    images: [OG_IMAGE],
+    siteName: "PHC Conference · Preventive Health Collaboration",
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PHC Conference 2026 - Nourish to Flourish",
-    description: "Join us for 2 days of world-class speakers and 16 CPD points at The Light, Euston, London on May 16-17, 2026",
-    images: ["/images/PHC26-Save-The-Date-v2.png"],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE.url],
     creator: "@PHCukorg",
     site: "@PHCukorg",
   },
@@ -66,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7XSQ542D02"
@@ -97,8 +107,16 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}
       >
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-phc-navy"
+        >
+          Skip to content
+        </a>
+        <TicketBanner />
         <AnnouncementBanner />
-        {children}
+        <SiteHeader />
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>
