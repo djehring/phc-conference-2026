@@ -126,4 +126,24 @@ export const speakers2027: Speaker[] = [];
  * Only add images we have the right to use (record the licence and credit).
  * The photo strip stays hidden while this list is empty.
  */
-export const WARWICK_IMAGES: { src: string; alt: string; credit: string; creditUrl?: string }[] = [];
+// All three are under the Unsplash License (free to use, credit appreciated).
+export const WARWICK_IMAGES: { src: string; alt: string; credit: string; creditUrl?: string }[] = [
+  {
+    src: "/images/warwick/warwick-castle-river.jpg",
+    alt: "Warwick Castle above the River Avon, reflected in the water on a sunny day",
+    credit: "Tom Podmore on Unsplash",
+    creditUrl: "https://unsplash.com/photos/7y26n59RJIw",
+  },
+  {
+    src: "/images/warwick/warwick-castle-towers.jpg",
+    alt: "The towers and battlements of Warwick Castle under a blue sky",
+    credit: "A Perry on Unsplash",
+    creditUrl: "https://unsplash.com/photos/umvsom3rVBo",
+  },
+  {
+    src: "/images/warwick/warwick-castle-grounds.jpg",
+    alt: "Visitors walking across the lawns inside the walls of Warwick Castle",
+    credit: "Neven Myst on Unsplash",
+    creditUrl: "https://unsplash.com/photos/w2gAlgEpzdI",
+  },
+];
