@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock, MapPin, PlayCircle, Store, Users, Utensils, Archive } from "lucide-react";
+import { ArrowRight, Calendar, Castle, Clock, Heart, MapPin, PlayCircle, Store, Trees, Users, Utensils, Archive } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 import AddToCalendarButton from "@/components/AddToCalendarButton";
 import TicketsSection from "@/components/TicketsSection";
@@ -14,9 +14,11 @@ import {
   DAYS,
   DINNER,
   DINNER_BOOKING_URL,
+  HAS_PROGRAMME,
   PROGRAMME,
   TICKET_PRICES,
   VENUE,
+  WARWICK_IMAGES,
   speakers2027,
 } from "@/lib/conference";
 
@@ -92,10 +94,10 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <BookingButton />
             <a
-              href="#programme"
+              href="#family"
               className="inline-flex items-center justify-center rounded-full border-2 border-white px-6 py-3 font-heading text-sm font-bold text-white transition-colors hover:bg-white hover:text-phc-navy sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
             >
-              See the programme
+              Plan a family weekend
             </a>
           </div>
         </div>
@@ -105,14 +107,14 @@ export default function Home() {
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start">
           <div>
-            <Eyebrow>Two days, four areas</Eyebrow>
+            <Eyebrow>A family conference weekend</Eyebrow>
             <h2 className="font-heading text-3xl font-bold text-phc-navy sm:text-4xl">
               The UK&apos;s conference on prevention
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-dark-grey">
               Doctors, scientists, campaigners and the public, together for two days on how to
-              prevent the diseases of modern life. The programme follows our four areas: metabolic
-              health, heart and stroke, brain health and cancer.
+              prevent the diseases of modern life, in the historic town of Warwick at the end of
+              the Easter holidays. Bring the family and make a weekend of it.
             </p>
           </div>
 
@@ -167,7 +169,8 @@ export default function Home() {
 
       <TicketsSection />
 
-      {/* Programme */}
+      {/* Programme: hidden until the programme is confirmed */}
+      {HAS_PROGRAMME && (
       <section id="programme" className="scroll-mt-4 bg-off-white px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <Eyebrow>Programme</Eyebrow>
@@ -217,6 +220,97 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      )}
+
+      {/* Family weekend */}
+      <section id="family" className="scroll-mt-4 bg-off-white px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-10 md:grid-cols-2 md:items-start">
+            <div>
+              <Eyebrow>Bring the family</Eyebrow>
+              <h2 className="font-heading text-3xl font-bold text-phc-navy sm:text-4xl">
+                A family weekend in Warwick
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-dark-grey">
+                Bring the family. Spend the weekend in Warwick. Attend the conference while they
+                explore. Come together in the evenings.
+              </p>
+              <p className="mt-4 leading-relaxed text-dark-grey">
+                Health is not something that happens only in the consulting room. It is built
+                through the way we eat, move, connect and live together, so we want partners and
+                children to feel genuinely welcome.
+              </p>
+              <p className="mt-4 leading-relaxed text-dark-grey">
+                The conference falls on the last weekend of the Easter holidays, with Warwick
+                Castle, the river and the old town a short walk away. Arrive on the Friday,
+                settle in, and head home on Sunday afternoon in time for school and work on
+                Monday.
+              </p>
+            </div>
+            <ul className="grid gap-4">
+              {[
+                {
+                  icon: Castle,
+                  title: "Warwick Castle on the doorstep",
+                  text: "One of England’s best-loved castles, minutes from the conference, for a day out while the sessions run.",
+                },
+                {
+                  icon: Trees,
+                  title: "The river, the town and the outdoors",
+                  text: "Riverside walks, parks and a historic market town to explore together.",
+                },
+                {
+                  icon: Heart,
+                  title: "Time together in the evenings",
+                  text: "Delegates, partners and children, all welcome when the day’s sessions end.",
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li
+                    key={item.title}
+                    className="flex gap-4 rounded-2xl border border-phc-navy/15 bg-white p-5 shadow-sm"
+                  >
+                    <Icon className="mt-1 h-6 w-6 shrink-0 text-phc-navy" aria-hidden="true" />
+                    <div>
+                      <h3 className="font-heading font-bold text-phc-navy">{item.title}</h3>
+                      <p className="mt-1 text-sm text-dark-grey">{item.text}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Photo strip: hidden until licensed Warwick photos are added */}
+          {WARWICK_IMAGES.length > 0 && (
+            <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-label="Warwick">
+              {WARWICK_IMAGES.map((img) => (
+                <li key={img.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <figure>
+                    <img src={img.src} alt={img.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                    <figcaption className="px-3 py-2 text-xs text-warm-grey">
+                      Photo:{" "}
+                      {img.creditUrl ? (
+                        <a href={img.creditUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:no-underline">
+                          {img.credit}
+                        </a>
+                      ) : (
+                        img.credit
+                      )}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <p className="mt-8 text-sm text-dark-grey">
+            We will share family activities, accommodation and the full programme when tickets go
+            on sale.
+          </p>
         </div>
       </section>
 

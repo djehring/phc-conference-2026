@@ -100,7 +100,7 @@ export default function Footer() {
             <div>
               <h2 className="font-heading font-semibold mb-4">PHC Conference 2027</h2>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/#programme" className="hover:text-phc-cyan transition-colors">Programme</Link></li>
+                <li><Link href="/#family" className="hover:text-phc-cyan transition-colors">Family weekend</Link></li>
                 <li><Link href="/#dinner" className="hover:text-phc-cyan transition-colors">Conference dinner</Link></li>
                 <li><Link href="/#tickets" className="hover:text-phc-cyan transition-colors">Tickets</Link></li>
                 <li><Link href="/#get-involved" className="hover:text-phc-cyan transition-colors">Exhibit or volunteer</Link></li>

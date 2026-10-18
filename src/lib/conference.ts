@@ -92,53 +92,19 @@ export const AREA_STYLES: Record<AreaKey, { bar: string; dot: string }> = {
   asks: { bar: "border-l-phc-navy", dot: "bg-phc-navy" },
 };
 
+/**
+ * Sessions per day. Empty until Steve confirms the programme: the programme
+ * section and its nav links stay hidden while every day is empty.
+ */
 export const PROGRAMME: Record<
   (typeof DAYS)[number]["id"],
   { title: string; area: AreaKey; description?: string }[]
 > = {
-  saturday: [
-    {
-      title: "Welcome and opening keynote",
-      area: "keynote",
-    },
-    {
-      title: "Metabolic health",
-      area: "metabolic",
-      description: "Type 2 diabetes, obesity and fatty liver: preventing and reversing them.",
-    },
-    {
-      title: "Heart and stroke",
-      area: "heart",
-      description: "Lowering the risk of heart disease and stroke.",
-    },
-    {
-      title: "Panel and questions",
-      area: "keynote",
-      description: "Put your questions to the day's speakers.",
-    },
-  ],
-  sunday: [
-    {
-      title: "Brain health",
-      area: "brain",
-      description: "What we know about lowering the risk of dementia.",
-    },
-    {
-      title: "Cancer",
-      area: "cancer",
-      description: "The everyday factors that shape cancer risk.",
-    },
-    {
-      title: "Our seven asks",
-      area: "asks",
-      description: "The policies that would put prevention first, and how you can help.",
-    },
-    {
-      title: "Closing keynote",
-      area: "keynote",
-    },
-  ],
+  saturday: [],
+  sunday: [],
 };
+
+export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => sessions.length > 0);
 
 // ---------------------------------------------
 // Speakers
@@ -150,3 +116,14 @@ export const PROGRAMME: Record<
  * photos go in /public/images/speaker-photos/.
  */
 export const speakers2027: Speaker[] = [];
+
+// ---------------------------------------------
+// Family weekend (David's proposal, 30 Sep 2026)
+// ---------------------------------------------
+
+/**
+ * Photos of Warwick Castle and the town for the family weekend section.
+ * Only add images we have the right to use (record the licence and credit).
+ * The photo strip stays hidden while this list is empty.
+ */
+export const WARWICK_IMAGES: { src: string; alt: string; credit: string; creditUrl?: string }[] = [];
