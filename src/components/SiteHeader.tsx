@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BRAND_NAME, MAIN_SITE_URL } from "@/lib/brand";
 
 const NAV = [
+  { href: "/#speakers", label: "Speakers" },
   { href: "/#family", label: "Family weekend" },
   { href: "/#dinner", label: "Dinner" },
   { href: "/#get-involved", label: "Get involved" },

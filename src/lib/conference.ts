@@ -115,7 +115,42 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
  * list is empty. Add a speaker once they have confirmed and approved their bio;
  * photos go in /public/images/speaker-photos/.
  */
-export const speakers2027: Speaker[] = [];
+// Confirmed by Steve Bennett, 18 Oct 2026: Adrian Soto-Mota, Ben Bikman and
+// Richard Johnson. Isabella Cooper is not yet confirmed, so she is not listed.
+export const speakers2027: Speaker[] = [
+  {
+    id: 1,
+    name: "Professor Ben Bikman",
+    slug: "ben-bikman",
+    title: "Professor of Cell Biology and Physiology, Brigham Young University",
+    description:
+      "Studies insulin, insulin resistance and ketones, and their role in obesity and chronic disease. Author of Why We Get Sick.",
+    initials: "BB",
+    photo: "ben-bikman.jpg",
+  },
+  {
+    id: 2,
+    name: "Professor Richard J. Johnson",
+    slug: "richard-johnson",
+    title: "Professor of Medicine, University of Colorado Anschutz Medical Campus",
+    description:
+      "Kidney specialist whose research on fructose and uric acid led to the survival switch theory. Author of Nature Wants Us to Be Fat.",
+    initials: "RJ",
+    photo: "richard-johnson.jpg",
+    links: {
+      university: "https://som.cuanschutz.edu/Profiles/Faculty/Profile/9426",
+    },
+  },
+  {
+    id: 3,
+    name: "Dr Adrian Soto-Mota",
+    slug: "adrian-soto-mota",
+    title: "Clinical scientist, human metabolism and cardiometabolic disease",
+    description:
+      "Oxford-trained clinical scientist leading studies on ketones, heart health and cholesterol, including why cholesterol rises in some people on low carbohydrate diets.",
+    initials: "AS",
+  },
+];
 
 // ---------------------------------------------
 // Family weekend (David's proposal, 30 Sep 2026)

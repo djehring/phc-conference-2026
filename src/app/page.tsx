@@ -224,6 +224,17 @@ export default function Home() {
       </section>
       )}
 
+      {/* Speakers: hidden until speakers are confirmed */}
+      {speakers2027.length > 0 && (
+        <div id="speakers" className="scroll-mt-4 bg-white">
+          <SpeakersSection
+            speakers={speakers2027}
+            heading="Speakers"
+            intro="Confirmed speakers for PHC Conference 2027."
+          />
+        </div>
+      )}
+
       {/* Family weekend */}
       <section id="family" className="scroll-mt-4 bg-off-white px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
@@ -313,17 +324,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* Speakers: hidden until speakers are confirmed */}
-      {speakers2027.length > 0 && (
-        <div id="speakers" className="scroll-mt-4 bg-white">
-          <SpeakersSection
-            speakers={speakers2027}
-            heading="Speakers"
-            intro="Confirmed speakers for PHC Conference 2027."
-          />
-        </div>
-      )}
 
       {/* Dinner */}
       <section id="dinner" className="scroll-mt-4 bg-phc-navy-dark px-4 py-16 text-white sm:py-20">
