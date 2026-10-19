@@ -230,7 +230,7 @@ export default function Home() {
           <SpeakersSection
             speakers={speakers2027}
             heading="Speakers"
-            intro="Confirmed speakers for PHC Conference 2027."
+            intro="Confirmed speakers for PHC Conference 2027, with more to be announced."
           />
         </div>
       )}

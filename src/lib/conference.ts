@@ -42,8 +42,8 @@ export const DAYS = [
 export const DINNER: { label: string; time: string; venue: string } = {
   label: "Saturday 10 April 2027",
   time: "19:00",
-  /** Leave empty until the dinner venue is confirmed. */
-  venue: "",
+  /** Confirmed by Steve, 19 Oct 2026: same venue as the conference. */
+  venue: "Warwick Hall, Warwick",
 };
 
 // ---------------------------------------------
@@ -71,10 +71,12 @@ export const DINNER_BOOKING_URL: string = "";
  * Ticket prices. Each one shows only when it has a value, e.g. "£195".
  * Leave empty until the trustees confirm prices.
  */
+// Confirmed by Steve, 19 Oct 2026. Online-only tickets are announced closer to the event.
 export const TICKET_PRICES: { label: string; price: string; note: string }[] = [
-  { label: "Weekend ticket", price: "", note: "Both days, lunches and refreshments" },
-  { label: "Members", price: "", note: "Discounted rate for PHC members" },
-  { label: "Conference dinner", price: "", note: "Saturday evening, booked separately" },
+  { label: "Early bird", price: "£99", note: "Both days, for a limited time" },
+  { label: "Full ticket", price: "£149", note: "Both days" },
+  { label: "Ambassadors and Associates", price: "£49", note: "Both days, for PHC volunteers" },
+  { label: "Conference dinner", price: "£89", note: "Saturday evening at Warwick Hall, booked separately" },
 ];
 
 // ---------------------------------------------
@@ -115,8 +117,9 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
  * list is empty. Add a speaker once they have confirmed and approved their bio;
  * photos go in /public/images/speaker-photos/.
  */
-// Confirmed by Steve Bennett, 18 Oct 2026: Adrian Soto-Mota, Ben Bikman and
-// Richard Johnson. Isabella Cooper is not yet confirmed, so she is not listed.
+// Confirmed by Steve Bennett, 18–19 Oct 2026: Ben Bikman, Richard Johnson,
+// Adrian Soto-Mota, David Unwin, Steve Bennett and David Jehring, with more to be
+// announced. Isabella Cooper is not yet confirmed, so she is not listed.
 export const speakers2027: Speaker[] = [
   {
     id: 1,
@@ -149,6 +152,36 @@ export const speakers2027: Speaker[] = [
     description:
       "Oxford-trained clinical scientist leading studies on ketones, heart health and cholesterol, including why cholesterol rises in some people on low carbohydrate diets.",
     initials: "AS",
+  },
+  {
+    id: 4,
+    name: "Dr David Unwin FRCGP",
+    slug: "david-unwin",
+    title: "NHS GP and Chair of our Scientific Advisory Committee",
+    description:
+      "Founding member of PHC whose work at Norwood Surgery in Southport has helped many patients put type 2 diabetes into remission.",
+    initials: "DU",
+    photo: "david-unwin.png",
+  },
+  {
+    id: 5,
+    name: "Steve Bennett",
+    slug: "steve-bennett",
+    title: "Chief Executive, Preventive Health Collaboration",
+    description:
+      "Turned his own health around after living with obesity for over 25 years. Author of Primal Cure and Fat & Furious.",
+    initials: "SB",
+    photo: "steve-bennett.png",
+  },
+  {
+    id: 6,
+    name: "Dr David Jehring",
+    slug: "david-jehring",
+    title: "Chair of Trustees, Preventive Health Collaboration",
+    description:
+      "Former NHS family doctor and chief executive of Black Pear Software, putting joined-up health records in the hands of patients and clinicians.",
+    initials: "DJ",
+    photo: "david-jehring.png",
   },
 ];
 
