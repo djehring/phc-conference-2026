@@ -148,10 +148,11 @@ export const speakers2027: Speaker[] = [
     id: 3,
     name: "Dr Adrian Soto-Mota",
     slug: "adrian-soto-mota",
-    title: "Clinical scientist, human metabolism and cardiometabolic disease",
+    title: "Physician scientist, Salvador Zubirán National Institute of Medical Sciences and Nutrition, Mexico City",
     description:
-      "Oxford-trained clinical scientist leading studies on ketones, heart health and cholesterol, including why cholesterol rises in some people on low carbohydrate diets.",
+      "Leads the Metabolic Diseases Research Unit. His Lipid Energy Model explains why some lean people see large rises in LDL cholesterol on low carbohydrate diets.",
     initials: "AS",
+    photo: "adrian-soto-mota.jpg",
   },
   {
     id: 4,
