@@ -1,584 +1,449 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Calendar, MapPin, Award, ChevronDown, CalendarPlus, Utensils, Clock, Info, Sparkles, Video } from "lucide-react";
-import { conferenceInfo, statistics } from "@/lib/data";
-import { generateICS } from "@/lib/generateICS";
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Calendar, Castle, Clock, Heart, MapPin, PlayCircle, Store, Trees, Users, Utensils, Archive } from "lucide-react";
+import BookingButton from "@/components/BookingButton";
+import AddToCalendarButton from "@/components/AddToCalendarButton";
+import TicketsSection from "@/components/TicketsSection";
 import SpeakersSection from "@/components/SpeakersSection";
-import ConferenceVideoSlider from "@/components/conference-video-slider";
-import MembershipSection from "@/components/membership-section";
-import MobileJumpNav from "@/components/MobileJumpNav";
+import { CONTACT_URL, PROMISE_TEXT, VOLUNTEER_URL, YOUTUBE_URL } from "@/lib/brand";
+import {
+  AREA_STYLES,
+  CONFERENCE_NAME,
+  CONFERENCE_THEME,
+  DATES_LABEL,
+  DAYS,
+  DINNER,
+  DINNER_BOOKING_URL,
+  HAS_PROGRAMME,
+  PROGRAMME,
+  TICKET_PRICES,
+  VENUE,
+  WARWICK_IMAGES,
+  speakers2027,
+} from "@/lib/conference";
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const confirmedPrices = TICKET_PRICES.filter((p) => p.price.trim() !== "");
+
+function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+  return (
+    <p
+      className={`mb-3 text-xs font-bold uppercase tracking-[0.2em] ${
+        light ? "text-phc-cyan" : "text-phc-navy"
+      }`}
+    >
+      {children}
+    </p>
+  );
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Preload Open Graph image to ensure it's included in build */}
-      <link rel="preload" as="image" href="/images/PHC26-Save-The-Date-v2.png" />
-      <MobileJumpNav />
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-phc-dark to-phc-light overflow-hidden py-20 sm:py-0">
-        {/* Floating shapes */}
-        <div className="absolute inset-0 pt-8 sm:pt-12 md:pt-16 hidden sm:block">
-          <motion.div
-            className="absolute top-8 left-2 sm:top-12 sm:left-10 md:top-20 md:left-20 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-lg"
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 10, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <Image 
-              src="/images/NourishToFlourish - Blue - JUST LOGO.png"
-              alt="Nourish to Flourish"
-              width={100}
-              height={100}
-              className="object-contain w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24"
-            />
-          </motion.div>
-          <motion.div
-            className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-16 h-16 sm:w-24 sm:h-24 bg-phc-light/10 rounded-lg"
-            animate={{
-              y: [0, -15, 0],
-              rotate: [0, -10, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-phc-navy-dark via-phc-navy to-phc-navy px-4 py-16 text-white sm:py-24">
+        <img
+          src="/images/PHC_mark_reversed.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 -bottom-16 w-72 opacity-[0.07] sm:w-[28rem]"
+        />
+        <div className="relative mx-auto max-w-6xl">
+          <Eyebrow light>{CONFERENCE_NAME}</Eyebrow>
+          <h1 className="font-heading text-4xl font-bold leading-tight sm:text-6xl">
+            {CONFERENCE_THEME}
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg text-white/90 sm:text-xl">{PROMISE_TEXT}</p>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto w-full">
-          {/* PHC Logo */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-3 sm:mb-4"
-          >
-            <img 
-              src="/images/PHC_logo_white_text.png" 
-              alt="Public Health Collaboration" 
-              className="h-10 sm:h-16 md:h-20 mx-auto"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-2 sm:mb-3"
-          >
-            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-white/90 font-semibold text-xs sm:text-sm">
-              10th Anniversary Conference
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-3"
-          >
-            Nourish to Flourish
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-white/90"
-          >
-            {conferenceInfo.tagline}
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 text-white/80 max-w-3xl mx-auto leading-relaxed px-2"
-          >
-            Celebrating 10 years of helping people nourish to flourish! Join us to explore good metabolic health 
-            for all the family with dedicated sessions from world-renowned speakers on women's health, 
-            men's health, teenage health, and children's health.
-          </motion.p>
-
-          {/* Key Details Cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6"
-          >
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4">
-              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
-              <h3 className="font-heading font-semibold text-xs sm:text-sm">Date</h3>
-              <p className="text-xs text-white/80">{conferenceInfo.dates}</p>
-              <button
-                onClick={generateICS}
-                className="mt-2 inline-flex items-center gap-1 px-2 py-1 bg-white/20 hover:bg-white/30 text-white/90 rounded transition-colors text-xs font-medium"
-                aria-label="Add conference to calendar"
+          <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
+            <div className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-phc-cyan">When</p>
+              <p className="mt-1 font-heading text-lg font-semibold">{DATES_LABEL}</p>
+              <ul className="mt-1 space-y-0.5 text-sm text-white/90">
+                {DAYS.map((day) => (
+                  <li key={day.id}>
+                    {day.label.split(" ")[0]}: {day.start} to {day.end}
+                  </li>
+                ))}
+              </ul>
+              <AddToCalendarButton className="mt-3 text-white" />
+            </div>
+            <div className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-phc-cyan">Where</p>
+              <p className="mt-1 font-heading text-lg font-semibold">
+                {VENUE.name}, {VENUE.town}
+              </p>
+              <p className="mt-1 text-sm text-white/90">
+                Conference dinner on the Saturday evening
+              </p>
+              <a
+                href={VENUE.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 rounded text-sm font-semibold underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
               >
-                <CalendarPlus className="w-3 h-3" />
-                Add to Calendar
-              </button>
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                Map<span className="sr-only"> of {VENUE.name} (opens in a new tab)</span>
+              </a>
             </div>
-            <a 
-              href="https://maps.google.com/?q=The+Light+Euston+London+NW1+2BJ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 block hover:bg-white/20 transition-colors"
-            >
-              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
-              <h3 className="font-heading font-semibold text-xs sm:text-sm">Location</h3>
-              <p className="text-xs text-white/80">{conferenceInfo.location}</p>
-              <p className="text-xs text-white/90 mt-1">Click for directions →</p>
-            </a>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4">
-              <Award className="w-5 h-5 sm:w-6 sm:h-6 mb-1 sm:mb-2 mx-auto text-white/90" />
-              <h3 className="font-heading font-semibold text-xs sm:text-sm">CPD Points</h3>
-              <p className="text-xs text-white/80">{conferenceInfo.cpdPoints} Points Available</p>
-            </div>
-          </motion.div>
+          </div>
 
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center"
-          >
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <BookingButton />
             <a
-              href={conferenceInfo.ticketUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 inline-block text-xs sm:text-sm"
+              href="#family"
+              className="inline-flex items-center justify-center rounded-full border-2 border-white px-6 py-3 font-heading text-sm font-bold text-white transition-colors hover:bg-white hover:text-phc-navy sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
             >
-              <span className="flex items-center gap-1 sm:gap-2">
-                Get Tickets
-                <span className="text-xs">from £159</span>
-              </span>
+              Plan a family weekend
             </a>
-            <a
-              href="/schedule/"
-              className="px-5 py-2.5 sm:px-6 sm:py-3 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/30 transition-colors text-xs sm:text-sm inline-flex items-center gap-2"
-            >
-              <Calendar className="w-4 h-4" />
-              View Full Schedule
-            </a>
-          </motion.div>
+          </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 z-20"
-        >
-          <ChevronDown className="w-6 h-6 text-white/60" />
-        </motion.div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="relative py-20 px-4 bg-gradient-to-br from-off-white via-phc-light/5 to-phc-light/10 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 right-10 w-64 h-64 bg-phc-light/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
-              Celebrating 10 Years
+      {/* Intro */}
+      <section className="px-4 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start">
+          <div>
+            <Eyebrow>A family conference weekend</Eyebrow>
+            <h2 className="font-heading text-3xl font-bold text-phc-navy sm:text-4xl">
+              The UK&apos;s conference on prevention
             </h2>
-            <p className="text-lg text-dark-grey max-w-3xl mx-auto">
-              Join us for the premier metabolic health conference, bringing together world-renowned experts, 
-              healthcare professionals, and wellness advocates for two days of transformative learning.
+            <p className="mt-4 text-lg leading-relaxed text-dark-grey">
+              Doctors, scientists, campaigners and the public, together for two days on how to
+              prevent the diseases of modern life, in the historic town of Warwick at the end of
+              the Easter holidays. Bring the family and make a weekend of it.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Statistics Grid */}
-          <div className="grid md:grid-cols-4 gap-6">
-            {statistics.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-white to-phc-light/5 rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-all hover:scale-105 border border-phc-light/10"
-              >
-                <div className="font-heading text-4xl font-bold text-warm-amber mb-2">
-                  {stat.number}
+          {confirmedPrices.length > 0 ? (
+            <ul className="grid gap-3 sm:grid-cols-2" aria-label="Ticket prices">
+              {confirmedPrices.map((p) => (
+                <li key={p.label} className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">{p.label}</p>
+                  <p className="mt-1 font-heading text-3xl font-bold text-phc-navy">{p.price}</p>
+                  <p className="mt-1 text-sm text-dark-grey">{p.note}</p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <dl className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                  <Calendar className="h-4 w-4" aria-hidden="true" /> When
+                </dt>
+                <dd className="mt-1 font-heading font-semibold text-phc-navy">10 and 11 April 2027</dd>
+              </div>
+              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                  <MapPin className="h-4 w-4" aria-hidden="true" /> Where
+                </dt>
+                <dd className="mt-1 font-heading font-semibold text-phc-navy">
+                  {VENUE.name}, {VENUE.town}
+                </dd>
+              </div>
+              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                  <Utensils className="h-4 w-4" aria-hidden="true" /> Dinner
+                </dt>
+                <dd className="mt-1 font-heading font-semibold text-phc-navy">
+                  Saturday evening, {DINNER.time}
+                </dd>
+              </div>
+              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                  <Clock className="h-4 w-4" aria-hidden="true" /> Tickets
+                </dt>
+                <dd className="mt-1 font-heading font-semibold text-phc-navy">
+                  <a href="#tickets" className="underline underline-offset-2 hover:no-underline">
+                    On sale 11 November 2026
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          )}
+        </div>
+      </section>
+
+      <TicketsSection />
+
+      {/* Programme: hidden until the programme is confirmed */}
+      {HAS_PROGRAMME && (
+      <section id="programme" className="scroll-mt-4 bg-off-white px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <Eyebrow>Programme</Eyebrow>
+          <h2 className="font-heading text-3xl font-bold text-phc-navy sm:text-4xl">
+            Sessions by prevention area
+          </h2>
+          <p className="mt-3 max-w-3xl text-lg text-dark-grey">
+            Each session focuses on one of our four prevention areas, with opening and closing
+            keynotes and a session on our seven asks. Speakers and session times will be added
+            here as they are confirmed.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {DAYS.map((day) => (
+              <div key={day.id} className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+                <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-off-white pb-3">
+                  <h3 className="font-heading text-xl font-bold text-phc-navy">{day.label}</h3>
+                  <p className="text-sm font-semibold text-dark-grey">
+                    {day.start} to {day.end}
+                  </p>
                 </div>
-                <div className="text-dark-grey">{stat.label}</div>
-              </motion.div>
+                <ul className="mt-3 space-y-2">
+                  {PROGRAMME[day.id].map((session) => (
+                    <li
+                      key={session.title}
+                      className={`border-l-4 ${AREA_STYLES[session.area].bar} py-2 pl-4`}
+                    >
+                      <p className="font-heading font-semibold text-phc-navy">{session.title}</p>
+                      {session.description && (
+                        <p className="text-sm text-dark-grey">{session.description}</p>
+                      )}
+                    </li>
+                  ))}
+                  {day.id === "saturday" && (
+                    <li className="border-l-4 border-l-warm-amber bg-warm-amber/10 py-2 pl-4">
+                      <p className="font-heading font-semibold text-phc-navy">
+                        {DINNER.time} Conference dinner
+                      </p>
+                      <p className="text-sm text-dark-grey">
+                        <a href="#dinner" className="underline underline-offset-2 hover:no-underline">
+                          About the dinner
+                        </a>
+                      </p>
+                    </li>
+                  )}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
       </section>
+      )}
 
-      {/* Early Bird Pricing Section */}
-      <section id="pricing" className="relative py-20 px-4 bg-gradient-to-br from-phc-light/10 via-white to-phc-light/10 overflow-hidden">
-        <div className="relative max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
-              Ticket Pricing
-            </h2>
-            <p className="text-lg text-dark-grey max-w-3xl mx-auto">
-              Secure your spot at the premier metabolic health conference of 2026
-            </p>
-          </motion.div>
+      {/* Speakers: hidden until speakers are confirmed */}
+      {speakers2027.length > 0 && (
+        <div id="speakers" className="scroll-mt-4 bg-white">
+          <SpeakersSection
+            speakers={speakers2027}
+            heading="Speakers"
+            intro="Confirmed speakers for PHC Conference 2027, with more to be announced."
+          />
+        </div>
+      )}
 
-          {/* Livestream Ticket - NEW */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="relative mb-8"
-          >
-            <div className="relative bg-gradient-to-r from-phc-dark via-phc-light to-phc-dark text-white rounded-2xl p-6 sm:p-8 shadow-xl overflow-hidden">
-              {/* Animated background effect */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-0 w-40 h-40 bg-phc-light rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-60 h-60 bg-phc-light rounded-full blur-3xl"></div>
-              </div>
-              
-              <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-white/20 rounded-xl">
-                    <Video className="w-8 h-8 text-white/90" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <motion.span
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="px-3 py-0.5 bg-white text-phc-dark text-xs font-bold rounded-full"
-                      >
-                        NEW
-                      </motion.span>
-                      <h3 className="font-heading text-xl sm:text-2xl font-bold">
-                        Livestream Tickets Now Available!
-                      </h3>
-                    </div>
-                    <p className="text-white/90 text-sm sm:text-base">
-                      Can't attend in person? Watch all sessions live from anywhere in the world.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                  <div className="flex gap-4 sm:gap-6">
-                    <div className="text-center">
-                      <div className="text-2xl sm:text-3xl font-bold">£69</div>
-                      <div className="text-xs text-white/90 font-semibold">Members</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl sm:text-3xl font-bold">£89</div>
-                      <div className="text-xs text-white/80">Non-Members</div>
-                    </div>
-                  </div>
-                  <a
-                    href={conferenceInfo.ticketUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 whitespace-nowrap"
+      {/* Family weekend */}
+      <section id="family" className="scroll-mt-4 bg-off-white px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-10 md:grid-cols-2 md:items-start">
+            <div>
+              <Eyebrow>Bring the family</Eyebrow>
+              <h2 className="font-heading text-3xl font-bold text-phc-navy sm:text-4xl">
+                A family weekend in Warwick
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-dark-grey">
+                Bring the family. Spend the weekend in Warwick. Attend the conference while they
+                explore. Come together in the evenings.
+              </p>
+              <p className="mt-4 leading-relaxed text-dark-grey">
+                Health is not something that happens only in the consulting room. It is built
+                through the way we eat, move, connect and live together, so we want partners and
+                children to feel genuinely welcome.
+              </p>
+              <p className="mt-4 leading-relaxed text-dark-grey">
+                The conference falls on the last weekend of the Easter holidays, with Warwick
+                Castle, the river and the old town a short walk away. Arrive on the Friday,
+                settle in, and head home on Sunday afternoon in time for school and work on
+                Monday.
+              </p>
+            </div>
+            <ul className="grid gap-4">
+              {[
+                {
+                  icon: Castle,
+                  title: "Warwick Castle on the doorstep",
+                  text: "One of England’s best-loved castles, minutes from the conference, for a day out while the sessions run.",
+                },
+                {
+                  icon: Trees,
+                  title: "The river, the town and the outdoors",
+                  text: "Riverside walks, parks and a historic market town to explore together.",
+                },
+                {
+                  icon: Heart,
+                  title: "Time together in the evenings",
+                  text: "Delegates, partners and children, all welcome when the day’s sessions end.",
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li
+                    key={item.title}
+                    className="flex gap-4 rounded-2xl border border-phc-navy/15 bg-white p-5 shadow-sm"
                   >
-                    Get Livestream Access →
-                  </a>
-                </div>
+                    <Icon className="mt-1 h-6 w-6 shrink-0 text-phc-navy" aria-hidden="true" />
+                    <div>
+                      <h3 className="font-heading font-bold text-phc-navy">{item.title}</h3>
+                      <p className="mt-1 text-sm text-dark-grey">{item.text}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Photo strip: hidden until licensed Warwick photos are added */}
+          {WARWICK_IMAGES.length > 0 && (
+            <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-label="Warwick">
+              {WARWICK_IMAGES.map((img) => (
+                <li key={img.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <figure>
+                    <img src={img.src} alt={img.alt} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                    <figcaption className="px-3 py-2 text-xs text-warm-grey">
+                      Photo:{" "}
+                      {img.creditUrl ? (
+                        <a href={img.creditUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:no-underline">
+                          {img.credit}
+                        </a>
+                      ) : (
+                        img.credit
+                      )}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <p className="mt-8 text-sm text-dark-grey">
+            We will share family activities, accommodation and the full programme when tickets go
+            on sale.
+          </p>
+        </div>
+      </section>
+
+      {/* Dinner */}
+      <section id="dinner" className="scroll-mt-4 bg-phc-navy-dark px-4 py-16 text-white sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <Eyebrow light>Saturday evening</Eyebrow>
+            <h2 className="font-heading text-3xl font-bold sm:text-4xl">The conference dinner</h2>
+            <p className="mt-4 text-lg text-white/90">
+              A real food dinner with speakers, members and supporters.
+            </p>
+            <div className="mt-8">
+              <BookingButton bookLabel="Book the dinner" href={DINNER_BOOKING_URL || undefined} />
+            </div>
+          </div>
+          <dl className="space-y-4 rounded-2xl bg-white/10 p-6">
+            <div className="flex items-start gap-3">
+              <Calendar className="mt-0.5 h-5 w-5 shrink-0 text-phc-cyan" aria-hidden="true" />
+              <div>
+                <dt className="sr-only">Date</dt>
+                <dd className="font-semibold">{DINNER.label}</dd>
               </div>
             </div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {/* PHC Members Ticket */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="relative bg-gradient-to-br from-phc-dark to-phc-light text-white rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all"
-            >
-              <h3 className="font-heading text-2xl font-bold mb-4">PHC Members</h3>
-              <div className="mb-6">
-                <div className="text-4xl font-bold">£159</div>
-                <div className="text-sm opacity-90">2-day ticket</div>
+            <div className="flex items-start gap-3">
+              <Clock className="mt-0.5 h-5 w-5 shrink-0 text-phc-cyan" aria-hidden="true" />
+              <div>
+                <dt className="sr-only">Time</dt>
+                <dd className="font-semibold">From {DINNER.time}</dd>
               </div>
-              <ul className="space-y-2 mb-6 text-sm">
-                <li>✓ 2-day conference access</li>
-                <li>✓ 16 CPD points</li>
-                <li>✓ All sessions included</li>
-                <li>✓ Member exclusive pricing</li>
-              </ul>
-            </motion.div>
-
-            {/* Non-Members Ticket */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-xl border-2 border-phc-light/30 transform hover:scale-105 transition-all"
-            >
-              <h3 className="font-heading text-2xl font-bold mb-4 text-phc-dark">
-                Non-Members
-              </h3>
-              <div className="mb-6">
-                <div className="text-4xl font-bold text-phc-dark">£209</div>
-                <div className="text-sm text-warm-grey">2-day ticket</div>
+            </div>
+            {DINNER.venue && (
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-phc-cyan" aria-hidden="true" />
+                <div>
+                  <dt className="sr-only">Venue</dt>
+                  <dd className="font-semibold">{DINNER.venue}</dd>
+                </div>
               </div>
-              <ul className="space-y-2 mb-6 text-sm text-dark-grey">
-                <li>✓ 2-day conference access</li>
-                <li>✓ 16 CPD points</li>
-                <li>✓ All sessions included</li>
-                <li>✓ Networking opportunities</li>
-              </ul>
-            </motion.div>
-
-            {/* Membership Add-on */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-gradient-to-br from-phc-light to-phc-light/80 text-white rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all"
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6" />
-                <h3 className="font-heading text-2xl font-bold">Add Membership</h3>
-              </div>
-              <div className="mb-6">
-                <div className="text-4xl font-bold">£75</div>
-                <div className="text-sm font-semibold mt-1">Annual Membership</div>
-              </div>
-              <ul className="space-y-2 mb-6 text-sm">
-                <li>✓ Instant £50 ticket discount</li>
-                <li>✓ Year-round benefits</li>
-                <li>✓ Exclusive events access</li>
-                <li>✓ Support PHC mission</li>
-              </ul>
-              <div className="text-xs font-semibold">
-                Bundle & Save!
-              </div>
-            </motion.div>
-          </div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <a
-              href={conferenceInfo.ticketUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-5 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 text-lg"
-            >
-              Get Your Tickets Now →
-            </a>
-            <p className="mt-4 text-sm text-warm-amber font-medium">
-              Lunch, teas and coffees not included — available for separate purchase
-            </p>
-          </motion.div>
+            )}
+          </dl>
         </div>
       </section>
 
-      {/* Event Details Section */}
-      <section id="schedule" className="relative py-20 px-4 bg-gradient-to-br from-phc-dark/5 via-white to-phc-light/5 overflow-hidden">
-        <div className="relative max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
-              Event Information
-            </h2>
-            <p className="text-lg text-dark-grey max-w-3xl mx-auto">
-              Important details about the conference schedule and special events
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            {/* Fundraiser Dinner Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-phc-dark to-phc-light text-white rounded-2xl p-8 shadow-xl"
-            >
-              <div className="flex items-center mb-4">
-                <Utensils className="w-8 h-8 text-white/90 mr-3" />
-                <h3 className="font-heading text-2xl font-bold">
-                  Evening Fundraiser Dinner
-                </h3>
-              </div>
-              <div className="space-y-3">
-                <p className="flex items-center">
-                  <Calendar className="w-5 h-5 mr-2 text-white/90" />
-                  Saturday 16th May 2026
-                </p>
-                <p className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-white/90" />
-                  7:00 PM to 10:00 PM
-                </p>
-                <p className="flex items-center">
-                  <MapPin className="w-5 h-5 mr-2 text-white/90" />
-                  The Memoir Club, London
-                </p>
-                <div className="mt-4 pt-4 border-t border-white/20">
-                  <p className="text-sm text-white/90">
-                    Welcome drink, 3-course real food meal and half-bottle of wine per person. Only 100 public tickets available!
+      {/* Get involved */}
+      <section id="get-involved" className="scroll-mt-4 px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <Eyebrow>Get involved</Eyebrow>
+          <h2 className="font-heading text-3xl font-bold text-phc-navy sm:text-4xl">
+            Be part of the weekend
+          </h2>
+          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Store,
+                eyebrow: "Exhibit",
+                title: "Exhibit or sponsor",
+                text: "Stands for organisations that share our values.",
+                cta: "Enquire",
+                href: CONTACT_URL,
+                external: true,
+              },
+              {
+                icon: Users,
+                eyebrow: "Volunteer",
+                title: "Help on the day",
+                text: "Join the volunteer team for the weekend.",
+                cta: "Volunteer",
+                href: VOLUNTEER_URL,
+                external: true,
+              },
+              {
+                icon: PlayCircle,
+                eyebrow: "Past conferences",
+                title: "Watch past talks",
+                text: "Talks from previous PHC conferences on our YouTube channel.",
+                cta: "Watch",
+                href: YOUTUBE_URL,
+                external: true,
+              },
+              {
+                icon: Archive,
+                eyebrow: "2026",
+                title: "Watch or revisit 2026",
+                text: "Speakers, schedule and exhibitors from PHC Conference 2026, Nourish to Flourish.",
+                cta: "Revisit 2026",
+                href: "/2026/",
+                external: false,
+              },
+            ].map((card) => {
+              const Icon = card.icon;
+              const linkClass =
+                "mt-4 inline-flex items-center gap-1 font-heading font-bold text-phc-navy underline-offset-4 hover:underline after:absolute after:inset-0 after:content-['']";
+              return (
+                <li
+                  key={card.title}
+                  className="relative flex flex-col rounded-2xl border border-phc-navy/15 bg-white p-6 shadow-sm transition-shadow focus-within:ring-2 focus-within:ring-phc-cyan hover:shadow-md"
+                >
+                  <Icon className="mb-4 h-7 w-7 text-phc-navy" aria-hidden="true" />
+                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                    {card.eyebrow}
                   </p>
-                  <a
-                    href="/dinner"
-                    className="mt-3 inline-flex items-center text-white font-semibold hover:underline"
-                  >
-                    <Info className="w-4 h-4 mr-2" />
-                    View full details &rarr;
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Speaker Schedule Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-phc-light to-phc-dark text-white rounded-2xl p-8 shadow-xl"
-            >
-              <div className="flex items-center mb-4">
-                <Clock className="w-8 h-8 text-white/90 mr-3" />
-                <h3 className="font-heading text-2xl font-bold">Speaker Schedule</h3>
-              </div>
-              <div className="space-y-3">
-                <p className="text-white/90">
-                  Two packed days of keynote presentations, expert panels, and interactive sessions.
-                </p>
-                <div className="mt-4 pt-4 border-t border-white/20">
-                  <h4 className="font-heading font-semibold mb-2">Highlights:</h4>
-                  <ul className="space-y-2 text-sm text-white/90">
-                    <li className="flex items-start">
-                      <span className="text-phc-light mr-2">•</span>
-                      Day 1: Men&apos;s Health & Teenage Health
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-phc-light mr-2">•</span>
-                      Day 2: Women&apos;s Health & Dietary Guidelines
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-phc-light mr-2">•</span>
-                      Expert panels with Q&A
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-phc-light mr-2">•</span>
-                      Evening Fundraiser Dinner
-                    </li>
-                  </ul>
-                  <a
-                    href="/schedule/"
-                    className="mt-5 inline-flex items-center px-6 py-3 bg-white text-phc-dark font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105"
-                  >
-                    <Calendar className="w-5 h-5 mr-2" />
-                    View Full Schedule →
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Exhibitors CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <a
-              href="/exhibitors"
-              className="inline-block px-8 py-4 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light hover:shadow-2xl transition-all hover:scale-105 text-base sm:text-lg"
-            >
-              View Our Exhibitors & Sponsors →
-            </a>
-          </motion.div>
+                  <h3 className="mt-1 font-heading text-lg font-bold text-phc-navy">{card.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-dark-grey">{card.text}</p>
+                  {card.external ? (
+                    <a href={card.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      {card.cta}
+                      <span className="sr-only">: {card.title} (opens in a new tab)</span>
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <Link href={card.href} className={linkClass}>
+                      {card.cta}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
-
-      {/* Speakers Section with gradient transition */}
-      <div id="speakers" className="relative bg-gradient-to-b from-off-white via-white to-phc-light/5">
-        <SpeakersSection />
-      </div>
-
-      {/* Conference Videos Section */}
-      <section id="videos" className="relative pt-8 pb-20 px-4 bg-gradient-to-br from-phc-light/5 via-white to-phc-dark/5 overflow-hidden">
-        {/* Animated gradient orbs */}
-        <div className="absolute inset-0 opacity-20">
-          <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-phc-light rounded-full blur-3xl"
-            animate={{
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-phc-light rounded-full blur-3xl"
-            animate={{
-              x: [0, -50, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-        <div className="relative">
-          <ConferenceVideoSlider />
-        </div>
-      </section>
-
-      {/* Membership Section */}
-      <div id="membership">
-        <MembershipSection />
-      </div>
     </div>
   );
 }

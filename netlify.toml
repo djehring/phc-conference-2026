@@ -21,7 +21,66 @@
 # Removed redirect from /conference to / to fix SEO issues
 # If /conference page needs to exist, create a proper page instead
 
-# Add custom 404 page
+# ---------------------------------------------------------------
+# 2026 archive: the 2026 conference pages moved under /2026/ when
+# the site switched to the 2027 conference. Permanent redirects keep
+# every old URL (and its search ranking) working. Hash fragments such
+# as /schedule/#session-id are kept by the browser.
+# Netlify matches with or without a trailing slash; both are listed
+# for clarity. These rules must stay above the 404 catch-all.
+# ---------------------------------------------------------------
+[[redirects]]
+  from = "/schedule"
+  to = "/2026/schedule/"
+  status = 301
+
+[[redirects]]
+  from = "/schedule/"
+  to = "/2026/schedule/"
+  status = 301
+
+[[redirects]]
+  from = "/dinner"
+  to = "/2026/dinner/"
+  status = 301
+
+[[redirects]]
+  from = "/dinner/"
+  to = "/2026/dinner/"
+  status = 301
+
+[[redirects]]
+  from = "/exhibitors"
+  to = "/2026/exhibitors/"
+  status = 301
+
+[[redirects]]
+  from = "/exhibitors/"
+  to = "/2026/exhibitors/"
+  status = 301
+
+[[redirects]]
+  from = "/speakers"
+  to = "/2026/#speakers"
+  status = 301
+
+[[redirects]]
+  from = "/speakers/"
+  to = "/2026/#speakers"
+  status = 301
+
+# /speakers/<slug> and /speakers/<slug>/ -> /2026/speakers/<slug>/
+[[redirects]]
+  from = "/speakers/:slug"
+  to = "/2026/speakers/:slug/"
+  status = 301
+
+[[redirects]]
+  from = "/speakers/:slug/"
+  to = "/2026/speakers/:slug/"
+  status = 301
+
+# Custom 404 page (must stay last)
 [[redirects]]
   from = "/*"
   to = "/404.html"

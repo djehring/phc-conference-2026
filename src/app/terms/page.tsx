@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Terms and conditions',
+  description: 'Terms and conditions for PHC Conference registration.',
+  alternates: { canonical: '/terms/' },
+};
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-phc-dark text-white py-20">
+      <div className="bg-phc-navy text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">Terms & Conditions</h1>
           <p className="text-lg">PHC Conference 2026</p>
@@ -13,6 +20,10 @@ export default function Terms() {
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <p className="text-gray-600 mb-6">Last updated: January 2025</p>
+          <p className="mb-6 rounded bg-phc-cyan/15 p-4 text-phc-navy">
+            These terms applied to PHC Conference 2026. Terms for PHC Conference 2027 will be published
+            here when tickets go on sale.
+          </p>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">1. Conference Registration</h2>
@@ -142,7 +153,7 @@ export default function Terms() {
             <div className="bg-gray-50 p-4 rounded">
               <p className="font-semibold">Public Health Collaboration</p>
               <p>Email: <a href="mailto:info@phcuk.org" className="text-phc-dark hover:underline">info@phcuk.org</a></p>
-              <p>Website: <a href="https://phcuk.org" target="_blank" className="text-phc-dark hover:underline">phcuk.org</a></p>
+              <p>Website: <a href="https://phcuk.org/" className="text-phc-dark hover:underline">phcuk.org</a></p>
             </div>
           </section>
 
