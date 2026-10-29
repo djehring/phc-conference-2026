@@ -143,15 +143,26 @@ export const speakers2027: Speaker[] = [
     initials: "BB",
     photo: "ben-bikman.jpg",
   },
+  // Caldesi portraits from caldesi.com/about, padded to 3:4 so the frame is not cropped.
   {
     id: 9,
-    name: "Giancarlo & Katie Caldesi",
-    slug: "giancarlo-and-katie-caldesi",
-    title: "Chefs, cookbook authors and cookery teachers",
+    name: "Giancarlo Caldesi",
+    slug: "giancarlo-caldesi",
+    title: "Chef, restaurateur and cookery teacher",
     description:
-      "Bring Italian cooking to life through their restaurants, cookery school and books. After Giancarlo’s type 2 diabetes remission, they developed a series of lower-carbohydrate cookbooks.",
-    initials: "GK",
-    photo: "giancarlo-and-katie-caldesi.jpg",
+      "Tuscan-born chef who runs restaurants and a cookery school with Katie. Putting his type 2 diabetes into remission helped inspire their books on lower-carbohydrate eating.",
+    initials: "GC",
+    photo: "giancarlo-caldesi.png",
+  },
+  {
+    id: 12,
+    name: "Katie Caldesi",
+    slug: "katie-caldesi",
+    title: "Cookbook author, cookery teacher and recipe developer",
+    description:
+      "Founded La Cucina Caldesi cookery school with Giancarlo. Her writing and teaching explore Italian food, food history and practical lower-carbohydrate cooking.",
+    initials: "KC",
+    photo: "katie-caldesi.png",
   },
   {
     id: 7,
