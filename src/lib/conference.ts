@@ -143,7 +143,8 @@ export const speakers2027: Speaker[] = [
     initials: "BB",
     photo: "ben-bikman.jpg",
   },
-  // Caldesi portraits from caldesi.com/about, padded to 3:4 so the frame is not cropped.
+  // Caldesi portraits from caldesi.com/about: frame removed, background and shoulders
+  // extended with AI image generation; the original photo inside the frame is unchanged.
   {
     id: 9,
     name: "Giancarlo Caldesi",
@@ -152,7 +153,7 @@ export const speakers2027: Speaker[] = [
     description:
       "Tuscan-born chef who runs restaurants and a cookery school with Katie. Putting his type 2 diabetes into remission helped inspire their books on lower-carbohydrate eating.",
     initials: "GC",
-    photo: "giancarlo-caldesi.png",
+    photo: "giancarlo-caldesi.jpg",
   },
   {
     id: 12,
@@ -162,7 +163,7 @@ export const speakers2027: Speaker[] = [
     description:
       "Founded La Cucina Caldesi cookery school with Giancarlo. Her writing and teaching explore Italian food, food history and practical lower-carbohydrate cooking.",
     initials: "KC",
-    photo: "katie-caldesi.png",
+    photo: "katie-caldesi.jpg",
   },
   {
     id: 7,
