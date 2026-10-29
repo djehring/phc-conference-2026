@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Castle, Clock, Heart, MapPin, PlayCircle, Store, Trees, Users, Utensils, Archive } from "lucide-react";
+import { ArrowRight, Calendar, Castle, ChefHat, Clock, Heart, MapPin, PlayCircle, Store, Trees, Users, Utensils, Archive } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 import AddToCalendarButton from "@/components/AddToCalendarButton";
 import TicketsSection from "@/components/TicketsSection";
@@ -282,6 +282,11 @@ export default function Home() {
                   icon: Trees,
                   title: "The river, the town and the outdoors",
                   text: "Riverside walks, parks and a historic market town to explore together.",
+                },
+                {
+                  icon: ChefHat,
+                  title: "Cookery masterclasses with Giancarlo and Katie Caldesi",
+                  text: "Italian cooking and practical lower-carbohydrate ideas for enjoyable, nourishing everyday meals, from the founders of La Cucina Caldesi cookery school.",
                 },
                 {
                   icon: Heart,

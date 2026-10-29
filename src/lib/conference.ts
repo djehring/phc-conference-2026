@@ -119,8 +119,20 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
  */
 // Confirmed by Steve Bennett, 18–19 Oct 2026: Ben Bikman, Richard Johnson,
 // Adrian Soto-Mota, David Unwin, Steve Bennett and David Jehring, with more to be
-// announced. Isabella Cooper added 22 Oct 2026 (David).
+// announced. Isabella Cooper added 22 Oct 2026 (David). Wafaa Abdel-Hadi, the
+// Caldesis, Glen Jeffery and Christopher Palmer added 29 Oct 2026 (David), with
+// bios and photos from the speaker research pack of that date.
 export const speakers2027: Speaker[] = [
+  {
+    id: 8,
+    name: "Dr Wafaa Abdel-Hadi",
+    slug: "wafaa-abdel-hadi",
+    title: "Clinical oncologist and functional medicine practitioner",
+    description:
+      "Founded AWARE Clinic in 2014 after 13 years in clinical oncology. Her work brings together oncology, nutrition and personalised lifestyle approaches.",
+    initials: "WA",
+    photo: "wafaa-abdel-hadi.jpg",
+  },
   {
     id: 1,
     name: "Professor Ben Bikman",
@@ -132,6 +144,16 @@ export const speakers2027: Speaker[] = [
     photo: "ben-bikman.jpg",
   },
   {
+    id: 9,
+    name: "Giancarlo & Katie Caldesi",
+    slug: "giancarlo-and-katie-caldesi",
+    title: "Chefs, cookbook authors and cookery teachers",
+    description:
+      "Bring Italian cooking to life through their restaurants, cookery school and books. After Giancarlo’s type 2 diabetes remission, they developed a series of lower-carbohydrate cookbooks.",
+    initials: "GK",
+    photo: "giancarlo-and-katie-caldesi.jpg",
+  },
+  {
     id: 7,
     name: "Dr Isabella D. Cooper",
     slug: "isabella-cooper",
@@ -140,6 +162,16 @@ export const speakers2027: Speaker[] = [
       "Leads the KetoSAge clinical trial on ageing, insulin and cancer risk, and founded the Forever Young Group research collaboration.",
     initials: "IC",
     photo: "isabella-cooper.jpg",
+  },
+  {
+    id: 10,
+    name: "Professor Glen Jeffery",
+    slug: "glen-jeffery",
+    title: "Professor of Neuroscience, UCL",
+    description:
+      "Researches vision, ageing and how light affects cellular energy production at UCL’s Institute of Ophthalmology, including the effects of red and near-infrared light on mitochondria.",
+    initials: "GJ",
+    photo: "glen-jeffery.jpg",
   },
   {
     id: 2,
@@ -153,6 +185,16 @@ export const speakers2027: Speaker[] = [
     links: {
       university: "https://som.cuanschutz.edu/Profiles/Faculty/Profile/9426",
     },
+  },
+  {
+    id: 11,
+    name: "Dr Christopher Palmer",
+    slug: "christopher-palmer",
+    title: "Assistant Professor of Psychiatry, Harvard Medical School",
+    description:
+      "Founded the Metabolic and Mental Health Program at McLean Hospital. His work explores metabolic approaches to psychiatric care, including ketogenic diets, and the brain energy theory of mental illness.",
+    initials: "CP",
+    photo: "christopher-palmer.jpg",
   },
   {
     id: 3,
