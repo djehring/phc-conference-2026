@@ -45,60 +45,64 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-phc-navy-dark via-phc-navy to-phc-navy px-4 py-16 text-white sm:py-24">
-        <img
-          src="/images/PHC_mark_reversed.svg"
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -bottom-16 w-72 opacity-[0.07] sm:w-[28rem]"
-        />
-        <div className="relative mx-auto max-w-6xl">
-          <Eyebrow light>{CONFERENCE_NAME}</Eyebrow>
-          <h1 className="font-heading text-4xl font-bold leading-tight sm:text-6xl">
-            {CONFERENCE_THEME}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90 sm:text-xl">{PROMISE_TEXT}</p>
+        <div className="relative mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-12">
+          <img
+            src="/images/conference-2027-badge.svg"
+            alt=""
+            aria-hidden="true"
+            width={600}
+            height={600}
+            className="mx-auto w-40 drop-shadow-xl sm:w-52 md:order-last md:w-72 lg:w-80"
+          />
+          <div>
+            <Eyebrow light>{CONFERENCE_NAME}</Eyebrow>
+            <h1 className="font-heading text-4xl font-bold leading-tight sm:text-6xl">
+              {CONFERENCE_THEME}
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg text-white/90 sm:text-xl">{PROMISE_TEXT}</p>
 
-          <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
-            <div className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-phc-cyan">When</p>
-              <p className="mt-1 font-heading text-lg font-semibold">{DATES_LABEL}</p>
-              <ul className="mt-1 space-y-0.5 text-sm text-white/90">
-                {DAYS.map((day) => (
-                  <li key={day.id}>
-                    {day.label.split(" ")[0]}: {day.start} to {day.end}
-                  </li>
-                ))}
-              </ul>
-              <AddToCalendarButton className="mt-3 text-white" />
+            <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
+              <div className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-phc-cyan">When</p>
+                <p className="mt-1 font-heading text-lg font-semibold">{DATES_LABEL}</p>
+                <ul className="mt-1 space-y-0.5 text-sm text-white/90">
+                  {DAYS.map((day) => (
+                    <li key={day.id}>
+                      {day.label.split(" ")[0]}: {day.start} to {day.end}
+                    </li>
+                  ))}
+                </ul>
+                <AddToCalendarButton className="mt-3 text-white" />
+              </div>
+              <div className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-phc-cyan">Where</p>
+                <p className="mt-1 font-heading text-lg font-semibold">
+                  {VENUE.name}, {VENUE.town}
+                </p>
+                <p className="mt-1 text-sm text-white/90">
+                  Conference dinner on the Saturday evening
+                </p>
+                <a
+                  href={VENUE.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 rounded text-sm font-semibold underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
+                >
+                  <MapPin className="h-4 w-4" aria-hidden="true" />
+                  Map<span className="sr-only"> of {VENUE.name} (opens in a new tab)</span>
+                </a>
+              </div>
             </div>
-            <div className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-phc-cyan">Where</p>
-              <p className="mt-1 font-heading text-lg font-semibold">
-                {VENUE.name}, {VENUE.town}
-              </p>
-              <p className="mt-1 text-sm text-white/90">
-                Conference dinner on the Saturday evening
-              </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <BookingButton />
               <a
-                href={VENUE.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 rounded text-sm font-semibold underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
+                href="#family"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white px-6 py-3 font-heading text-sm font-bold text-white transition-colors hover:bg-white hover:text-phc-navy sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
               >
-                <MapPin className="h-4 w-4" aria-hidden="true" />
-                Map<span className="sr-only"> of {VENUE.name} (opens in a new tab)</span>
+                Plan a family weekend
               </a>
             </div>
-          </div>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <BookingButton />
-            <a
-              href="#family"
-              className="inline-flex items-center justify-center rounded-full border-2 border-white px-6 py-3 font-heading text-sm font-bold text-white transition-colors hover:bg-white hover:text-phc-navy sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
-            >
-              Plan a family weekend
-            </a>
           </div>
         </div>
       </section>

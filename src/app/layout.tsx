@@ -17,14 +17,14 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 });
 
-const SITE_TITLE = "PHC Conference 2027: Prevent the preventable";
+const SITE_TITLE = "PHC Conference 2027: Prevent the preventable, reverse the reversible";
 const SITE_DESCRIPTION =
   "The Preventive Health Collaboration conference on preventing the diseases of modern life. Warwick Hall, Warwick, Saturday 10 and Sunday 11 April 2027. Tickets on sale 11 November 2026.";
 const OG_IMAGE = {
   url: "/images/og-conference-2027.png",
   width: 1200,
   height: 630,
-  alt: "PHC Conference 2027: Prevent the preventable. Warwick Hall, Warwick, 10 and 11 April 2027. Preventive Health Collaboration.",
+  alt: "PHC Conference 2027: Prevent the preventable, reverse the reversible. Warwick Hall, Warwick, 10 and 11 April 2027. Preventive Health Collaboration.",
 };
 
 export const metadata: Metadata = {

@@ -9,7 +9,7 @@
 import type { Speaker } from "@/types";
 
 export const CONFERENCE_NAME = "PHC Conference 2027";
-export const CONFERENCE_THEME = "Prevent the preventable";
+export const CONFERENCE_THEME = "Prevent the preventable, reverse the reversible";
 
 export const VENUE = {
   name: "Warwick Hall",
