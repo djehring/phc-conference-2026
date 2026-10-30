@@ -119,9 +119,9 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
  */
 // Confirmed by Steve Bennett, 18–19 Oct 2026: Ben Bikman, Richard Johnson,
 // Adrian Soto-Mota, David Unwin, Steve Bennett and David Jehring, with more to be
-// announced. Isabella Cooper added 22 Oct 2026 (David). Wafaa Abdel-Hadi, Glen
-// Jeffery and Christopher Palmer added 29 Oct 2026 (David), with bios and photos
-// from the speaker research pack of that date.
+// announced. Wafaa Abdel-Hadi, Glen Jeffery and Christopher Palmer added 29 Oct
+// 2026 (David), with bios and photos from the speaker research pack of that date.
+// Isabella Cooper removed 30 Oct 2026 (David): not yet confirmed.
 export const speakers2027: Speaker[] = [
   {
     id: 8,
@@ -142,16 +142,6 @@ export const speakers2027: Speaker[] = [
       "Studies insulin, insulin resistance and ketones, and their role in obesity and chronic disease. Author of Why We Get Sick.",
     initials: "BB",
     photo: "ben-bikman.jpg",
-  },
-  {
-    id: 7,
-    name: "Dr Isabella D. Cooper",
-    slug: "isabella-cooper",
-    title: "Biochemistry and medical pathophysiology scientist, University of Westminster",
-    description:
-      "Leads the KetoSAge clinical trial on ageing, insulin and cancer risk, and founded the Forever Young Group research collaboration.",
-    initials: "IC",
-    photo: "isabella-cooper.jpg",
   },
   {
     id: 10,
