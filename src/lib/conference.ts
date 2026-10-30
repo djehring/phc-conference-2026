@@ -119,9 +119,9 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
  */
 // Confirmed by Steve Bennett, 18–19 Oct 2026: Ben Bikman, Richard Johnson,
 // Adrian Soto-Mota, David Unwin, Steve Bennett and David Jehring, with more to be
-// announced. Isabella Cooper added 22 Oct 2026 (David). Wafaa Abdel-Hadi, the
-// Caldesis, Glen Jeffery and Christopher Palmer added 29 Oct 2026 (David), with
-// bios and photos from the speaker research pack of that date.
+// announced. Isabella Cooper added 22 Oct 2026 (David). Wafaa Abdel-Hadi, Glen
+// Jeffery and Christopher Palmer added 29 Oct 2026 (David), with bios and photos
+// from the speaker research pack of that date.
 export const speakers2027: Speaker[] = [
   {
     id: 8,
@@ -142,28 +142,6 @@ export const speakers2027: Speaker[] = [
       "Studies insulin, insulin resistance and ketones, and their role in obesity and chronic disease. Author of Why We Get Sick.",
     initials: "BB",
     photo: "ben-bikman.jpg",
-  },
-  // Caldesi portraits from caldesi.com/about: frame removed, background and shoulders
-  // extended with AI image generation; the original photo inside the frame is unchanged.
-  {
-    id: 9,
-    name: "Giancarlo Caldesi",
-    slug: "giancarlo-caldesi",
-    title: "Chef, restaurateur and cookery teacher",
-    description:
-      "Tuscan-born chef who runs restaurants and a cookery school with Katie. Putting his type 2 diabetes into remission helped inspire their books on lower-carbohydrate eating.",
-    initials: "GC",
-    photo: "giancarlo-caldesi.jpg",
-  },
-  {
-    id: 12,
-    name: "Katie Caldesi",
-    slug: "katie-caldesi",
-    title: "Cookbook author, cookery teacher and recipe developer",
-    description:
-      "Founded La Cucina Caldesi cookery school with Giancarlo. Her writing and teaching explore Italian food, food history and practical lower-carbohydrate cooking.",
-    initials: "KC",
-    photo: "katie-caldesi.jpg",
   },
   {
     id: 7,
@@ -253,6 +231,29 @@ export const speakers2027: Speaker[] = [
 // ---------------------------------------------
 // Family weekend (David's proposal, 30 Sep 2026)
 // ---------------------------------------------
+
+/**
+ * Hosts of the cookery masterclasses in the family weekend section. They are
+ * not conference speakers, so they are kept out of speakers2027 (David, 30 Oct 2026).
+ * Portraits from caldesi.com/about: frame removed, background and shoulders
+ * extended with AI image generation; the original photo inside the frame is unchanged.
+ */
+export const COOKERY_HOSTS: { name: string; title: string; description: string; photo: string }[] = [
+  {
+    name: "Giancarlo Caldesi",
+    title: "Chef, restaurateur and cookery teacher",
+    description:
+      "Tuscan-born chef who runs restaurants and a cookery school with Katie. Putting his type 2 diabetes into remission helped inspire their books on lower-carbohydrate eating.",
+    photo: "/images/speaker-photos/giancarlo-caldesi.jpg",
+  },
+  {
+    name: "Katie Caldesi",
+    title: "Cookbook author, cookery teacher and recipe developer",
+    description:
+      "Founded La Cucina Caldesi cookery school with Giancarlo. Her writing and teaching explore Italian food, food history and practical lower-carbohydrate cooking.",
+    photo: "/images/speaker-photos/katie-caldesi.jpg",
+  },
+];
 
 /**
  * Photos of Warwick Castle and the town for the family weekend section.

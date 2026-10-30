@@ -9,6 +9,7 @@ import { CONTACT_URL, PROMISE_TEXT, VOLUNTEER_URL, YOUTUBE_URL } from "@/lib/bra
 import {
   AREA_STYLES,
   CONFERENCE_NAME,
+  COOKERY_HOSTS,
   CONFERENCE_THEME,
   DATES_LABEL,
   DAYS,
@@ -284,11 +285,6 @@ export default function Home() {
                   text: "Riverside walks, parks and a historic market town to explore together.",
                 },
                 {
-                  icon: ChefHat,
-                  title: "Cookery masterclasses with Giancarlo and Katie Caldesi",
-                  text: "Italian cooking and practical lower-carbohydrate ideas for enjoyable, nourishing everyday meals, from the founders of La Cucina Caldesi cookery school.",
-                },
-                {
                   icon: Heart,
                   title: "Time together in the evenings",
                   text: "Delegates, partners and children, all welcome when the day’s sessions end.",
@@ -310,6 +306,45 @@ export default function Home() {
               })}
             </ul>
           </div>
+
+          {/* Cookery masterclasses: the Caldesis host these and are not conference speakers */}
+          {COOKERY_HOSTS.length > 0 && (
+            <div className="mt-10 grid gap-8 rounded-2xl border border-phc-navy/15 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center">
+              <div>
+                <ChefHat className="mb-4 h-7 w-7 text-phc-navy" aria-hidden="true" />
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                  Family weekend
+                </p>
+                <h3 className="mt-1 font-heading text-2xl font-bold text-phc-navy">
+                  Cookery masterclasses with Giancarlo and Katie Caldesi
+                </h3>
+                <p className="mt-3 leading-relaxed text-dark-grey">
+                  Italian cooking and practical lower-carbohydrate ideas for enjoyable, nourishing
+                  everyday meals, from the founders of La Cucina Caldesi cookery school.
+                </p>
+              </div>
+              <ul className="grid gap-4 sm:grid-cols-2" aria-label="Masterclass hosts">
+                {COOKERY_HOSTS.map((host) => (
+                  <li key={host.name} className="overflow-hidden rounded-xl bg-off-white">
+                    <img
+                      src={host.photo}
+                      alt={host.name}
+                      className="aspect-[4/3] w-full object-cover object-[50%_25%]"
+                      loading="lazy"
+                    />
+                    <div className="p-4">
+                      <p className="text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                        Masterclass host
+                      </p>
+                      <h4 className="mt-1 font-heading font-bold text-phc-navy">{host.name}</h4>
+                      <p className="text-sm font-semibold text-phc-navy">{host.title}</p>
+                      <p className="mt-2 text-xs text-dark-grey">{host.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Photo strip: hidden until licensed Warwick photos are added */}
           {WARWICK_IMAGES.length > 0 && (
