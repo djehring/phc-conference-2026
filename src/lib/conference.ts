@@ -84,20 +84,22 @@ export type TicketOption = {
  */
 // From Steve's price table, "ticket prices" email of 30 Oct 2026 (14:46), which
 // he kept after trustee comments that day. Members, Ambassadors, Associates and
-// course participants get £15 off every ticket.
+// course participants get 20% off every ticket, capped at £15 so Gift Aid can
+// still be claimed on their membership (Steve, 31 Oct 2026). Members' prices
+// are rounded down to whole pounds.
 export const TICKET_OPTIONS: TicketOption[] = [
   { format: "In person", length: "2 days", earlyBird: "£99", earlyBirdMembers: "£84", standard: "£149", standardMembers: "£134" },
-  { format: "In person", length: "1 day", earlyBird: "£59", earlyBirdMembers: "£44", standard: "£89", standardMembers: "£74" },
-  { format: "Online", length: "2 days", earlyBird: "£59", earlyBirdMembers: "£44", standard: "£79", standardMembers: "£64" },
-  { format: "Online", length: "1 day", earlyBird: "£35", earlyBirdMembers: "£20", standard: "£45", standardMembers: "£30" },
+  { format: "In person", length: "1 day", earlyBird: "£59", earlyBirdMembers: "£47", standard: "£89", standardMembers: "£74" },
+  { format: "Online", length: "2 days", earlyBird: "£59", earlyBirdMembers: "£47", standard: "£79", standardMembers: "£64" },
+  { format: "Online", length: "1 day", earlyBird: "£35", earlyBirdMembers: "£28", standard: "£45", standardMembers: "£36" },
 ];
 
 export const EARLY_BIRD_UNTIL = "31 January 2027";
 
 export const TICKET_NOTES: { title: string; text: string; highlight?: boolean }[] = [
   {
-    title: "£15 off",
-    text: "every ticket for Members, Ambassadors, Associates and course participants",
+    title: "20% off",
+    text: "every ticket, up to £15, for Members, Ambassadors, Associates and course participants",
     highlight: true,
   },
   { title: "Early bird", text: `until ${EARLY_BIRD_UNTIL}` },

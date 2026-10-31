@@ -41,8 +41,8 @@ export default function Terms() {
               <li>Full payment is required at the time of booking</li>
               <li>Early bird prices are available until {EARLY_BIRD_UNTIL}</li>
               <li>
-                Members, Ambassadors, Associates and course participants receive £15 off every
-                ticket
+                Members, Ambassadors, Associates and course participants receive 20% off every
+                ticket, up to a maximum of £15 per ticket
               </li>
               <li>The conference dinner on Saturday evening is booked and paid for separately</li>
               <li>All prices are in GBP and include VAT where applicable</li>
