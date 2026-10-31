@@ -75,9 +75,11 @@ export default function SpeakersSection({
                   <h3 className="font-heading font-bold text-lg text-phc-dark mb-1">
                     {speaker.name}
                   </h3>
-                  <p className="text-sm text-phc-navy font-semibold mb-2">
-                    {speaker.title}
-                  </p>
+                  {speaker.title && (
+                    <p className="text-sm text-phc-navy font-semibold mb-2">
+                      {speaker.title}
+                    </p>
+                  )}
                   <p className="text-xs text-dark-grey flex-1">
                     {speaker.description}
                   </p>

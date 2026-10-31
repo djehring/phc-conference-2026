@@ -147,6 +147,8 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
 // announced. Wafaa Abdel-Hadi, Glen Jeffery and Christopher Palmer added 29 Oct
 // 2026 (David), with bios and photos from the speaker research pack of that date.
 // Isabella Cooper removed 30 Oct 2026 (David): not yet confirmed.
+// David Cavan agreed to speak, 31 Oct 2026 (David). No photo, title or bio yet:
+// his card shows initials until he supplies them.
 export const speakers2027: Speaker[] = [
   {
     id: 8,
@@ -167,6 +169,14 @@ export const speakers2027: Speaker[] = [
       "Studies insulin, insulin resistance and ketones, and their role in obesity and chronic disease. Author of Why We Get Sick.",
     initials: "BB",
     photo: "ben-bikman.jpg",
+  },
+  {
+    id: 12,
+    name: "Dr David Cavan",
+    slug: "david-cavan",
+    title: "",
+    description: "",
+    initials: "DC",
   },
   {
     id: 10,
