@@ -17,7 +17,6 @@ import {
   DINNER_BOOKING_URL,
   HAS_PROGRAMME,
   PROGRAMME,
-  TICKET_PRICES,
   VENUE,
   WARWICK_IMAGES,
   speakers2027,
@@ -26,8 +25,6 @@ import {
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
-
-const confirmedPrices = TICKET_PRICES.filter((p) => p.price.trim() !== "");
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
@@ -130,52 +127,40 @@ export default function Home() {
             </p>
           </div>
 
-          {confirmedPrices.length > 0 ? (
-            <ul className="grid gap-3 sm:grid-cols-2" aria-label="Ticket prices">
-              {confirmedPrices.map((p) => (
-                <li key={p.label} className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
-                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">{p.label}</p>
-                  <p className="mt-1 font-heading text-3xl font-bold text-phc-navy">{p.price}</p>
-                  <p className="mt-1 text-sm text-dark-grey">{p.note}</p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <dl className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
-                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
-                  <Calendar className="h-4 w-4" aria-hidden="true" /> When
-                </dt>
-                <dd className="mt-1 font-heading font-semibold text-phc-navy">10 and 11 April 2027</dd>
-              </div>
-              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
-                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
-                  <MapPin className="h-4 w-4" aria-hidden="true" /> Where
-                </dt>
-                <dd className="mt-1 font-heading font-semibold text-phc-navy">
-                  {VENUE.name}, {VENUE.town}
-                </dd>
-              </div>
-              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
-                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
-                  <Utensils className="h-4 w-4" aria-hidden="true" /> Dinner
-                </dt>
-                <dd className="mt-1 font-heading font-semibold text-phc-navy">
-                  Saturday evening, {DINNER.time}
-                </dd>
-              </div>
-              <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
-                <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
-                  <Clock className="h-4 w-4" aria-hidden="true" /> Tickets
-                </dt>
-                <dd className="mt-1 font-heading font-semibold text-phc-navy">
-                  <a href="#tickets" className="underline underline-offset-2 hover:no-underline">
-                    On sale 11 November 2026
-                  </a>
-                </dd>
-              </div>
-            </dl>
-          )}
+          <dl className="grid gap-3 sm:grid-cols-2">
+            <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+              <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                <Calendar className="h-4 w-4" aria-hidden="true" /> When
+              </dt>
+              <dd className="mt-1 font-heading font-semibold text-phc-navy">10 and 11 April 2027</dd>
+            </div>
+            <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+              <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                <MapPin className="h-4 w-4" aria-hidden="true" /> Where
+              </dt>
+              <dd className="mt-1 font-heading font-semibold text-phc-navy">
+                {VENUE.name}, {VENUE.town}
+              </dd>
+            </div>
+            <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+              <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                <Utensils className="h-4 w-4" aria-hidden="true" /> Dinner
+              </dt>
+              <dd className="mt-1 font-heading font-semibold text-phc-navy">
+                Saturday evening, {DINNER.time}
+              </dd>
+            </div>
+            <div className="rounded-xl border border-phc-navy/15 bg-white p-5 shadow-sm">
+              <dt className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                <Clock className="h-4 w-4" aria-hidden="true" /> Tickets
+              </dt>
+              <dd className="mt-1 font-heading font-semibold text-phc-navy">
+                <a href="#tickets" className="underline underline-offset-2 hover:no-underline">
+                  On sale 11 November 2026
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -410,6 +395,15 @@ export default function Home() {
                 <div>
                   <dt className="sr-only">Venue</dt>
                   <dd className="font-semibold">{DINNER.venue}</dd>
+                </div>
+              </div>
+            )}
+            {DINNER.price && (
+              <div className="flex items-start gap-3">
+                <Utensils className="mt-0.5 h-5 w-5 shrink-0 text-phc-cyan" aria-hidden="true" />
+                <div>
+                  <dt className="sr-only">Price</dt>
+                  <dd className="font-semibold">{DINNER.price} per person, booked separately</dd>
                 </div>
               </div>
             )}
