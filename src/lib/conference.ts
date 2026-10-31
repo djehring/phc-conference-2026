@@ -149,6 +149,7 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
 // Isabella Cooper removed 30 Oct 2026 (David): not yet confirmed.
 // David Cavan agreed to speak, 31 Oct 2026 (David). No photo, title or bio yet:
 // his card shows initials until he supplies them.
+// Steve Bennett removed from the speaker list, 31 Oct 2026 (David).
 export const speakers2027: Speaker[] = [
   {
     id: 8,
@@ -230,16 +231,6 @@ export const speakers2027: Speaker[] = [
       "Founding member of PHC whose work at Norwood Surgery in Southport has helped many patients put type 2 diabetes into remission.",
     initials: "DU",
     photo: "david-unwin.png",
-  },
-  {
-    id: 5,
-    name: "Steve Bennett",
-    slug: "steve-bennett",
-    title: "Chief Executive, Preventive Health Collaboration",
-    description:
-      "Turned his own health around after living with obesity for over 25 years. Author of Primal Cure and Fat & Furious.",
-    initials: "SB",
-    photo: "steve-bennett.png",
   },
   {
     id: 6,
