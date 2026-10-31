@@ -5,9 +5,8 @@ import { Calendar, Clock, Coffee, Utensils, Users, Mic, ChevronRight, ArrowLeft 
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { scheduleData } from "@/lib/schedule-data";
-import { getSpeakerBySlug } from "@/lib/utils";
-import { conferenceInfo } from "@/lib/data";
+import { scheduleData } from "@/lib/2026/schedule-data";
+import { getSpeakerBySlug } from "@/lib/2026/utils";
 import type { ScheduleSession } from "@/types";
 
 function SessionIcon({ type }: { type: ScheduleSession["type"] }) {
@@ -66,7 +65,7 @@ function SpeakerPhoto({ slug, className = "" }: { slug: string; className?: stri
   if (!speaker) return null;
   return (
     <Link
-      href={`/speakers/${speaker.slug}/`}
+      href={`/2026/speakers/${speaker.slug}/`}
       className={`relative block overflow-hidden rounded-lg flex-shrink-0 group/photo ${className}`}
     >
       {speaker.photo ? (
@@ -91,7 +90,7 @@ function SpeakerName({ slug }: { slug: string }) {
   if (!speaker) return null;
   return (
     <Link
-      href={`/speakers/${speaker.slug}/`}
+      href={`/2026/speakers/${speaker.slug}/`}
       className="text-phc-light hover:text-phc-dark hover:underline transition-colors font-medium text-sm"
     >
       {speaker.name}
@@ -202,7 +201,7 @@ function SessionCard({ session, index }: { session: ScheduleSession; index: numb
 
           {session.type === "dinner" && (
             <Link
-              href="/dinner/"
+              href="/2026/dinner/"
               className="inline-flex items-center text-sm text-phc-light hover:text-phc-dark mt-2 font-medium transition-colors"
             >
               View dinner details <ChevronRight className="w-4 h-4 ml-1" />
@@ -255,11 +254,11 @@ export default function SchedulePage() {
             transition={{ duration: 0.5 }}
           >
             <Link
-              href="/"
+              href="/2026/"
               className="inline-flex items-center text-white/80 hover:text-white transition-colors mb-6"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Conference
+              Back to PHC Conference 2026
             </Link>
           </motion.div>
 
@@ -272,11 +271,11 @@ export default function SchedulePage() {
             {/* PHC Logo */}
             <div className="mb-6">
               <Image
-                src="/images/PHC_logo_white_text.png"
-                alt="Public Health Collaboration"
-                width={180}
-                height={80}
-                className="mx-auto h-14 sm:h-16 w-auto"
+                src="/images/PHC_logo_reversed.svg"
+                alt="Preventive Health Collaboration"
+                width={830}
+                height={180}
+                className="mx-auto h-12 sm:h-14 w-auto"
               />
             </div>
             <div className="flex items-center justify-center mb-4">
@@ -286,13 +285,13 @@ export default function SchedulePage() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
-              Conference Schedule
+              2026 Conference Schedule
             </h1>
             <p className="text-lg text-white/90 max-w-2xl mx-auto mb-4">
               Two days of world-class speakers, panels, and networking at The Light, Euston, London.
             </p>
-            <p className="text-sm text-white/60">
-              Please note: This schedule is subject to change.
+            <p className="text-sm text-white/80">
+              Saturday 16 and Sunday 17 May 2026
             </p>
           </motion.div>
         </div>
@@ -348,23 +347,18 @@ export default function SchedulePage() {
             transition={{ duration: 0.6 }}
             className="text-center mt-12 space-y-4"
           >
-            <p className="text-sm text-gray-500 italic">
-              Please note: This schedule is subject to change.
-            </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={conferenceInfo.ticketUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 bg-phc-light text-white font-bold rounded-full hover:shadow-2xl transition-all hover:scale-105"
-              >
-                Get Your Tickets Now
-              </a>
               <Link
                 href="/"
+                className="inline-block px-8 py-4 bg-phc-navy text-white font-bold rounded-full hover:bg-phc-navy-dark transition-colors"
+              >
+                See the 2027 conference
+              </Link>
+              <Link
+                href="/2026/"
                 className="inline-flex items-center px-8 py-4 bg-white border-2 border-phc-dark text-phc-dark font-semibold rounded-full hover:bg-phc-dark hover:text-white transition-colors"
               >
-                Back to Conference
+                Back to PHC Conference 2026
               </Link>
             </div>
           </motion.div>

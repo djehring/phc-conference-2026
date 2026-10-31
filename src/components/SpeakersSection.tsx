@@ -3,11 +3,27 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { speakers } from "@/lib/data";
 import { ExternalLink, ChevronRight } from "lucide-react";
+import type { Speaker } from "@/types";
 
-export default function SpeakersSection() {
+interface SpeakersSectionProps {
+  speakers: Speaker[];
+  /** Base path for profile pages, e.g. "/2026/speakers". Omit if there are no profile pages. */
+  profileBasePath?: string;
+  heading?: string;
+  intro?: string;
+}
+
+/** Speaker cards. Renders nothing when the list is empty (no placeholder cards). */
+export default function SpeakersSection({
+  speakers,
+  profileBasePath,
+  heading = "Our speakers",
+  intro,
+}: SpeakersSectionProps) {
   const router = useRouter();
+
+  if (speakers.length === 0) return null;
 
   return (
     <section className="relative pt-20 pb-8 px-4">
@@ -20,11 +36,9 @@ export default function SpeakersSection() {
           className="text-center mb-16"
         >
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-phc-dark mb-6">
-            Our Speakers
+            {heading}
           </h2>
-          <p className="text-lg text-dark-grey max-w-3xl mx-auto">
-            Learn from world-renowned experts in metabolic health, nutrition science, and lifestyle medicine
-          </p>
+          {intro && <p className="text-lg text-dark-grey max-w-3xl mx-auto">{intro}</p>}
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -35,8 +49,8 @@ export default function SpeakersSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group cursor-pointer"
-              onClick={() => router.push(`/speakers/${speaker.slug}/`)}
+              className={`group ${profileBasePath ? "cursor-pointer" : ""}`}
+              onClick={profileBasePath ? () => router.push(`${profileBasePath}/${speaker.slug}/`) : undefined}
             >
               <div className="bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-phc-light/20 hover:border-phc-light/40 hover:-translate-y-1 h-full flex flex-col">
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-white">
@@ -61,9 +75,11 @@ export default function SpeakersSection() {
                   <h3 className="font-heading font-bold text-lg text-phc-dark mb-1">
                     {speaker.name}
                   </h3>
-                  <p className="text-sm text-phc-cyan font-semibold mb-2">
-                    {speaker.title}
-                  </p>
+                  {speaker.title && (
+                    <p className="text-sm text-phc-navy font-semibold mb-2">
+                      {speaker.title}
+                    </p>
+                  )}
                   <p className="text-xs text-dark-grey flex-1">
                     {speaker.description}
                   </p>
@@ -75,17 +91,24 @@ export default function SpeakersSection() {
                           href={url as string}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-phc-cyan hover:text-phc-cyan-light transition-all hover:scale-110"
+                          className="text-phc-navy hover:text-phc-cyan transition-all hover:scale-110"
                           title={`View ${key}`}
+                          aria-label={`${speaker.name}: ${key} (opens in a new tab)`}
                           onClick={(e) => e.stopPropagation()}
                         >
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       ))}
                     </div>
-                    <span className="text-xs text-phc-cyan font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      View Profile <ChevronRight className="w-3 h-3 ml-0.5" />
-                    </span>
+                    {profileBasePath && (
+                      <a
+                        href={`${profileBasePath}/${speaker.slug}/`}
+                        className="text-xs text-phc-navy font-medium flex items-center underline-offset-2 hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        View profile<span className="sr-only">: {speaker.name}</span> <ChevronRight className="w-3 h-3 ml-0.5" aria-hidden="true" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

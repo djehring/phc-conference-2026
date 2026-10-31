@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, Utensils, Wine, ExternalLink, Ticket, Users } from "lucide-react";
+import { Calendar, Clock, MapPin, Utensils, Wine, ExternalLink, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { conferenceInfo } from "@/lib/data";
 
 export default function DinnerPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-phc-dark to-phc-light overflow-hidden">
         {/* Background image overlay */}
@@ -45,20 +44,11 @@ export default function DinnerPage() {
               to support the Public Health Collaboration&apos;s mission.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={conferenceInfo.ticketUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark font-bold rounded-full hover:scale-105 transition-transform shadow-lg"
-              >
-                <Ticket className="w-5 h-5 mr-2" />
-                Get Dinner Tickets
-              </a>
               <Link
-                href="/"
+                href="/2026/"
                 className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/30 transition-colors"
               >
-                Back to Conference
+                Back to PHC Conference 2026
               </Link>
             </div>
           </motion.div>
@@ -258,29 +248,19 @@ export default function DinnerPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-phc-dark to-phc-light">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+            Join us in 2027
+          </h2>
+          <p className="text-white/90 text-lg max-w-xl mx-auto mb-8">
+            The 2027 conference dinner is on Saturday 10 April 2027, during PHC Conference 2027
+            at Warwick Hall, Warwick.
+          </p>
+          <Link
+            href="/#dinner"
+            className="inline-flex items-center px-10 py-4 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light transition-colors shadow-lg text-lg"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Secure Your Place
-            </h2>
-            <p className="text-white/90 text-lg max-w-xl mx-auto mb-8">
-              With only 100 public tickets available, don&apos;t miss this exclusive evening.
-              Book your dinner ticket today!
-            </p>
-            <a
-              href={conferenceInfo.ticketUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark font-bold rounded-full hover:scale-105 transition-transform shadow-lg text-lg"
-            >
-              <Ticket className="w-6 h-6 mr-2" />
-              Get Your Dinner Tickets
-            </a>
-          </motion.div>
+            See the 2027 conference
+          </Link>
         </div>
       </section>
     </div>

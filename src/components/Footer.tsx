@@ -1,7 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import {
+  BRAND_NAME,
+  CONTACT_EMAIL,
+  CONTACT_URL,
+  LEGAL_LINE,
+  MAIN_SITE_URL,
+  MEMBERSHIP_URL,
+  PROMISE_TEXT,
+  WHAT_WE_DO,
+} from '@/lib/brand';
 import { useState, useEffect } from 'react';
 
 export default function Footer() {
@@ -69,63 +78,51 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-phc-dark text-white py-12">
+      <footer className="bg-phc-navy text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Logo and Description */}
             <div className="md:col-span-1">
-              <Link href="https://phcuk.org/" target="_blank" rel="noopener">
-                <Image 
-                  src="/images/PHC_logo_white_text.png" 
-                  alt="Public Health Collaboration" 
-                  width={180} 
-                  height={80}
-                  className="mb-4 h-auto"
+              <a href={MAIN_SITE_URL} className="inline-block">
+                <img
+                  src="/images/PHC_logo_reversed.svg"
+                  alt={`${BRAND_NAME} (phcuk.org)`}
+                  width={830}
+                  height={180}
+                  className="mb-4 h-auto w-full max-w-[220px]"
                 />
-              </Link>
-              <p className="text-sm text-gray-300">
-                Prevention starts with knowledge.
-              </p>
+              </a>
+              <p className="text-sm text-white/80">{PROMISE_TEXT}</p>
+              <p className="mt-2 text-sm text-white/80">{WHAT_WE_DO}</p>
             </div>
 
-            {/* Quick Links */}
+            {/* Conference */}
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <h2 className="font-heading font-semibold mb-4">PHC Conference 2027</h2>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/#about" className="hover:text-phc-light transition-colors">About</Link></li>
-                <li><Link href="/#speakers" className="hover:text-phc-light transition-colors">Speakers</Link></li>
-                <li><Link href="/schedule/" className="hover:text-phc-light transition-colors">Schedule</Link></li>
-                <li><Link href="/#venue" className="hover:text-phc-light transition-colors">Venue</Link></li>
-                <li><Link href="/dinner" className="hover:text-phc-light transition-colors">Dinner</Link></li>
-                <li><Link href="/exhibitors" className="hover:text-phc-light transition-colors">Exhibitors</Link></li>
-                <li><Link href="/#tickets" className="hover:text-phc-light transition-colors">Tickets</Link></li>
+                <li><Link href="/#family" className="hover:text-phc-cyan transition-colors">Family weekend</Link></li>
+                <li><Link href="/#dinner" className="hover:text-phc-cyan transition-colors">Conference dinner</Link></li>
+                <li><Link href="/#tickets" className="hover:text-phc-cyan transition-colors">Tickets</Link></li>
+                <li><Link href="/#get-involved" className="hover:text-phc-cyan transition-colors">Exhibit or volunteer</Link></li>
+                <li><Link href="/2026/" className="hover:text-phc-cyan transition-colors">2026 conference archive</Link></li>
               </ul>
             </div>
 
             {/* Resources */}
             <div>
-              <h4 className="font-semibold mb-4">Resources</h4>
+              <h2 className="font-heading font-semibold mb-4">{BRAND_NAME}</h2>
               <ul className="space-y-2 text-sm">
-                <li><Link href="https://phcuk.org/" target="_blank" className="hover:text-phc-light transition-colors">PHC Website</Link></li>
-                <li><Link href="https://phcuk.org/membership/" target="_blank" className="hover:text-phc-light transition-colors">Become a Member</Link></li>
+                <li><a href={MAIN_SITE_URL} className="hover:text-phc-cyan transition-colors">Visit phcuk.org</a></li>
+                <li><a href={MEMBERSHIP_URL} className="hover:text-phc-cyan transition-colors">Become a member</a></li>
+                <li><a href={CONTACT_URL} className="hover:text-phc-cyan transition-colors">Contact us</a></li>
+                <li><Link href="/privacy-policy/" className="hover:text-phc-cyan transition-colors">Privacy policy</Link></li>
+                <li><Link href="/terms/" className="hover:text-phc-cyan transition-colors">Terms and conditions</Link></li>
                 <li>
-                  <a 
-                    href="https://forms.office.com/e/LTaJrbkxmG" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-phc-light transition-colors"
-                  >
-                    Request Exhibitor Brochure
-                  </a>
-                </li>
-                <li><Link href="/privacy-policy" className="hover:text-phc-light transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-phc-light transition-colors">Terms & Conditions</Link></li>
-                <li>
-                  <button 
+                  <button
                     onClick={() => setShowCookieSettings(true)}
-                    className="hover:text-phc-light transition-colors text-left"
+                    className="hover:text-phc-cyan transition-colors text-left"
                   >
-                    Cookie Settings
+                    Cookie settings
                   </button>
                 </li>
               </ul>
@@ -133,7 +130,7 @@ export default function Footer() {
 
             {/* Contact & Social */}
             <div>
-              <h4 className="font-semibold mb-4">Connect With Us</h4>
+              <h2 className="font-heading font-semibold mb-4">Connect with us</h2>
               <div className="flex gap-3 mb-4">
                 <a 
                   href="https://x.com/PHCukorg" 
@@ -191,16 +188,14 @@ export default function Footer() {
                   </svg>
                 </a>
               </div>
-              <p className="text-sm text-gray-300">
-                Email: <a href="mailto:info@phcuk.org" className="hover:text-phc-light transition-colors">info@phcuk.org</a>
+              <p className="text-sm text-white/80">
+                Email: <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-phc-cyan transition-colors">{CONTACT_EMAIL}</a>
               </p>
             </div>
           </div>
 
           <div className="border-t border-white/10 pt-8 text-center">
-            <p className="text-sm text-gray-300">
-              © 2025 Public Health Collaboration. Prevention starts with knowledge.
-            </p>
+            <p className="text-sm text-white/80">{LEGAL_LINE}</p>
           </div>
         </div>
       </footer>
@@ -213,7 +208,7 @@ export default function Footer() {
               <div className="flex-1">
                 <h3 className="font-semibold text-gray-900 mb-1">Cookie Preferences</h3>
                 <p className="text-sm text-gray-600">
-                  We use cookies to improve your experience and analyze site traffic.{' '}
+                  We use cookies to improve your experience and analyse site traffic.{' '}
                   <Link href="/privacy-policy#cookies" className="text-phc-dark hover:underline">
                     Learn more
                   </Link>
