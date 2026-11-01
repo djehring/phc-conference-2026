@@ -44,8 +44,8 @@ export const DINNER: { label: string; time: string; venue: string; price: string
   time: "19:00",
   /** Confirmed by Steve, 19 Oct 2026: same venue as the conference. */
   venue: "Warwick Hall, Warwick",
-  /** Confirmed by Steve, 19 Oct 2026. Booked separately. Empty = hidden. */
-  price: "£89",
+  /** Steve's "ticket prices" email of 1 Nov 2026 (19:24). Booked separately. Empty = hidden. */
+  price: "£79",
 };
 
 // ---------------------------------------------
@@ -82,24 +82,22 @@ export type TicketOption = {
  * Ticket prices. The price table stays hidden while this list is empty.
  * Leave empty until the trustees confirm prices.
  */
-// From Steve's price table, "ticket prices" email of 30 Oct 2026 (14:46), which
-// he kept after trustee comments that day. Members, Ambassadors, Associates and
-// course participants get 20% off every ticket, capped at £15 so Gift Aid can
-// still be claimed on their membership (Steve, 31 Oct 2026). Members' prices
-// are rounded down to whole pounds.
+// From Steve's revised price table, "ticket prices" email of 1 Nov 2026 (19:24),
+// after Giles's review. This replaces the 30 Oct table and the 20% off, capped at
+// £15 rule: PHC is not pursuing Gift Aid on membership for 2027, so the cap has gone.
 export const TICKET_OPTIONS: TicketOption[] = [
-  { format: "In person", length: "2 days", earlyBird: "£99", earlyBirdMembers: "£84", standard: "£149", standardMembers: "£134" },
-  { format: "In person", length: "1 day", earlyBird: "£59", earlyBirdMembers: "£47", standard: "£89", standardMembers: "£74" },
-  { format: "Online", length: "2 days", earlyBird: "£59", earlyBirdMembers: "£47", standard: "£79", standardMembers: "£64" },
-  { format: "Online", length: "1 day", earlyBird: "£35", earlyBirdMembers: "£28", standard: "£45", standardMembers: "£36" },
+  { format: "In person", length: "2 days", earlyBird: "£129", earlyBirdMembers: "£99", standard: "£169", standardMembers: "£139" },
+  { format: "In person", length: "1 day", earlyBird: "£79", earlyBirdMembers: "£59", standard: "£99", standardMembers: "£79" },
+  { format: "Online", length: "2 days", earlyBird: "£79", earlyBirdMembers: "£59", standard: "£89", standardMembers: "£69" },
+  { format: "Online", length: "1 day", earlyBird: "£39", earlyBirdMembers: "£29", standard: "£49", standardMembers: "£39" },
 ];
 
 export const EARLY_BIRD_UNTIL = "31 January 2027";
 
 export const TICKET_NOTES: { title: string; text: string; highlight?: boolean }[] = [
   {
-    title: "20% off",
-    text: "every ticket, up to £15, for Members, Ambassadors, Associates and course participants",
+    title: "Save up to £30",
+    text: "with the members' price on every ticket, for Members, Ambassadors, Associates and course participants",
     highlight: true,
   },
   { title: "Early bird", text: `until ${EARLY_BIRD_UNTIL}` },

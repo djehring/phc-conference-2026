@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/terms/' },
 };
 
-// Updated for 2027 from Steve's price table (30 Oct 2026). The refund dates keep the
+// Updated for 2027 from Steve's price table (1 Nov 2026). The refund dates keep the
 // 2026 pattern moved to the April 2027 dates and need confirming by Steve and Giles.
 export default function Terms() {
   return (
@@ -23,7 +23,7 @@ export default function Terms() {
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <p className="text-gray-600 mb-6">Last updated: 31 October 2026</p>
+          <p className="text-gray-600 mb-6">Last updated: 1 November 2026</p>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">1. Conference Registration</h2>
@@ -41,8 +41,8 @@ export default function Terms() {
               <li>Full payment is required at the time of booking</li>
               <li>Early bird prices are available until {EARLY_BIRD_UNTIL}</li>
               <li>
-                Members, Ambassadors, Associates and course participants receive 20% off every
-                ticket, up to a maximum of £15 per ticket
+                Members, Ambassadors, Associates and course participants pay the members&apos; price
+                shown for each ticket
               </li>
               <li>The conference dinner on Saturday evening is booked and paid for separately</li>
               <li>All prices are in GBP and include VAT where applicable</li>
