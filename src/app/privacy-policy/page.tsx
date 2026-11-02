@@ -1,26 +1,35 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { BRAND_NAME, LEGAL_LINE } from '@/lib/brand';
+
+export const metadata: Metadata = {
+  title: 'Privacy policy',
+  description: 'How the Preventive Health Collaboration conference website uses your information.',
+  alternates: { canonical: '/privacy-policy/' },
+};
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-phc-dark text-white py-20">
+      <div className="bg-phc-navy text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-lg">PHC Conference 2026</p>
+          <h1 className="font-heading text-4xl font-bold mb-4">Privacy policy</h1>
+          <p className="text-lg">PHC Conference website</p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <p className="text-gray-600 mb-6">Last updated: January 2025</p>
+          <p className="text-gray-600 mb-6">Last updated: October 2026</p>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
             <p className="mb-4">
-              Public Health Collaboration ("we", "our", or "us") is committed to protecting your privacy. 
-              This Privacy Policy explains how we collect, use, disclose, and safeguard your information 
+              {BRAND_NAME} (&quot;we&quot;, &quot;our&quot; or &quot;us&quot;) is committed to protecting your privacy.
+              This privacy policy explains how we collect, use, disclose and safeguard your information
               when you visit our conference website.
             </p>
+            <p className="mb-4 text-sm text-gray-600">{LEGAL_LINE}</p>
           </section>
 
           <section className="mb-8">
@@ -31,7 +40,7 @@ export default function PrivacyPolicy() {
             </p>
             <ul className="list-disc list-inside mb-4 space-y-1">
               <li>Name and contact information</li>
-              <li>Professional details (organization, role)</li>
+              <li>Professional details (organisation, role)</li>
               <li>Dietary requirements and accessibility needs</li>
               <li>Payment information (processed securely via third-party providers)</li>
             </ul>
@@ -45,6 +54,22 @@ export default function PrivacyPolicy() {
               <li>Pages visited and time spent on site</li>
               <li>Referring website addresses</li>
             </ul>
+          </section>
+
+          <section className="mb-8 scroll-mt-4" id="ticket-alerts">
+            <h2 className="text-2xl font-semibold mb-4">Ticket alerts</h2>
+            <p className="mb-4">
+              If you ask us to tell you when tickets go on sale, we collect your first name and email
+              address. We use these details only to email you once, when tickets for PHC Conference 2027
+              go on sale. We will not add you to any other mailing list or use your details for anything
+              else.
+            </p>
+            <p className="mb-4">
+              Your details are held by our website host (Netlify) and our email service provider, and are
+              deleted after that email has been sent. Our lawful basis is your consent, which you can
+              withdraw at any time by emailing{' '}
+              <a href="mailto:info@phcuk.org" className="text-phc-navy underline">info@phcuk.org</a>.
+            </p>
           </section>
 
           <section className="mb-8" id="cookies">
@@ -69,7 +94,7 @@ export default function PrivacyPolicy() {
             </p>
             <ul className="list-disc list-inside mb-4 space-y-1">
               <li><strong>cookie-consent-analytics</strong>: Records your consent for analytics cookies</li>
-              <li><strong>Google Analytics</strong>: Tracks website usage and visitor behavior</li>
+              <li><strong>Google Analytics</strong>: Tracks website usage and visitor behaviour</li>
             </ul>
           </section>
 
@@ -81,7 +106,7 @@ export default function PrivacyPolicy() {
               <li>Send important conference updates and information</li>
               <li>Improve our website and services</li>
               <li>Comply with legal obligations</li>
-              <li>Respond to your inquiries and support requests</li>
+              <li>Respond to your enquiries and support requests</li>
             </ul>
           </section>
 
@@ -100,8 +125,8 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">6. Data Security</h2>
             <p className="mb-4">
-              We implement appropriate technical and organizational measures to protect your personal 
-              information against unauthorized access, alteration, disclosure, or destruction.
+              We implement appropriate technical and organisational measures to protect your personal
+              information against unauthorised access, alteration, disclosure or destruction.
             </p>
           </section>
 
@@ -140,15 +165,15 @@ export default function PrivacyPolicy() {
               If you have any questions about this Privacy Policy or our data practices, please contact us at:
             </p>
             <div className="bg-gray-50 p-4 rounded">
-              <p className="font-semibold">Public Health Collaboration</p>
-              <p>Email: <a href="mailto:info@phcuk.org" className="text-phc-dark hover:underline">info@phcuk.org</a></p>
-              <p>Website: <a href="https://phcuk.org" target="_blank" className="text-phc-dark hover:underline">phcuk.org</a></p>
+              <p className="font-semibold">{BRAND_NAME}</p>
+              <p>Email: <a href="mailto:info@phcuk.org" className="text-phc-navy hover:underline">info@phcuk.org</a></p>
+              <p>Website: <a href="https://phcuk.org/" className="text-phc-navy hover:underline">phcuk.org</a></p>
             </div>
           </section>
 
           <div className="mt-12 pt-8 border-t">
-            <Link href="/" className="text-phc-dark hover:underline">
-              ← Back to Conference Website
+            <Link href="/" className="text-phc-navy hover:underline">
+              ← Back to the conference website
             </Link>
           </div>
         </div>

@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, ExternalLink, Clock, Users, Mic, ChevronRight } from "lucide-react";
-import { getSpeakerBySlug, getSessionsForSpeaker } from "@/lib/utils";
-import { conferenceInfo } from "@/lib/data";
+import { getSpeakerBySlug, getSessionsForSpeaker } from "@/lib/2026/utils";
 
 export default function SpeakerPageContent({ slug }: { slug: string }) {
   const speaker = getSpeakerBySlug(slug);
@@ -16,8 +15,8 @@ export default function SpeakerPageContent({ slug }: { slug: string }) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-phc-dark mb-4">Speaker not found</h1>
-          <Link href="/#speakers" className="text-phc-light hover:underline">
-            Back to speakers
+          <Link href="/2026/#speakers" className="text-phc-light hover:underline">
+            Back to 2026 speakers
           </Link>
         </div>
       </div>
@@ -40,11 +39,11 @@ export default function SpeakerPageContent({ slug }: { slug: string }) {
             transition={{ duration: 0.5 }}
           >
             <Link
-              href="/#speakers"
+              href="/2026/#speakers"
               className="inline-flex items-center text-white/80 hover:text-white transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to speakers
+              Back to 2026 speakers
             </Link>
           </motion.div>
 
@@ -152,7 +151,7 @@ export default function SpeakerPageContent({ slug }: { slug: string }) {
                 {sessions.map(({ day, session, role }) => (
                   <Link
                     key={session.id}
-                    href={`/schedule/#${session.id}`}
+                    href={`/2026/schedule/#${session.id}`}
                     className="block border-l-4 border-l-phc-light bg-gradient-to-r from-phc-light/5 to-white rounded-r-xl p-5 hover:shadow-md transition-all group"
                   >
                     <div className="flex items-start justify-between">
@@ -188,41 +187,26 @@ export default function SpeakerPageContent({ slug }: { slug: string }) {
       {/* CTA */}
       <section className="py-16 bg-gradient-to-br from-phc-dark to-phc-light">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              {slug === "nina-teicholz"
-                ? "Watch Nina Teicholz Remotely at PHC 2026"
-                : `See ${speaker.name.replace(/^(Dr|Prof|Mr|Mrs|Ms)\s+/i, "").split(" ")[0]} Live at PHC 2026`
-              }
-            </h2>
-            <p className="text-white/90 max-w-xl mx-auto mb-8">
-              {slug === "nina-teicholz"
-                ? "Nina is joining remotely from the United States. Register to access her sessions virtually."
-                : "Join us at The Light, Euston, London for two days of transformative learning."
-              }
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={conferenceInfo.ticketUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-phc-yellow to-yellow-400 text-phc-dark font-bold rounded-full hover:scale-105 transition-transform shadow-lg"
-              >
-                Get Your Tickets
-              </a>
-              <Link
-                href="/schedule/"
-                className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/30 transition-colors"
-              >
-                View Full Schedule
-              </Link>
-            </div>
-          </motion.div>
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
+            {speaker.name} spoke at PHC Conference 2026
+          </h2>
+          <p className="text-white/90 max-w-xl mx-auto mb-8">
+            PHC Conference 2027 is at Warwick Hall, Warwick, on 10 and 11 April 2027.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/"
+              className="inline-block px-8 py-4 bg-phc-cyan text-phc-navy-dark font-bold rounded-full hover:bg-phc-cyan-light transition-colors shadow-lg"
+            >
+              See the 2027 conference
+            </Link>
+            <Link
+              href="/2026/schedule/"
+              className="inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/30 transition-colors"
+            >
+              View the 2026 schedule
+            </Link>
+          </div>
         </div>
       </section>
     </div>

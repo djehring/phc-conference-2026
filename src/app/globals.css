@@ -21,6 +21,12 @@
   --color-phc-dark: var(--color-phc-navy);
   --color-phc-light: var(--color-phc-cyan);
 
+  /* Prevention areas (matches phcuk.org) */
+  --color-area-metabolic: #4abfd8;
+  --color-area-cancer: #8e6fc9;
+  --color-area-brain: #2ba57a;
+  --color-area-heart: #d9534f;
+
   --color-warm-amber: #d97706;
   --color-success-green: #16a34a;
   --color-off-white: #f4f5f7;

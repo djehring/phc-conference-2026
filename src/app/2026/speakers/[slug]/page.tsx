@@ -1,7 +1,7 @@
-import { speakers } from "@/lib/data";
+import { speakers } from "@/lib/2026/data";
 import SpeakerPageContent from "./SpeakerPageContent";
 import type { Metadata } from "next";
-import { getSpeakerBySlug } from "@/lib/utils";
+import { getSpeakerBySlug } from "@/lib/2026/utils";
 
 export function generateStaticParams() {
   return speakers.map((speaker) => ({
@@ -18,9 +18,10 @@ export async function generateMetadata({
   const speaker = getSpeakerBySlug(slug);
   return {
     title: speaker
-      ? `${speaker.name} - PHC Conference 2026`
-      : "Speaker - PHC Conference 2026",
+      ? `${speaker.name}: PHC Conference 2026 archive`
+      : "Speaker: PHC Conference 2026 archive",
     description: speaker?.description,
+    alternates: { canonical: `/2026/speakers/${slug}/` },
   };
 }
 

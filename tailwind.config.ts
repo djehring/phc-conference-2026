@@ -21,9 +21,14 @@ const config: Config = {
         'off-white': '#f4f5f7',
         'dark-grey': '#3d4454',
         'warm-grey': '#6b7280',
+        'area-metabolic': '#4abfd8',
+        'area-cancer': '#8e6fc9',
+        'area-brain': '#2ba57a',
+        'area-heart': '#d9534f',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',

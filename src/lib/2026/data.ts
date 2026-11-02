@@ -1,4 +1,6 @@
-export const speakers = [
+import type { Speaker } from "@/types";
+
+export const speakers: Speaker[] = [
   {
     id: 1,
     name: "Prof Richard J Johnson",
