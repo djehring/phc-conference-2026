@@ -22,6 +22,6 @@ export const WHAT_WE_DO =
 export const MAIN_SITE_URL = "https://phcuk.org/";
 export const CONTACT_URL = "https://phcuk.org/contact/";
 export const VOLUNTEER_URL = "https://phcuk.org/volunteer/";
-export const MEMBERSHIP_URL = "https://phcuk.org/membership/";
+export const MEMBERSHIP_URL = "https://phcuk.org/get-involved/#membership";
 export const YOUTUBE_URL = "https://www.youtube.com/@PHCukorg";
 export const CONTACT_EMAIL = "info@phcuk.org";
