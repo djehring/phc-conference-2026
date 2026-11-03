@@ -147,8 +147,8 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
 // announced. Wafaa Abdel-Hadi, Glen Jeffery and Christopher Palmer added 29 Oct
 // 2026 (David), with bios and photos from the speaker research pack of that date.
 // Isabella Cooper removed 30 Oct 2026 (David): not yet confirmed.
-// David Cavan agreed to speak, 31 Oct 2026 (David). No photo, title or bio yet:
-// his card shows initials until he supplies them.
+// David Cavan agreed to speak, 31 Oct 2026 (David). Bio, title and photo as he
+// supplied them, via Steve Bennett, 3 Nov 2026.
 // Steve Bennett removed from the speaker list, 31 Oct 2026 (David).
 export const speakers2027: Speaker[] = [
   {
@@ -175,9 +175,11 @@ export const speakers2027: Speaker[] = [
     id: 12,
     name: "Dr David Cavan",
     slug: "david-cavan",
-    title: "",
-    description: "",
+    title: "Consultant Physician and Endocrinologist",
+    description:
+      "Dr David Cavan is a consultant endocrinologist who specialises in lifestyle as well as medical management of diabetes. He has international experience of developing lifestyle programmes and has written several books including ‘How to Reverse Type 2 diabetes and Prediabetes’ and ‘A guide to weight loss injections’.",
     initials: "DC",
+    photo: "david-cavan.jpg",
   },
   {
     id: 10,
