@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Castle, ChefHat, Clock, Heart, MapPin, PlayCircle, Store, Trees, Users, Utensils, Archive } from "lucide-react";
+import { ArrowRight, BedDouble, Calendar, Castle, Check, ChefHat, Clock, Heart, MapPin, PlayCircle, Store, Trees, Users, Utensils, Archive } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 import AddToCalendarButton from "@/components/AddToCalendarButton";
 import TicketsSection from "@/components/TicketsSection";
 import SpeakersSection from "@/components/SpeakersSection";
 import { CONTACT_URL, PROMISE_TEXT, VOLUNTEER_URL, YOUTUBE_URL } from "@/lib/brand";
 import {
+  ACCOMMODATION,
   AREA_STYLES,
   CONFERENCE_NAME,
   COOKERY_HOSTS,
@@ -292,6 +293,53 @@ export default function Home() {
             </ul>
           </div>
 
+          {/* Where to stay: delegates book the hotel directly, never through our tickets */}
+          {ACCOMMODATION.bookingUrl && (
+            <div
+              id="where-to-stay"
+              className="mt-10 scroll-mt-4 grid gap-8 rounded-2xl border border-phc-navy/15 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-center"
+            >
+              <div>
+                <BedDouble className="mb-4 h-7 w-7 text-phc-navy" aria-hidden="true" />
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+                  Where to stay
+                </p>
+                <h3 className="mt-1 font-heading text-2xl font-bold text-phc-navy">
+                  {ACCOMMODATION.name}
+                </h3>
+                <p className="mt-3 leading-relaxed text-dark-grey">
+                  A discounted rate for PHC delegates, available only through our booking link. You
+                  book and pay the hotel directly.
+                </p>
+                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {ACCOMMODATION.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-dark-grey">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-phc-navy" aria-hidden="true" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-xl bg-off-white p-5">
+                <a
+                  href={ACCOMMODATION.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-phc-navy px-6 py-3 font-heading text-sm font-bold text-white transition-colors hover:bg-phc-navy-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan focus-visible:ring-offset-2 sm:text-base"
+                >
+                  Book your room
+                  <span className="sr-only"> at {ACCOMMODATION.name} (opens in a new tab)</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+                <p className="mt-4 text-sm text-dark-grey">
+                  Choose the <strong>{ACCOMMODATION.rateName}</strong> rate. It is non-refundable
+                  and paid when you book. If you might need to cancel, the hotel&rsquo;s flexible
+                  rate is also available.
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Cookery masterclasses: the Caldesis host these and are not conference speakers */}
           {COOKERY_HOSTS.length > 0 && (
             <div className="mt-10 grid gap-8 rounded-2xl border border-phc-navy/15 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center">
@@ -355,8 +403,7 @@ export default function Home() {
           )}
 
           <p className="mt-8 text-sm text-dark-grey">
-            We will share family activities, accommodation and the full programme when tickets go
-            on sale.
+            We will share family activities and the full programme when tickets go on sale.
           </p>
         </div>
       </section>
