@@ -64,6 +64,11 @@ export default function Terms() {
               In the unlikely event that we need to cancel the conference, full refunds will be issued.
               We are not responsible for travel or accommodation costs.
             </p>
+            <p className="mb-4">
+              Accommodation is not included in any ticket. Hotel bookings, including at our discounted
+              delegate rate, are made and paid for directly with the hotel and are covered by the
+              hotel&rsquo;s own terms.
+            </p>
           </section>
 
           <section className="mb-8">

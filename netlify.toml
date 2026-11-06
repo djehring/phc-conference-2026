@@ -80,6 +80,23 @@
   to = "/2026/speakers/:slug/"
   status = 301
 
+# ---------------------------------------------------------------
+# Short link for the delegate hotel rate, for emails and social posts.
+# Keep "to" in step with ACCOMMODATION.bookingUrl in src/lib/conference.ts.
+# 302 (not 301) so browsers don't cache it if the hotel link changes.
+# ---------------------------------------------------------------
+[[redirects]]
+  from = "/hotel"
+  to = "https://www.ihg.com/redirect?path=hd&brandCode=EX&localeCode=en&regionCode=925&hotelCode=WARUK&_PMID=99502056&corpNum=100276187&cn=no&adjustMonth=false&showApp=true&monthIndex=00"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/hotel/"
+  to = "https://www.ihg.com/redirect?path=hd&brandCode=EX&localeCode=en&regionCode=925&hotelCode=WARUK&_PMID=99502056&corpNum=100276187&cn=no&adjustMonth=false&showApp=true&monthIndex=00"
+  status = 302
+  force = true
+
 # Custom 404 page (must stay last)
 [[redirects]]
   from = "/*"

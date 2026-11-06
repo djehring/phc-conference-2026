@@ -49,6 +49,42 @@ export const DINNER: { label: string; time: string; venue: string; price: string
 };
 
 // ---------------------------------------------
+// Where to stay
+// ---------------------------------------------
+
+/**
+ * Delegate hotel rate. The "Where to stay" card stays hidden while bookingUrl is empty.
+ *
+ * Delegates book and pay the hotel directly. Keep it that way: Steve's VAT email of
+ * 29 Oct 2026 relies on "no accommodation is sold as part of the ticket", so never
+ * add rooms to the ticket basket.
+ *
+ * Source: Ben Pilling (Atlas Hotels), forwarded by Steve Bennett, "Bookings", 5 Nov 2026.
+ * The rate shows as "Conference And Meetings" and only through this link (corpNum is
+ * PHC's rate code). The link from the email was wrapped in an Outlook safelink; this is
+ * the unwrapped IHG address. /hotel on this site redirects here (netlify.toml).
+ */
+export const ACCOMMODATION: {
+  name: string;
+  rateName: string;
+  bookingUrl: string;
+  shortPath: string;
+  features: string[];
+} = {
+  name: "Holiday Inn Express Warwick",
+  rateName: "Conference And Meetings",
+  bookingUrl:
+    "https://www.ihg.com/redirect?path=hd&brandCode=EX&localeCode=en&regionCode=925&hotelCode=WARUK&_PMID=99502056&corpNum=100276187&cn=no&adjustMonth=false&showApp=true&monthIndex=00",
+  shortPath: "/hotel",
+  features: [
+    "Breakfast included for each guest",
+    "On-site car park, £5.50 for hotel guests",
+    "Restaurant and bar",
+    "8 minutes’ drive from Warwick Hall",
+  ],
+};
+
+// ---------------------------------------------
 // Tickets
 // ---------------------------------------------
 
