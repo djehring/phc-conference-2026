@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BedDouble, Calendar, Castle, Check, ChefHat, Clock, Heart, MapPin, PlayCircle, Store, Trees, Users, Utensils, Archive } from "lucide-react";
+import { ArrowRight, BedDouble, Calendar, Castle, Check, ChefHat, Clock, Heart, MapPin, PlayCircle, Store, Trees, Utensils, Archive } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 import AddToCalendarButton from "@/components/AddToCalendarButton";
 import TicketsSection from "@/components/TicketsSection";
 import SpeakersSection from "@/components/SpeakersSection";
-import { CONTACT_URL, PROMISE_TEXT, VOLUNTEER_URL, YOUTUBE_URL } from "@/lib/brand";
+import { CONTACT_URL, PROMISE_TEXT, YOUTUBE_URL } from "@/lib/brand";
 import {
   ACCOMMODATION,
   AREA_STYLES,
@@ -465,7 +465,7 @@ export default function Home() {
           <h2 className="font-heading text-3xl font-bold text-phc-navy sm:text-4xl">
             Be part of the weekend
           </h2>
-          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: Store,
@@ -474,15 +474,6 @@ export default function Home() {
                 text: "Stands for organisations that share our values.",
                 cta: "Enquire",
                 href: CONTACT_URL,
-                external: true,
-              },
-              {
-                icon: Users,
-                eyebrow: "Volunteer",
-                title: "Help on the day",
-                text: "Join the volunteer team for the weekend.",
-                cta: "Volunteer",
-                href: VOLUNTEER_URL,
                 external: true,
               },
               {
