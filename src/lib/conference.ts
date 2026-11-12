@@ -190,6 +190,7 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
 // David Cavan agreed to speak, 31 Oct 2026 (David). Bio, title and photo as he
 // supplied them, via Steve Bennett, 3 Nov 2026.
 // Steve Bennett removed from the speaker list, 31 Oct 2026 (David).
+// Christopher Palmer removed 12 Nov 2026 (David): he has withdrawn.
 export const speakers2027: Speaker[] = [
   {
     id: 8,
@@ -243,16 +244,6 @@ export const speakers2027: Speaker[] = [
     links: {
       university: "https://som.cuanschutz.edu/Profiles/Faculty/Profile/9426",
     },
-  },
-  {
-    id: 11,
-    name: "Dr Christopher Palmer",
-    slug: "christopher-palmer",
-    title: "Assistant Professor of Psychiatry, Harvard Medical School",
-    description:
-      "Founded the Metabolic and Mental Health Program at McLean Hospital. His work explores metabolic approaches to psychiatric care, including ketogenic diets, and the brain energy theory of mental illness.",
-    initials: "CP",
-    photo: "christopher-palmer.jpg",
   },
   {
     id: 3,
