@@ -103,7 +103,7 @@ export default function Footer() {
                 <li><Link href="/#family" className="hover:text-phc-cyan transition-colors">Family weekend</Link></li>
                 <li><Link href="/#dinner" className="hover:text-phc-cyan transition-colors">Conference dinner</Link></li>
                 <li><Link href="/#tickets" className="hover:text-phc-cyan transition-colors">Tickets</Link></li>
-                <li><Link href="/#get-involved" className="hover:text-phc-cyan transition-colors">Exhibit or volunteer</Link></li>
+                <li><Link href="/#get-involved" className="hover:text-phc-cyan transition-colors">Exhibit or sponsor</Link></li>
                 <li><Link href="/2026/" className="hover:text-phc-cyan transition-colors">2026 conference archive</Link></li>
               </ul>
             </div>
