@@ -17,6 +17,19 @@ export const VENUE = {
   mapUrl: "https://maps.google.com/?q=Warwick+Hall,+Warwick",
 } as const;
 
+/**
+ * Photo of the venue, shown in the intro section of the homepage.
+ * Fill `credit` once the photographer or source is confirmed; the caption
+ * shows only the venue name while it is empty.
+ */
+export const VENUE_IMAGE: { src: string; alt: string; width: number; height: number; credit: string } = {
+  src: "/images/venue/warwick-hall-exterior.webp",
+  alt: "Warwick Hall at dusk: a curved, glass-fronted building with tall brick columns, lit from inside, with a crowd gathered on the forecourt",
+  width: 2000,
+  height: 1093,
+  credit: "",
+};
+
 export const DATES_LABEL = "Saturday 10 and Sunday 11 April 2027";
 
 export const DAYS = [

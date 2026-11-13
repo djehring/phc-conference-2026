@@ -25,6 +25,7 @@ import {
   HAS_PROGRAMME,
   PROGRAMME,
   VENUE,
+  VENUE_IMAGE,
   WARWICK_IMAGES,
   speakers2027,
 } from "@/lib/conference";
@@ -184,6 +185,23 @@ export default function Home() {
             </div>
           </dl>
         </div>
+
+        <figure className="mx-auto mt-10 max-w-6xl overflow-hidden rounded-2xl bg-white shadow-sm sm:mt-12">
+          <img
+            src={VENUE_IMAGE.src}
+            alt={VENUE_IMAGE.alt}
+            width={VENUE_IMAGE.width}
+            height={VENUE_IMAGE.height}
+            className="aspect-[4/3] w-full object-cover sm:aspect-[2/1]"
+            loading="lazy"
+          />
+          <figcaption className="px-4 py-3 text-sm text-dark-grey">
+            {VENUE.name}, {VENUE.town}
+            {VENUE_IMAGE.credit && (
+              <span className="text-warm-grey"> · Photo: {VENUE_IMAGE.credit}</span>
+            )}
+          </figcaption>
+        </figure>
       </section>
 
       <TicketsSection />
