@@ -5,7 +5,13 @@ import BookingButton from "@/components/BookingButton";
 import AddToCalendarButton from "@/components/AddToCalendarButton";
 import TicketsSection from "@/components/TicketsSection";
 import SpeakersSection from "@/components/SpeakersSection";
-import { CONTACT_URL, PROMISE_TEXT, YOUTUBE_URL } from "@/lib/brand";
+import {
+  CONTACT_URL,
+  FUNDRAISING_HEADING,
+  FUNDRAISING_INTRO,
+  PROMISE_TEXT,
+  YOUTUBE_URL,
+} from "@/lib/brand";
 import {
   ACCOMMODATION,
   AREA_STYLES,
@@ -109,6 +115,21 @@ export default function Home() {
                 Plan a family weekend
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fundraising event statement */}
+      <section className="bg-phc-cyan/15 px-4 py-10 sm:py-12">
+        <div className="mx-auto flex max-w-6xl gap-4 sm:gap-5">
+          <Heart className="mt-1 h-7 w-7 shrink-0 text-phc-navy" aria-hidden="true" />
+          <div>
+            <h2 className="font-heading text-2xl font-bold text-phc-navy sm:text-3xl">
+              {FUNDRAISING_HEADING}
+            </h2>
+            <p className="mt-3 max-w-4xl text-lg leading-relaxed text-dark-grey">
+              {FUNDRAISING_INTRO}
+            </p>
           </div>
         </div>
       </section>

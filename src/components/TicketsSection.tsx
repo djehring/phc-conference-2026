@@ -2,6 +2,7 @@
 
 import { useTicketsOnSale } from "@/hooks/useTicketsOnSale";
 import { BOOKING_URL, TICKET_NOTES, TICKET_OPTIONS, type TicketOption } from "@/lib/conference";
+import { FUNDRAISING_TICKET_STATEMENT } from "@/lib/brand";
 import BookingButton from "@/components/BookingButton";
 import TicketAlertForm from "@/components/TicketAlertForm";
 
@@ -65,6 +66,9 @@ export default function TicketsSection() {
               )}
             </>
           )}
+          <p className="mt-6 border-l-4 border-phc-navy pl-4 text-base text-phc-navy">
+            {FUNDRAISING_TICKET_STATEMENT}
+          </p>
         </div>
         {!onSale && (
           <div id="ticket-alerts" className="scroll-mt-4">
