@@ -209,9 +209,9 @@ export const speakers2027: Speaker[] = [
     id: 8,
     name: "Dr Wafaa Abdel-Hadi",
     slug: "wafaa-abdel-hadi",
-    title: "Clinical oncologist and functional medicine practitioner",
+    title: "Clinical Oncologist & Functional Medicine Doctor",
     description:
-      "Founded AWARE Clinic in 2014 after 13 years in clinical oncology. Her work brings together oncology, nutrition and personalised lifestyle approaches.",
+      "Founder, AWARE Clinic and co-host of The Perflow Podcast. A physician scientist who applies metabolic therapy and lifestyle medicine to restore the body\u2019s innate healing and prevent non-communicable diseases, including cancer.",
     initials: "WA",
     photo: "wafaa-abdel-hadi.jpg",
   },
