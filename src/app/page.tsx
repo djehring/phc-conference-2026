@@ -22,6 +22,7 @@ import {
   DAYS,
   DINNER,
   DINNER_BOOKING_URL,
+  COOKING_CLASS_BOOKING_URL,
   HAS_PROGRAMME,
   PROGRAMME,
   VENUE,
@@ -394,6 +395,12 @@ export default function Home() {
                   Italian cooking and practical lower-carbohydrate ideas for enjoyable, nourishing
                   everyday meals, from the founders of La Cucina Caldesi cookery school.
                 </p>
+                <div className="mt-6">
+                  <BookingButton
+                    bookLabel="Book the cooking class"
+                    href={COOKING_CLASS_BOOKING_URL || undefined}
+                  />
+                </div>
               </div>
               <ul className="grid gap-4 sm:grid-cols-2" aria-label="Masterclass hosts">
                 {COOKERY_HOSTS.map((host) => (
