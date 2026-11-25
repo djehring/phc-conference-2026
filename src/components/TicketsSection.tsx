@@ -56,7 +56,7 @@ export default function TicketsSection() {
             <>
               <p className="mt-4 text-lg text-dark-grey">
                 {BOOKING_URL
-                  ? "Book your place in person or online, and for the Saturday conference dinner."
+                  ? "Book your place in person or online, and for the Saturday conference dinner and Caldesi cooking class."
                   : "Booking opens shortly. Please check back soon."}
               </p>
               {BOOKING_URL && (

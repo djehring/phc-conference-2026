@@ -115,12 +115,19 @@ export const TICKETS_ON_SALE_AT: string = "2026-11-11T00:00:00Z";
  *
  * Ticket Tailor event published by Sarah James, 10 Nov 2026 ("Integrating
  * TicketTailor with PHC Conference website"). One event holds the in-person,
- * online and dinner tickets, so DINNER_BOOKING_URL stays empty and falls back here.
+ * online, dinner and Caldesi cooking class tickets, so DINNER_BOOKING_URL and
+ * COOKING_CLASS_BOOKING_URL stay empty and fall back here.
  */
 export const BOOKING_URL: string = "https://buytickets.at/preventivehealthcollaboration/2499881";
 
 /** Dinner booking, if it differs from the main booking page. Falls back to BOOKING_URL. */
 export const DINNER_BOOKING_URL: string = "";
+
+/**
+ * Caldesi cooking class booking, if it differs from the main booking page. Falls back to BOOKING_URL.
+ * Class tickets (£29, limited to 25) added to the Ticket Tailor event by Sarah James, 25 Nov 2026.
+ */
+export const COOKING_CLASS_BOOKING_URL: string = "";
 
 export type TicketOption = {
   format: "In person" | "Online";
