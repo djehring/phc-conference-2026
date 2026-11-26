@@ -211,6 +211,8 @@ export const HAS_PROGRAMME = Object.values(PROGRAMME).some((sessions) => session
 // supplied them, via Steve Bennett, 3 Nov 2026.
 // Steve Bennett removed from the speaker list, 31 Oct 2026 (David).
 // Christopher Palmer removed 12 Nov 2026 (David): he has withdrawn.
+// Patrick Holford added 26 Nov 2026 (David), with bio and photo from the 2025
+// conference site (PHCConference repo).
 export const speakers2027: Speaker[] = [
   {
     id: 8,
@@ -241,6 +243,16 @@ export const speakers2027: Speaker[] = [
       "Dr David Cavan is a consultant endocrinologist who specialises in lifestyle as well as medical management of diabetes. He has international experience of developing lifestyle programmes and has written several books including ‘How to Reverse Type 2 diabetes and Prediabetes’ and ‘A guide to weight loss injections’.",
     initials: "DC",
     photo: "david-cavan.jpg",
+  },
+  {
+    id: 13,
+    name: "Patrick Holford",
+    slug: "patrick-holford",
+    title: "Nutrition and mental health expert",
+    description:
+      "Founder of the Food for the Brain Foundation and the Institute for Optimum Nutrition, and author of 48 books including The Optimum Nutrition Bible and Upgrade Your Brain.",
+    initials: "PH",
+    photo: "patrick-holford.png",
   },
   {
     id: 10,
