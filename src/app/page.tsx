@@ -187,22 +187,55 @@ export default function Home() {
           </dl>
         </div>
 
-        <figure className="mx-auto mt-10 max-w-6xl overflow-hidden rounded-2xl bg-white shadow-sm sm:mt-12">
-          <img
-            src={VENUE_IMAGE.src}
-            alt={VENUE_IMAGE.alt}
-            width={VENUE_IMAGE.width}
-            height={VENUE_IMAGE.height}
-            className="aspect-[4/3] w-full object-cover sm:aspect-[2/1]"
-            loading="lazy"
-          />
-          <figcaption className="px-4 py-3 text-sm text-dark-grey">
-            {VENUE.name}, {VENUE.town}
-            {VENUE_IMAGE.credit && (
-              <span className="text-warm-grey"> · Photo: {VENUE_IMAGE.credit}</span>
-            )}
-          </figcaption>
-        </figure>
+        <div className="mx-auto mt-10 grid max-w-6xl gap-6 sm:mt-12 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+          <figure className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm">
+            <img
+              src={VENUE_IMAGE.src}
+              alt={VENUE_IMAGE.alt}
+              width={VENUE_IMAGE.width}
+              height={VENUE_IMAGE.height}
+              className="aspect-[4/3] w-full object-cover sm:aspect-[2/1] lg:aspect-auto lg:min-h-0 lg:flex-1"
+              loading="lazy"
+            />
+            <figcaption className="px-4 py-3 text-sm text-dark-grey">
+              {VENUE.name}, {VENUE.town}
+              {VENUE_IMAGE.credit && (
+                <span className="text-warm-grey"> · Photo: {VENUE_IMAGE.credit}</span>
+              )}
+            </figcaption>
+          </figure>
+
+          <div id="venue" className="flex scroll-mt-4 flex-col rounded-2xl border border-phc-navy/15 bg-white p-5 shadow-sm sm:p-6">
+            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-warm-grey">
+              <MapPin className="h-4 w-4" aria-hidden="true" /> Venue address
+            </p>
+            <address className="mt-2 not-italic leading-relaxed text-dark-grey">
+              {VENUE.addressLines.map((line, i) => (
+                <span key={line} className={i === 0 ? "block font-heading font-semibold text-phc-navy" : "block"}>
+                  {line}
+                </span>
+              ))}
+            </address>
+            <div className="mt-4 aspect-[4/3] overflow-hidden rounded-xl border border-phc-navy/10 bg-off-white lg:aspect-auto lg:min-h-48 lg:flex-1">
+              <iframe
+                src={VENUE.mapEmbedUrl}
+                title={`Map showing ${VENUE.name}, ${VENUE.postcode}`}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <a
+              href={VENUE.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 self-start rounded text-sm font-semibold text-phc-navy underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-phc-cyan"
+            >
+              Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
       </section>
 
       <TicketsSection />

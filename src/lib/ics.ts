@@ -14,7 +14,7 @@ DTSTAMP:${stamp}
 DTSTART:${toIcsUtc(day.startIso)}
 DTEND:${toIcsUtc(day.endIso)}
 SUMMARY:${CONFERENCE_NAME}: ${CONFERENCE_THEME} (day ${i + 1})
-LOCATION:${VENUE.name}\\, ${VENUE.town}
+LOCATION:${VENUE.addressLines.join("\\, ")}
 URL:https://phcukconference.org/
 END:VEVENT`
   ).join("\n");

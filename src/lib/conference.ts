@@ -14,7 +14,12 @@ export const CONFERENCE_THEME = "Prevent the preventable, reverse the reversible
 export const VENUE = {
   name: "Warwick Hall",
   town: "Warwick",
-  mapUrl: "https://maps.google.com/?q=Warwick+Hall,+Warwick",
+  /** Full postal address, one line per entry. Confirmed by David, 26 Nov 2026. */
+  addressLines: ["Warwick Hall", "Warwick School", "Myton Road", "Warwick", "CV34 6PP"],
+  postcode: "CV34 6PP",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Warwick+Hall,+Warwick+School,+Myton+Road,+Warwick+CV34+6PP",
+  /** Keyless Google Maps embed, shown as the map thumbnail beside the venue photo. */
+  mapEmbedUrl: "https://maps.google.com/maps?q=Warwick+Hall,+Warwick+School,+Myton+Road,+Warwick+CV34+6PP&z=15&output=embed",
 } as const;
 
 /**
